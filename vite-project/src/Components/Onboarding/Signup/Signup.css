@@ -1,0 +1,167 @@
+.Signup_Page {
+    width: 100%;
+    height: 100vh;
+    background: url('../../../assets//bg2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.SignUp_Opacity {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.14);
+}
+
+.Redex_TlogoSignUp {
+    position: absolute;
+    left: 2%;
+    top: 5%;
+}
+
+.Signup_Card {
+    width: 30%;
+    height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Nunito, sans-serif;
+}
+
+.Signup_Header {
+    width: 90%;
+    height: 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+}
+
+.Signup_Header h1 {
+    font-size: 30px;
+}
+
+.Signup_Header span {
+    font-size: 19px;
+    font-weight: bold;
+    color: red;
+}
+
+.Signup_Body {
+    width: 85%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Signup_Inputs {
+    width: 100%;
+    height: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Signup_Input {
+    width: 100%;
+    height: 17.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Signup_Input label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.678);
+}
+
+.Signup_Input input {
+    width: 100%;
+    height: 85%;
+    border: none;
+    outline: none;
+    color: black;
+    background: #EDF2F7;
+    border-radius: 3px;
+    padding-inline: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.Signup_Input input:placeholder-shown {
+    color: rgba(0, 0, 0, 0.34);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.Signup_InputDuo input:placeholder-shown {
+    color: rgba(0, 0, 0, 0.34);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.Signup_Input input:focus {
+    border: 1px solid red;
+}
+
+.Signup_InputDuo {
+    width: 100%;
+    height: 17.5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Signup_InputDuo div {
+    width: 49%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Signup_InputDuo div input{
+    width: 100%;
+    height: 85%;
+    border: none;
+    outline: none;
+    color: black;
+    background: #EDF2F7;
+    border-radius: 3px;
+    padding-inline: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.Signup_InputDuo div input:focus {
+    border: 1px solid red;
+}
+
+.Signup_InputDuo div label{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.678);
+}
+
+.Signup_Btn {
+    width: 100%;
+    height: 12%;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.Signup_Btn:hover {
+    transition: all 700ms;
+    background-color: rgb(209, 12, 12);
+}

@@ -1,0 +1,52 @@
+
+@media screen and (max-width: 767px) { 
+
+    .Verification_Card {
+        width: 95%;
+        height: 45%;
+    }
+
+    .RedExVerification_Logo {
+        width: 42%;
+        height: 14%;
+        border-radius: 3px;
+    }
+    
+    .RedExVerification_Logo img{
+        width: 90%;
+        height: 78%;
+    }
+
+    .Verification_Text {
+        width: 100%;
+        height: 28%;
+    }
+
+    .Verification_Text h1 {
+        font-size: 27px;
+        font-weight: normal;
+    }
+    .Verification_Text span{
+        font-size: 24px;
+    }
+    
+    .Resend_Verification {
+        width: 100%;
+        height: 35%;
+        gap: 10px;
+    }
+
+    .Resend_Verification span{
+        font-size: 13px;
+    }
+    
+    .ResendVerification_Btn {
+        width: 50%;
+        height: 34%;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    
+}

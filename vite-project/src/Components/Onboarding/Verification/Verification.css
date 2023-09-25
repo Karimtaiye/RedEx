@@ -1,0 +1,95 @@
+.Verification_Page {
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    background: url('../../../assets//bg1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Verification_Opacity {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.14);
+}
+
+.Verification_Card {
+    width: 55%;
+    height: 75%;
+    background: rgba(255, 0, 0, 0.71);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.RedExVerification_Logo {
+    width: 22%;
+    height: 13%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.RedExVerification_Logo img{
+    width: 90%;
+    height: 73%;
+}
+
+.Verification_Text {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    gap: 15px;
+}
+.Verification_Text h1 {
+    font-size: 32px;
+    font-weight: normal;
+}
+.Verification_Text span{
+    font-size: 28px;
+}
+
+.Resend_Verification {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 13px;
+    justify-content: flex-start;
+}
+.Resend_Verification span{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.89);
+}
+
+.ResendVerification_Btn {
+    width: 30%;
+    height: 33%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    outline: none;
+}
+
+.ResendVerification_Btn:hover {
+    transition: all 500ms ;
+    background-color: rgba(194, 194, 194, 0.966);
+}

@@ -1,0 +1,129 @@
+.Login_Page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../../assets//bg2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Login_Opacity {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.14);
+}
+
+.Redex_TlogoLogin {
+    position: absolute;
+    left: 2%;
+    top: 5%;
+}
+
+.Login_Card {
+    width: 30%;
+    height: 65%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Nunito, sans-serif;
+    gap: 5%;
+}
+
+.Login_Header {
+    width: 90%;
+    height: 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+}
+
+.Login_Header h1 {
+    font-size: 30px;
+}
+
+.Login_Header span {
+    font-size: 19px;
+    font-weight: bold;
+    color: red;
+}
+
+.Login_Body {
+    width: 85%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.Login_Inputs {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+
+.Login_Input {
+    gap: 5px;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Login_Input label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.678);
+}
+
+.Login_Input input {
+    width: 100%;
+    height: 85%;
+    border: none;
+    outline: none;
+    color: black;
+    background: #EDF2F7;
+    border-radius: 3px;
+    padding-inline: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.Login_Input input:placeholder-shown {
+    color: rgba(0, 0, 0, 0.34);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.Login_Input input:focus {
+    border: 1px solid red;
+}
+
+.Login_Btn {
+    width: 100%;
+    height: 19%;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.Login_Btn:hover {
+    transition: all 700ms;
+    background-color: rgb(209, 12, 12);
+}

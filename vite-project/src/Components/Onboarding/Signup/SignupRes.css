@@ -1,0 +1,80 @@
+/* @media screen and (max-width:430px) {
+    .Signup_Card {
+        width: 95%;
+        height: 90%;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+
+    .Redex_Tlogo {
+        left: 20%;
+    }
+
+    .Signup_Input input {
+        height: 75%;
+        border: 1px solid white;
+        color: white;
+        background: transparent;
+        border-radius: 5px;
+    }
+
+    .Signup_InputDuo div input{
+        width: 100%;
+        height: 73%;
+        border: 1px solid white;
+        color: white;
+        background: transparent;
+        border-radius: 5px;
+    }
+
+    .Signup_Input input:placeholder-shown {
+        color: green;
+    }
+    .Signup_Input input::placeholder {
+        color: rgba(255, 255, 255, 0.61);
+    }
+} */
+
+
+@media screen and (max-width: 767px) { 
+
+    .Signup_Card {
+        width: 95%;
+        height: 90%;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+
+    .Redex_Tlogo {
+        left: 20%;
+    }
+
+    .Signup_Input input {
+        height: 75%;
+        border: 1px solid white;
+        color: white;
+        background: transparent;
+        border-radius: 5px;
+    }
+
+    .Signup_InputDuo div input{
+        width: 100%;
+        height: 73%;
+        border: 1px solid white;
+        color: white;
+        background: transparent;
+        border-radius: 5px;
+    }
+
+    .Signup_Input input:placeholder-shown {
+        color: green;
+    }
+    .Signup_Input input::placeholder {
+        color: rgba(255, 255, 255, 0.61);
+    }
+
+}
+
+@media screen and (max-width:1024px) {
+    
+}

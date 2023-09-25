@@ -1,0 +1,35 @@
+
+@media screen and (max-width: 767px) { 
+
+    .Login_Card {
+        width: 95%;
+        height: 55%;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+
+    .Login_Input input {
+        height: 75%;
+        border: 1px solid white;
+        color: white;
+        background: transparent;
+        border-radius: 5px;
+    }
+
+    .Redex_TlogoLogin {
+        left: 22%;
+        top: 21%;
+    }
+
+    .Login_Input input:placeholder-shown {
+        color: green;
+    }
+    .Login_Input input::placeholder {
+        color: rgba(255, 255, 255, 0.61);
+    }
+
+}
+
+@media screen and (max-width:1024px) {
+    
+}
