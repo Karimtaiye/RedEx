@@ -1,5 +1,5 @@
-
-@media screen and (max-width: 767px) { 
+/* 
+@media screen and (max-width: 575px) { 
 
     .Login_Card {
         width: 95%;
@@ -9,7 +9,7 @@
     }
 
     .Login_Input input {
-        height: 75%;
+        height: 75px;
         border: 1px solid white;
         color: white;
         background: transparent;
@@ -30,6 +30,30 @@
 
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (min-width:576px) and (max-width:767px) {
     
+    .Login_Input input {
+        height: 75%;
+        border: 1px solid white;
+        color: white;
+        background: white;
+        border-radius: 5px;
+    }
 }
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .Login_Card {
+        width: 95%;
+        height: 55%;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    
+    .Login_Input input {
+        height: 75%;
+        border: 1px solid white;
+        color: white;
+        background: white;
+        border-radius: 5px;
+    }
+} */
