@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './LandingPage.css'
 import './LandingPageRes.css'
-import Logo from '../../assets/Logo1.png'
+
 import image from '../LandingPage/assets/DesImg.png'
 import item1 from '../LandingPage/assets/item1.png'
 import item2 from '../LandingPage/assets/item2.png'
@@ -14,27 +14,16 @@ import Service4 from '../LandingPage/assets/Service4.png'
 import Service3 from '../LandingPage/assets/Service3.png'
 import Service2 from '../LandingPage/assets/Service2.png'
 import Service1 from '../LandingPage/assets/Service1.png'
+import { useNavigate } from 'react-router-dom'
 
 function LandingPage() {
   const [ans, setAns] = useState({type:"first", drop:false})
+  const nav = useNavigate()
   
   return (
     <div className='Landing_page'>
       <div className='LandingPage_Wrapper'>
-        <section className='RedEx_Header'>
-          <div className='RedExHeader_Logo'>
-            <img src={Logo} alt="" />
-          </div>
-          <div className='RedExHeader_Nav'>
-            <ul>
-              <li style={{color:"red"}}>Home</li>
-              <li>About us</li>
-              <li>Blog</li>
-              <li>Cart</li>
-              <li>Account</li>
-            </ul>
-          </div>
-        </section>
+
         
         <section className='RedExDisplay_Details'>
           <div className='RedExDisplay_Carousel'>
@@ -76,7 +65,9 @@ function LandingPage() {
              <h1>Featured </h1><h1 style={{color:"red"}}>Category</h1>
           </div>  
           <div className='RedExCategories_Products'>
-            <div className='Categoriy_Products'>
+            <div className='Categoriy_Products' onClick={()=>{
+              nav('/category')
+            }}>
               <div className='Category_ProductImg'>
                 <img src={item1} alt="" />
               </div>
@@ -89,7 +80,9 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className='Categoriy_Products'>
+            <div className='Categoriy_Products' onClick={()=>{
+              nav('/category')
+            }}>
               <div className='Category_ProductImg'>
                 <img src={item1} alt="" />
               </div>
@@ -102,7 +95,9 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className='Categoriy_Products'>
+            <div className='Categoriy_Products' onClick={()=>{
+              nav('/category')
+            }}>
               <div className='Category_ProductImg'>
                 <img src={item1} alt="" />
               </div>
@@ -115,7 +110,9 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className='Categoriy_Products'>
+            <div className='Categoriy_Products' onClick={()=>{
+              nav('/category')
+            }}>
               <div className='Category_ProductImg'>
                 <img src={item1} alt="" />
               </div>
@@ -267,7 +264,7 @@ function LandingPage() {
                 
               </div>
              {
-              ans.type === "four" && ans.drop?
+              ans.type === "fourth" && ans.drop?
               <span className='FAQ_Ans'>You can do some shii</span>:null
              }
             </div>
@@ -280,7 +277,7 @@ function LandingPage() {
                 
               </div>
              {
-              ans.type === "first" && ans.drop?
+              ans.type === "fifth" && ans.drop?
               <span className='FAQ_Ans'>You can do some shii</span>:null
              }
             </div>

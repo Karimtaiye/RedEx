@@ -1,0 +1,38 @@
+.RedEx_Header {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.RedExHeader_Logo {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.RedExHeader_Nav {
+    width: 48.4%;
+    height: 100%;
+}
+
+.RedExHeader_Nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around   ;
+    color: black;
+    align-items: center;
+}
+
+.RedExHeader_Nav ul li {
+    list-style-type: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.RedExHeader_Nav ul li:hover {
+    text-decoration: underline;
+}
