@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { HashRouter, Routes, Route} from 'react-router-dom'
 import Signup from './Components/Onboarding/Signup/Signup'
 import Login from './Components/Onboarding/Login/Login'
 import Verification from './Components/Onboarding/Verification/Verification'
@@ -13,7 +13,7 @@ import Category from './Components/Category/Category'
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <Header />
        <Routes>
           <Route path='/' element={<LandingPage />} />
@@ -25,7 +25,7 @@ function App() {
           <Route path='/details' element={<Detail />} />
           <Route path='/category' element={<Category />} />
        </Routes>
-    </Router>
+    </HashRouter>
   )
 }
 
