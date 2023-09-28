@@ -172,18 +172,18 @@
     height: max-content;
     display: flex;
     flex-wrap: wrap;
-    gap: 3.4%;
+    justify-content: center;
+    gap: 3.9%;
  }
 
 .Categoriy_Products {
-    width: 595px;
+    width: 585px;
     height: 398px;
     background: #EDEBEB;
     display: flex;
     align-items: center;
     margin-bottom: 8vh;
     border-radius: 5px;
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     /* g */
 
@@ -269,11 +269,12 @@
     height: max-content;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 4%;
 }
 
 .Demanding_Products {
-    width: 376px;
+    width: 372px;
     height: 350px;
     background: white;
     border-radius: 20px;
@@ -340,12 +341,13 @@
     height: max-content;
     display: flex;
     flex-wrap: wrap;
-    gap: 5.1%;
+    gap: 5.9%;
+    justify-content: center;
 }
 
 .RedExService_Info {
-    width: 355px;
-    height: 320px;
+    width: 346px;
+    height: 314px;
     /* background: #000; */
     display: flex;
     justify-content: center;
@@ -459,7 +461,4 @@
     line-height:21px;
     font-weight: 600;
     color:rgba(0, 0, 0, 0.5);
-    rotate: 180deg;
-    transition: all 350ms;
-    background-color: #1d252f38;
 }

@@ -1,5 +1,12 @@
-.RedEx_Header {
+.RedExHeaderWrappper {
     width: 100%;
+    height: max-content;
+        display: flex;
+    justify-content: center;
+}
+
+.RedEx_Header {
+    width: 95%;
     height: 15vh;
     display: flex;
     justify-content: space-between;

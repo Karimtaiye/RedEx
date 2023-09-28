@@ -4,7 +4,8 @@ import Logo from '../../assets/Logo1.png'
 
 function Header() {
   return (
-    <section className='RedEx_Header'>
+   <div className='RedExHeaderWrappper'>
+     <section className='RedEx_Header'>
     <div className='RedExHeader_Logo'>
       <img src={Logo} alt="" />
     </div>
@@ -18,6 +19,7 @@ function Header() {
       </ul>
     </div>
   </section>
+   </div>
   )
 }
 
