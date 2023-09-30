@@ -192,4 +192,18 @@
     color: white;
     font-size: 20px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transform: scale(1);
+}
+
+.Cateory_ATCBtn:hover {
+    transition: all 350ms;
+    transform: scale(1.05);
+}
+
+.ATC_Icon {
+    font-size: 26px;
 }

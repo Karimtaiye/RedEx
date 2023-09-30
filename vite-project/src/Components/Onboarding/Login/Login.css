@@ -8,6 +8,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 .Login_Opacity {
@@ -20,9 +21,15 @@
 }
 
 .Redex_TlogoLogin {
+    cursor: pointer;
     position: absolute;
     left: 2%;
     top: 5%;
+}
+
+.Redex_TlogoLogin:hover {
+    transition: all 500ms ease-in-out;
+    top: 4%;
 }
 
 .Login_Card {
@@ -139,4 +146,21 @@
 .Login_Btn:hover {
     transition: all 700ms;
     background-color: rgb(209, 12, 12);
+}
+
+.SignUp_Route {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    gap: 3px;
+}
+
+.SignUp_Route span{
+    cursor: pointer;
+    color: red;
+}
+
+.SignUp_Route span:hover {
+    text-decoration: underline;
 }

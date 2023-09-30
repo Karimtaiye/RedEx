@@ -3,10 +3,12 @@ import './Verification.css'
 import './VerificationRes.css'
 import Logo from '../assets/Tlogo.png'
 import axios from 'axios'
+import { useSelector} from 'react-redux'
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function Verification() {
+  const userRes = useSelector(state=>state.redexstore.userRes)
   const nav = useNavigate()
   const location = useLocation();
     const [verified, setVerified] = useState(false)
@@ -62,7 +64,7 @@ function Verification() {
 
 
     const ReVerifyUser = () => {
-      axios.put(url2, "olayinkahassan117@gmail.com")
+      axios.put(url2, userRes.email)
       .then(res=>{
         console.log(res)
         setVerified(true)

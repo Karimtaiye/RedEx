@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './LandingPage.css'
 import './LandingPageRes.css'
 
@@ -15,13 +15,62 @@ import Service3 from '../LandingPage/assets/Service3.png'
 import Service2 from '../LandingPage/assets/Service2.png'
 import Service1 from '../LandingPage/assets/Service1.png'
 import { useNavigate } from 'react-router-dom'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+import axios from 'axios'
 
 function LandingPage() {
+  const [allProducts, setAllProducts] = useState([])
+  const [nextPro, setNextPro] = useState(0)
+  const [execute, setexecute] = useState(true)
   const [ans, setAns] = useState({type:"first", drop:false})
   const nav = useNavigate()
+  const homepage = "red"
+
+
+  const url = "https://redex-webapp-v1.onrender.com/api/getProducts"
+  const getAllProducts = () => {
+    axios.get(url)
+    .then(res=>{
+      console.log(res)
+      setAllProducts(res.data.data)
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+  }
+  
+  const carousel = () => {
+    setNextPro((prev)=>prev += 1) 
+    if(execute){
+     setTimeout(() => {
+      carousel()
+     }, 5000);
+    }
+  }
+  
+  useEffect(()=>{
+    getAllProducts()
+  },[])
+
+  console.log(allProducts);
+  const getCategory = allProducts.filter((products)=>products.productType[0])
+  console.log(getCategory);
+
+  useEffect(()=>{
+    carousel()
+    setexecute(false)
+    // setInterval(() => {
+    //  setNextPro((prev)=>prev += 1) 
+    // }, 3000);
+
+  },[])
+
   
   return (
-    <div className='Landing_page'>
+    <>
+      <Header home={homepage}/>
+      <div className='Landing_page'>
       <div className='LandingPage_Wrapper'>
 
         
@@ -65,67 +114,61 @@ function LandingPage() {
              <h1>Featured </h1><h1 style={{color:"red"}}>Category</h1>
           </div>  
           <div className='RedExCategories_Products'>
-            <div className='Categoriy_Products' onClick={()=>{
-              nav('/category')
-            }}>
-              <div className='Category_ProductImg'>
-                <img src={item1} alt="" />
-              </div>
-              <div className='Category_ProductDesc'>
-                <div className='Category_TopDesc'>
-                  <span>Shop Generic Food Packaging</span>
+           {
+            getCategory.length === 0?
+              <div className='Categoriy_Products'>
+                <div className='Category_ProductImg'>
+                  <img src="" alt="" />
                 </div>
-                <div className='Category_BotDesc'>
-                  <button className='Get_ShoppingBtn'>Get Shopping</button>
+                <div className='Category_ProductDesc'>
+                  <div className='Category_TopDesc'>
+                    <span></span>
+                  </div>
+                  <div className='Category_BotDesc'>
+                    <button  className='Get_ShoppingBtn'  onClick={()=>{
+                      nav('/category')
+                    }}>Get Shopping</button>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className='Categoriy_Products' onClick={()=>{
-              nav('/category')
-            }}>
-              <div className='Category_ProductImg'>
-                <img src={item1} alt="" />
-              </div>
-              <div className='Category_ProductDesc'>
-                <div className='Category_TopDesc'>
-                  <span>Shop Generic Food Packaging</span>
+              </div>:
+            getCategory.map((category)=>(
+              <div className='Categoriy_Products'>
+                <div className='Category_ProductImg'>
+                  <img src={category.productImages[nextPro % category.productImages.length]} alt="" />
                 </div>
-                <div className='Category_BotDesc'>
-                  <button className='Get_ShoppingBtn'>Get Shopping</button>
-                </div>
-              </div>
-            </div>
-            <div className='Categoriy_Products' onClick={()=>{
-              nav('/category')
-            }}>
-              <div className='Category_ProductImg'>
-                <img src={item1} alt="" />
-              </div>
-              <div className='Category_ProductDesc'>
-                <div className='Category_TopDesc'>
-                  <span>Shop Generic Food Packaging</span>
-                </div>
-                <div className='Category_BotDesc'>
-                  <button className='Get_ShoppingBtn'>Get Shopping</button>
+                <div className='Category_ProductDesc'>
+                  <div className='Category_TopDesc'>
+                    <span>{category.productType}</span>
+                  </div>
+                  <div className='Category_BotDesc'>
+                    <button  className='Get_ShoppingBtn'  onClick={()=>{
+                      nav('/category')
+                    }}>Get Shopping</button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className='Categoriy_Products' onClick={()=>{
-              nav('/category')
-            }}>
-              <div className='Category_ProductImg'>
-                <img src={item1} alt="" />
-              </div>
-              <div className='Category_ProductDesc'>
-                <div className='Category_TopDesc'>
-                  <span>Shop Generic Food Packaging</span>
+            ))
+           }
+            {
+              getCategory.map((category)=>(
+                <div className='Categoriy_Products' >
+                  <div className='Category_ProductImg'>
+                    <img src={item1} alt="" />
+                  </div>
+                  <div className='Category_ProductDesc'>
+                    <div className='Category_TopDesc'>
+                      <span>{category.productType}</span>
+                    </div>
+                    <div className='Category_BotDesc'>
+                      <button className='Get_ShoppingBtn' onClick={()=>{
+                        nav('/category')
+                      }}>Get Shopping</button>
+                    </div>
+                  </div>
                 </div>
-                <div className='Category_BotDesc'>
-                  <button className='Get_ShoppingBtn'>Get Shopping</button>
-                </div>
-              </div>
-            </div>
-
+              ))
+            }
+          
           </div>
         </section>
 
@@ -134,10 +177,16 @@ function LandingPage() {
             <h1>Top </h1><h1 style={{color:"red"}}>Demanding</h1>
           </div>
           <div className='RedExDemanding_Products'>
-            <div className='Demanding_Products'>
-              <img src={item1} alt="" />
-              <span>Customized Takeout Full Package</span>
-            </div>
+           {
+            allProducts.map((products)=>(
+              <div className='Demanding_Products' onClick={()=>{
+                nav(`/api/product/${products._id}`)
+              }}>
+                <img src={products.productImages} alt="" />
+                <span>Customized Takeout Full Package</span>
+              </div>
+            ))
+           }
             <div className='Demanding_Products'>
             <img src={item2} alt="" />
               <span>Overchoke carton stuff chsi</span>
@@ -285,6 +334,8 @@ function LandingPage() {
         </section>
       </div>
     </div>
+    {/* <Footer />   */}
+    </>
   )
 }
 

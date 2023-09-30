@@ -1,0 +1,419 @@
+.RedEx_DetailPage {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+}
+
+.DetailPage_Wrapper{
+    width: 95%;
+    height: max-content;
+}
+
+.DetailPage_Item {
+    width: 100%;
+    height: 88vh;
+}
+
+.DetailItem_Actions {
+    width: 100%;
+    height: 88%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Detail_ItemImg {
+    width: 47%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Detail_ItemDet {
+    width: 47%;
+    height: 100%;
+}
+
+.Item_MainImg {
+    width: 100%;
+    height: 77%;
+    background: #000;
+    object-fit: cover;
+}
+
+.Item_MainImg img{
+    width: 100%;
+    height: 100%;
+}
+
+.Item_SubImg {
+    width: 100%;
+    height: 21%;
+    display: flex;
+    overflow: auto;
+    gap: 3%;
+    cursor: pointer;
+}
+
+.Item_SubImg::-webkit-scrollbar {
+    display: none;
+}
+
+.Sub_Img {
+    width: 24%;
+    height: 100%;
+    background: #000;
+    flex: 0 0 auto;
+    object-fit: cover;
+}
+
+.Sub_Img img{
+    width: 100%;
+    height: 100%;
+}
+
+.Item_NameDes {
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+} 
+.Item_NameDes h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 38px;
+    width: 100%;
+} 
+.Item_NameDes span {
+    width: 90%;
+    font-size: 25px;
+} 
+
+.Item_InputInfo {
+    width: 80%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+} 
+
+.Item_Action {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.Item_InfoSel {
+    width: 100%;
+    height: 32%;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.Item_InfoSel select{
+    width: 100%;
+    height: 58%;
+    background: #F8F8F8;
+    border-radius: 3px;
+    outline: none;
+    padding-left: 2%;
+    border: 1px solid rgba(0, 0, 0, 0.142);
+    color: grey;
+    cursor: pointer;
+    font-size: 16px ;
+}
+
+.ATC_Btn {
+    width: 49%;
+    height: 80%;
+    background: orangered;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.ATC_Btn:hover {
+    transition: all 350ms ease-in;
+    background: rgb(196, 98, 0);
+    background: red;
+}
+
+.PTP_Btn {
+    width: 49%;
+    height: 80%;
+    border:2px solid black;
+    color: black;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+}
+
+.PTP_Btn:hover {
+    transition: all 350ms ease-in;
+    /* border:2px solid rgba(162, 154, 154, 0.834); */
+    color: #ff0707;
+}
+
+.SubmitDesign_Act {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.SubmitDesign_Btn {
+    width: 20%;
+    height: 80%;
+    background: black;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.RedEx_ItemVideo {
+    width: 95%;
+    height: 65vh;
+    margin-block: 8vh;
+    object-fit: cover;
+}
+
+.RedEx_ItemVideo video {
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.ItemDetails_Others {
+    width: 95%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.ItemDetails_Nav {
+    width: 45%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+}
+
+.ItemDetails_Nav li{
+    height: 40%;
+    display: flex;
+    align-items: center;
+    padding-inline: 13px;
+    padding-block: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: rgba(0, 0, 0, 0.734);
+    cursor: pointer;
+}
+
+.active{
+    background: rgb(222, 221, 221);
+}
+
+.CheckOut_Details {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.CheckOut_Img {
+    width: 32%;
+    height: 350px;
+    background: #000;
+    border-radius: 3px;
+}
+
+.CheckOut_Img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.CheckOutDesc {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.77);
+    font-weight: bold;
+    gap: 10px;
+}
+
+.Categories_Products {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4.5%;
+}
+
+.Quote_PopUpDiv {
+    width: 100%;
+    height: 100vh;
+    background: #00000055;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    top: 0;
+
+}
+
+.Quote_PopUp {
+    width: 45%;
+    height: 90%;
+    border-radius: 3px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation:slideInDown;
+    animation-duration:1s ;
+}
+
+.Quote_Header {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40%;
+}
+
+.Quote_Header h3{
+    font-size: 30px;
+    font-weight: normal;
+    cursor: pointer;
+    color: red;
+    transform: scale(1);
+}
+
+.Quote_Header h3:hover{
+    transition: all 400ms;
+    transform: scale(1.1);
+}
+
+.Quote_Img {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Quote_PrevImg {
+    width: 50%;
+    height: 75%;
+    background: #000;
+    object-fit: cover;
+}
+
+.Quote_PrevImg img{
+    width: 100%;
+    height: 100%;
+}
+
+.Quote_SeleImg {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Select_Btn {
+    width: 40%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    background: #DFDFDF;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Select_Btn:hover {
+    transition: all 300ms;
+    background: #cecdcd;
+}
+
+.Quote_Txt {
+    width: 90%;
+    height: 20%;
+    display: flex;
+}
+
+.Quote_Txt {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    position: relative;
+}
+
+.Quote_Txt h4{
+    padding-inline: 4px;
+    background: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: -5%;
+    left: 5%;
+}
+
+.Quote_Txt textarea {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    padding: 10px;
+    outline: none;
+    background: #fff;
+}
+
+.Quote_Submit {
+    width: 90%;
+    height: 10%;
+    display: flex;
+}
+
+.Quote_Btn {
+    width: 100%;
+    height: 90%;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Quote_Btn:hover {
+    transition: all 300ms;
+    background: rgb(227, 23, 23)
+    /* background: rgb(185, 184, 184); */
+}

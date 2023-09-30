@@ -3,8 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family:  Inter, arial, sans-serif; 
+    /* font-family: Nunito, sans-serif; */
     /* background: rgb(241, 241, 241); */
 }
 body{
     background: rgb(241, 241, 241);
+}
+body::-webkit-scrollbar{
+    display: none;
 }

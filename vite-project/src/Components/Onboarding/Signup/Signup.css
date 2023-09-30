@@ -5,6 +5,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 .SignUp_Opacity {
@@ -17,9 +18,15 @@
 }
 
 .Redex_TlogoSignUp {
+    cursor: pointer;
     position: absolute;
     left: 2%;
     top: 5%;
+}
+
+.Redex_TlogoSignUp:hover {
+     transition: all 500ms ease-in-out;
+     top: 4%;
 }
 
 .Signup_Card {
@@ -75,17 +82,18 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    justify-content: space-between;
 }
 
 .Signup_Input label {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: black;
 }
 
 .Signup_Input input {
     width: 100%;
-    height: 85%;
+    height: 70%;
     border: none;
     outline: none;
     color: black;
@@ -94,6 +102,10 @@
     padding-inline: 10px;
     font-size: 15px;
     font-weight: 600;
+}
+
+.Signup_Input input::-webkit-inner-spin-button {
+    display: none;
 }
 
 .Signup_Input input:placeholder-shown {
@@ -109,7 +121,7 @@
 }
 
 .Signup_Input input:focus {
-    border: 1px solid red;
+    border: 1px solid #27283D;
 }
 
 .Signup_InputDuo {
@@ -124,11 +136,12 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .Signup_InputDuo div input{
     width: 100%;
-    height: 85%;
+    height: 70%;
     border: none;
     outline: none;
     color: black;
@@ -140,11 +153,11 @@
 }
 
 .Signup_InputDuo div input:focus {
-    border: 1px solid red;
+    border: 1px solid #27283D;
 }
 
 .Signup_InputDuo div label{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.678);
 }

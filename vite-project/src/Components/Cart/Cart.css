@@ -1,0 +1,247 @@
+.RedExCart_Page {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3%;
+}
+
+.CartPage_Route {
+    width: 95%;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.CartPage_BoxDiv {
+    width: 95%;
+    height: 84%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.CartPage_Items {
+    width: 66%;
+    height: 100%;
+    background: #EEDDEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CartItems_Wrapper {
+    width: 97%;
+    height: 95%;
+    overflow: auto;
+    /* gap: 30px; */
+    overflow-x: hidden;
+}
+
+.CartItems_Wrapper::-webkit-scrollbar {
+    background-color: grey;
+}
+
+.CartItems_Wrapper::-webkit-scrollbar-thumb{
+    background-color: red;
+}
+
+.CartItems_Header {
+    width: 100%;
+    height: 10%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -3px;
+}
+
+.CartItem_Container {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3px;
+    cursor: pointer;
+    transform: scale(1);
+    margin-top: 10px;
+}
+
+.CartItems_Header ul{
+    width: 99.5%;
+    height: 100%;
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2.5%;
+
+}
+
+.CartItems_Header ul li{
+    display: flex;
+   font-size: 14px;
+   font-weight: bold;
+    list-style-type: none;
+    color: white;
+    align-items: center;
+    gap: 1px;
+}
+
+hr {
+    height: 16px;
+    rotate: 16deg;
+    background: white;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+}
+
+
+.Cart_Item {
+    width: 99.5%;
+    height: 80px;
+    background: white;
+    display: flex;
+
+}
+
+.Cart_Item:hover {
+    transition: all 150ms;
+    transform: scale(1.005);
+    background: rgb(255, 255, 255);
+}
+
+.Item_Img {
+    width: 18%;
+    height: 100%;
+    display: flex;
+    padding-left: 2%;
+    align-items: center;
+}
+
+.Item_Img div {
+    width: 60px;
+    height: 60px;
+    background: #000;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.Item_Img div img{
+    width: 100%;
+    height: 100%;;
+    border-radius: 50%;
+}
+
+.Item_Name {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Item_Price {
+    width: 23%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Item_Qty {
+    width: 22%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Item_Total {
+    width: 17%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CartPage_Checkout {
+    width: 32%;
+    height: 65%;
+    background: #EEDDEE;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+}
+
+.CheckOut_Text {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.CheckOut_Prices {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.CheckOut_Total {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.CheckOut_Total span{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.679);
+}
+
+.CheckOut_Btn {
+    width: 90%;
+    height: 19%;
+    background: white;
+    outline: none;
+    border: 1.5px solid black;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: bold;
+}
+.CheckOut_Btn:hover {
+    transition: all 350ms;
+    background: rgba(255, 255, 255, 0.655);
+}
+
+.Product_No {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.679);
+    align-items: center;
+}
+
+.Total_Qty {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.679);
+    align-items: center;
+}

@@ -10,11 +10,14 @@ import NewPassword from './Components/Onboarding/NewPassword/NewPassword'
 import Detail from './Components/Detail/Detail'
 import Header from './Components/Header/Header'
 import Category from './Components/Category/Category'
+import Cart from './Components/Cart/Cart'
+import Blog from './Components/Blog/Blog'
+import About from './Components/About/About'
+import LogOut from './Components/Onboarding/LogOut/LogOut'
 
 function App() {
   return (
     <HashRouter>
-      <Header />
        <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/login' element={<Login />} />
@@ -22,8 +25,12 @@ function App() {
           <Route path='/api/verify' element={<Verification />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
           <Route path='/newpassword' element={<NewPassword />} />
-          <Route path='/details' element={<Detail />} />
+          <Route path='/api/product/:id' element={<Detail />} />
           <Route path='/category' element={<Category />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/logout' element={<LogOut />} />
        </Routes>
     </HashRouter>
   )

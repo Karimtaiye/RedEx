@@ -1,31 +1,20 @@
-import React from 'react'
+import { React, useState} from 'react'
 import Logo from '../assets/Tlogo.png'
 import axios from 'axios'
 import Swal from "sweetalert2";
 import { useNavigate } from 'react-router-dom';
 import './ForgetPassword.css'
-// import Swal from "sweetalert2";
 import { useEffect } from 'react';
 
 function ForgetPassword() {
+  const [loading, setLoading] = useState(false)
     const user = JSON.parse(localStorage.getItem("userData"))
-    console.log(user);
-    const email = user.email
-
-    // useEffect(()=>{
-    //     Swal.fire({
-    //         title: 'User Already Exists!',
-    //         text: 'Do you want to continue',
-    //         icon: 'error',
-    //         confirmButtonText: 'Close',
-    //         showCancelButton: true
-    //       })
-
-    // },[])
+    // console.log(user);
+    // const email = user.email
 
   const url = "https://redex-webapp-v1.onrender.com/api/forgotpassword"
   const reqResetPassword = () => {
-    axios.post(url, email)
+    axios.post(url)
     .then(res=>{
         console.log(res)
         Swal.fire({
@@ -48,7 +37,6 @@ function ForgetPassword() {
               console.log(err)
               Swal.fire({
                   title: err.response.data.message,
-                  // text: 'Check your mail for reset password link',
                   icon: 'error',
                   confirmButtonText: 'Close'
                 })

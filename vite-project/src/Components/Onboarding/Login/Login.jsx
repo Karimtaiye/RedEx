@@ -1,21 +1,37 @@
-import { React, useState} from 'react'
+import { React, useEffect, useState} from 'react'
 import './Login.css'
 import './LoginRes.css'
 import Logo from '../assets/Tlogo.png'
 import axios from 'axios'
 import Swal from "sweetalert2";
 import { useNavigate } from 'react-router-dom'
+import { userResData, userStoreData } from '../../Redux/State'
+import { useDispatch, useSelector} from 'react-redux'
 
 function Login() {
+  const userRes = useSelector(state=>state.redexstore.userRes)
+  const user = useSelector(state=>state.redexstore.user)
+  const Dispatch = useDispatch()
   const nav = useNavigate()
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setpassword] = useState("")
+  const [disable, setdisable] = useState(true)
 
   const data = {email:email.trim().toLowerCase(), password}
 
   const url = "https://redex-webapp-v1.onrender.com/api/login"
 
+  useEffect(()=>{
+    if(!email){
+      setdisable(true)
+    }
+    else if(!password){
+      setdisable(true)
+    }
+    else{setdisable(false)}
+  
+  },[email, password])
   const LoginUser = (e) => {
     e.preventDefault()
     setLoading(true)
@@ -23,7 +39,15 @@ function Login() {
     .then(res=>{
       console.log(res)
       setLoading(false)
-      
+      Dispatch(userRes(res.data.data))
+      Dispatch(userStoreData({name:res.data.data.firstnme,
+                              email:res.data.data.email, 
+                              id:res.data.data._id,
+                              token:res.data.data.token,
+                              Login:res.data.data.isLogin,
+                              profilePicture:res.data.data.profilePicture,
+                              admin:res.data.data.isAdmin
+      }))
       nav('/')
     })
     .catch(err=>{
@@ -35,6 +59,14 @@ function Login() {
           text: 'Check your input',
           icon: 'error',
           confirmButtonText: 'Continue'
+        })
+      }
+      else if(err.message === "Network Error"){
+        Swal.fire({
+          title: "Check your internet connection",
+          // text: 'Do you want to continue',
+          icon: 'error',
+          confirmButtonText: 'Cool'
         })
       }
       else{
@@ -52,7 +84,7 @@ function Login() {
   return (
     <form onSubmit={LoginUser} className='Login_Page'>
       <div className='Login_Opacity'>
-      <img className='Redex_TlogoLogin' src={Logo} alt="" />
+      <img className='Redex_TlogoLogin' onClick={()=>nav('/')} src={Logo} alt="" />
     <div className='Login_Card'>
         <section className='Login_Header'>
             <h1>Welcome Back</h1>
@@ -72,7 +104,10 @@ function Login() {
                   nav('/forgetpassword')
                 }} className='Forgot_PasswordSpan'>Forgot password?</span>
            </div>
-           <button type='submit' disabled={loading} className='Login_Btn' style={{background:loading? "rgba(255, 0, 0, 0.589)":null}} >Log in</button>
+           <button type='submit' disabled={loading || disable} className='Login_Btn' style={{background:loading? "rgb(185, 184, 184)":disable?"rgb(216, 81, 81)":null}} >Log in</button>
+           <span className='SignUp_Route'>Don't have an account?<span onClick={()=>{
+            nav('/signup')
+           }}>Sign up</span></span>
         </section>
     </div>
       </div>

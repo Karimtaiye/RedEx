@@ -6,10 +6,15 @@ import item3 from '../LandingPage/assets/item3.png'
 import item4 from '../LandingPage/assets/item4.png'
 import item5 from '../LandingPage/assets/item5.png'
 import { BiSearch } from 'react-icons/bi'
+import Header from '../Header/Header'
+import { HiShoppingCart } from 'react-icons/hi'
 
 
 function Category() {
+    const categorypage = "red"
   return (
+   <>
+    <Header active={categorypage}/>
     <div className='RedExCategory_Page'>
         <section className='RexExMain_Category'>
             <div className='MainCategory_Img'>
@@ -52,7 +57,7 @@ function Category() {
                             <h4>Price: </h4>
                         </div>
                         <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'>Add to Cart</button>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -66,7 +71,7 @@ function Category() {
                             <h4>Price: </h4>
                         </div>
                         <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'>Add to Cart</button>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -80,7 +85,7 @@ function Category() {
                             <h4>Price: </h4>
                         </div>
                         <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'>Add to Cart</button>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -94,7 +99,7 @@ function Category() {
                             <h4>Price: </h4>
                         </div>
                         <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'>Add to Cart</button>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -108,7 +113,7 @@ function Category() {
                             <h4>Price: </h4>
                         </div>
                         <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'>Add to Cart</button>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -122,7 +127,7 @@ function Category() {
                             <h4>Price: </h4>
                         </div>
                         <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'>Add to Cart</button>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -136,7 +141,7 @@ function Category() {
                             <h4>Price: </h4>
                         </div>
                         <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'>Add to Cart</button>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -150,7 +155,7 @@ function Category() {
                             <h4>Price: </h4>
                         </div>
                         <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'>Add to Cart</button>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -164,7 +169,7 @@ function Category() {
                             <h4>Price: </h4>
                         </div>
                         <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'>Add to Cart</button>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -172,6 +177,7 @@ function Category() {
             </div>
         </section>
     </div>
+   </>
   )
 }
 

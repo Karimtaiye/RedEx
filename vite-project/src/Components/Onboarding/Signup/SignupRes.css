@@ -72,6 +72,10 @@
     .Signup_Input input::placeholder {
         color: rgba(255, 255, 255, 0.61);
     }
+    
+.Show_Confirmpassword, .Show_Password {
+    color: white;
+ }
 
 }
 
