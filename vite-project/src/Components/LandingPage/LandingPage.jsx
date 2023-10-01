@@ -17,9 +17,12 @@ import Service1 from '../LandingPage/assets/Service1.png'
 import { useNavigate } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import { useDispatch, useSelector} from 'react-redux'
 import axios from 'axios'
 
 function LandingPage() {
+  const userRes = useSelector(state=>state.redexstore.userRes)
+  const user = useSelector(state=>state.redexstore.user)
   const [allProducts, setAllProducts] = useState([])
   const [nextPro, setNextPro] = useState(0)
   const [execute, setexecute] = useState(true)
@@ -65,6 +68,8 @@ function LandingPage() {
     // }, 3000);
 
   },[])
+  console.log(user)
+  console.log(userRes)
 
   
   return (
@@ -85,7 +90,9 @@ function LandingPage() {
                 <h1>Packaging Crafted From Ecosystem Responsible Materials</h1>
                 <span>Packaging Crafted From Ecosystem Responsible Materials</span>
                 </div>
-                <button className='RedExShopNow_Btn'>Shop Now</button>
+                <button className='RedExShopNow_Btn' onClick={()=>{
+                  nav('/allproducts')
+                }}>Shop Now</button>
               </div>
             </div>
           </div>
@@ -182,7 +189,7 @@ function LandingPage() {
               <div className='Demanding_Products' onClick={()=>{
                 nav(`/api/product/${products._id}`)
               }}>
-                <img src={products.productImages} alt="" />
+                <img src={products.productImages[0]} alt="" />
                 <span>Customized Takeout Full Package</span>
               </div>
             ))

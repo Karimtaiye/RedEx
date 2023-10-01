@@ -10,6 +10,7 @@
     height: 15vh;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .RedExHeader_Logo {
@@ -42,4 +43,59 @@
 
 .RedExHeader_Nav ul li:hover {
     text-decoration: underline;
+}
+
+.Profile {
+    width: 40px;
+    height: 40px;
+    background: #000;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Profile:hover {
+    transition: all 350ms;
+    background: red;
+}
+
+.Nav_PopUp {
+    width: 20%;
+    height: 70px;
+    background: white;
+    position: absolute;
+    right: 5%;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    top: 11%;
+}
+
+.Nav_PopUp ul{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items:center;
+}
+
+.Nav_PopUp ul li{
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.Nav_PopUp ul li:hover{
+    color: red;
+}
+
+.Profile_Arr {
+    font-size: 10px;
+    rotate: -90deg;
+    /* font-weight: bolder; */
 }

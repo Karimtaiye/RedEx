@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './Detail.css'
 import Header from '../Header/Header'
 import MainPackage from './assets/MainPackage.png'
 import Min1 from './assets/Min1.png'
@@ -13,49 +12,34 @@ import item5 from '../LandingPage/assets/item5.png'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
-function Detail() {
-  const { id } = useParams()
-  const [details, setDetails] = useState(true)
-  const [reviews, setReview] = useState(false)
-  const [allProducts, setOneProducts] = useState([])
-  const [related, setRelated] = useState(false)
-  const [quote, setQuote] = useState(false)
-  const [addImg, setAddImg] = useState(false)
-  const [selImg, setSelImg] = useState("")
-  const [main, setMain] = useState(MainPackage)
+import './UpdateCart.css'
 
-  const images = [Min1, Min2, Min3, Min1, Min3, Min2, Min3, Min2]
+function UpdateCart() {
+    const { id } = useParams()
+    const [details, setDetails] = useState(true)
+    const [reviews, setReview] = useState(false)
+    const [allProducts, setOneProducts] = useState([])
+    const [related, setRelated] = useState(false)
+    const [quote, setQuote] = useState(false)
+    const [addImg, setAddImg] = useState(false)
+    const [selImg, setSelImg] = useState("")
+    const [main, setMain] = useState(MainPackage)
 
-
-  const PreviewImg = (e) => {
-    const File = e.target.files[0]
-    setSelImg(URL.createObjectURL(File))
-   }
-    const url = `https://redex-webapp-v1.onrender.com/api/product/${id}`
-    const getOneProducts = () => {
-      axios.get(url)
-      .then(res=>{
-        console.log(res)
-        setOneProducts(res.data.data)
-      })
-      .catch(err=>{
-        console.log(err);
-      })
-    }
-    useEffect(()=>{
-      getOneProducts()
-    },[])
+    const images = [Min1, Min2, Min3, Min1, Min3, Min2, Min3, Min2]
   
-
+    const PreviewImg = (e) => {
+      const File = e.target.files[0]
+      setSelImg(URL.createObjectURL(File))
+     }
   return (
     <>
-        <Header />
-        <div className='RedEx_DetailPage'>
+    <Header />
+         <div className='RedEx_DetailPage'>
           <div className='DetailPage_Wrapper'>
             <section className='DetailPage_Item'>
               <div className='DetailItem_Actions'>
                 <div className='Detail_ItemImg'>
-                <div className='Item_MainImg'>
+                  <div className='Item_MainImg'>
                     <img src={main} alt="" />
                   </div>
                   <div className='Item_SubImg'>
@@ -124,7 +108,7 @@ function Detail() {
                     </div>
                   </div>
                   <div className='Item_Action'>
-                    <button className='ATC_Btn'>Add to Cart</button>
+                    <button className='ATC_Btn'>Update Cart</button>
                     <button className='PTP_Btn'>Proceed to payment</button>
                   </div>
                 </div>
@@ -239,4 +223,4 @@ function Detail() {
   )
 }
 
-export default Detail
+export default UpdateCart

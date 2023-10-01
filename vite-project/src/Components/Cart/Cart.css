@@ -36,7 +36,6 @@
     width: 97%;
     height: 95%;
     overflow: auto;
-    /* gap: 30px; */
     overflow-x: hidden;
 }
 
@@ -59,13 +58,28 @@
 
 .CartItem_Container {
     width: 100%;
-    height: 10%;
+    height: 80px;
     display: flex;
     justify-content: center;
     margin-bottom: 3px;
     cursor: pointer;
     transform: scale(1);
     margin-top: 10px;
+
+}
+
+.DeleteCart_Icon {
+    position: absolute;
+    bottom: 6%;
+    color: red;
+    font-size: 19px;
+    cursor: pointer;
+    right: 2%;
+    transform: scale(1);
+}
+
+.DeleteCart_Icon:hover {
+    transform: scale(1.1);
 }
 
 .CartItems_Header ul{
@@ -101,13 +115,14 @@ hr {
 
 .Cart_Item {
     width: 99.5%;
-    height: 80px;
+    height: 100%;
     background: white;
     display: flex;
+    position: relative;
 
 }
 
-.Cart_Item:hover {
+.CartItem_Container:hover {
     transition: all 150ms;
     transform: scale(1.005);
     background: rgb(255, 255, 255);

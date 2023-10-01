@@ -1,5 +1,7 @@
 import React from 'react'
 import './About.css'
+import './AboutRes.css'
+
 import Header from '../Header/Header'
 
 function About() {

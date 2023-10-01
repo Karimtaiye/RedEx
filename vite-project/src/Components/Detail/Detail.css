@@ -185,7 +185,7 @@
 }
 
 .RedEx_ItemVideo {
-    width: 95%;
+    width: 100%;
     height: 65vh;
     margin-block: 8vh;
     object-fit: cover;

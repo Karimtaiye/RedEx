@@ -2,6 +2,7 @@ import React from 'react'
 import './Cart.css'
 import Header from '../Header/Header'
 import { useNavigate } from 'react-router-dom'
+import { RiDeleteBin5Fill } from 'react-icons/ri'
 
 function Cart() {
     const nav = useNavigate()
@@ -26,7 +27,7 @@ function Cart() {
                             </ul>
                         </div>
                            <div className='CartItem_Container' onClick={()=>{
-                            nav('/details')
+                            nav('/api/product/:id')
                            }}>
                              <div className='Cart_Item'>
                                 <div className='Item_Img'>
@@ -46,6 +47,7 @@ function Cart() {
                                 <div className='Item_Total'>
                                     <h4>NGN800, 000</h4>
                                 </div>
+                                <RiDeleteBin5Fill  className='DeleteCart_Icon'/>
                             </div>
                            </div>
                     </div>
@@ -73,6 +75,7 @@ function Cart() {
                 </div>
             </div>
         </div>
+
     </>
   )
 }

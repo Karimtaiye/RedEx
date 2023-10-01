@@ -1,28 +1,41 @@
-import { React, useState} from 'react'
+import { React, useEffect, useState} from 'react'
 import './NewPassword.css'
 import Logo from '../assets/Tlogo.png'
 import axios from 'axios'
 import Swal from "sweetalert2";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function NewPassword() {
     const nav = useNavigate()
+    const { id, token} = useParams()
     const [password, setpassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
     const [showPassword, setshowPassword] = useState(false)
     const [showconfirmPassword, setshowConfirmPassword] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [disable, setdisable] = useState(true)
   
 
-    const url = "https://redex-webapp-v1.onrender.com/api/changepassword"
+    const url = `https://redex-webapp-v1.onrender.com/api/changepassword/${id}/${token}`
+
+    useEffect(()=>{
+      if(!password){
+        setdisable(true)
+      }
+      else if(password !== confirmPassword){
+        setdisable(true)
+    }
+    else{
+      setdisable(false)
+    }
+    },[password,confirmPassword])
 
     const changePassword = () => {
-        if(password !== confirmPassword){
-            alert("password doesn't match")
-        }
-        else{
-        axios.put(url, {password})
+       
+          setLoading(true)
+        axios.post(url, {password, confirmPassword})
         .then(res=>{
+          setLoading(false)
             console.log(res)
             Swal.fire({
                 title: 'Password reset successfully',
@@ -37,12 +50,13 @@ function NewPassword() {
               })
         })
         .catch(err=>{
+          setLoading(false)
              if(err.message === "Network Error"){
                 Swal.fire({
                   title: "Check your internet connection",
                   // text: 'Do you want to continue',
                   icon: 'error',
-                  confirmButtonText: 'Cool'
+                  confirmButtonText: 'Close'
                 })
               }
               else{
@@ -54,7 +68,7 @@ function NewPassword() {
                   })
               }
         })
-    }
+    
       }
 
   return (
@@ -74,7 +88,7 @@ function NewPassword() {
                 <input className='EmailVer_Input' onChange={(e)=>{
                         setConfirmPassword(e.target.value)
                       }} type={showconfirmPassword?"text":"password"} placeholder='Confirm Password' value={confirmPassword}/>
-                <button className='NewPassword_Btn' disabled={loading} style={{background:loading? "rgba(255, 0, 0, 0.589)":null}} onClick={changePassword}>Reset Password</button>
+                <button className='NewPassword_Btn' disabled={loading || disable} style={{background:loading? "rgb(185, 184, 184)":disable?"rgb(216, 81, 81)":null}} onClick={changePassword}>Reset Password</button>
             </div>
         </div>
        </div>

@@ -32,6 +32,7 @@ function Login() {
     else{setdisable(false)}
   
   },[email, password])
+
   const LoginUser = (e) => {
     e.preventDefault()
     setLoading(true)
@@ -39,34 +40,35 @@ function Login() {
     .then(res=>{
       console.log(res)
       setLoading(false)
-      Dispatch(userRes(res.data.data))
-      Dispatch(userStoreData({name:res.data.data.firstnme,
+      nav('/')
+      Dispatch(userResData(res.data.data))
+      Dispatch(userStoreData({name:res.data.data.firstname,
                               email:res.data.data.email, 
                               id:res.data.data._id,
                               token:res.data.data.token,
-                              Login:res.data.data.isLogin,
+                              Login:res.data.data.islogin,
                               profilePicture:res.data.data.profilePicture,
                               admin:res.data.data.isAdmin
       }))
-      nav('/')
     })
     .catch(err=>{
       console.log(err)
       setLoading(false)
-      if(err.response.data.message === `User not found`){
+       if(err.message === "Network Error"){
+        Swal.fire({
+          title: "Check your internet connection",
+          text: 'Do you want to continue',
+          icon: 'error',
+          confirmButtonText: 'Close'
+        })
+      }
+      else if(err.response.data.message === `User not found`){
+        // console.log("oo");
         Swal.fire({
           title: err.response.data.message,
           text: 'Check your input',
           icon: 'error',
           confirmButtonText: 'Continue'
-        })
-      }
-      else if(err.message === "Network Error"){
-        Swal.fire({
-          title: "Check your internet connection",
-          // text: 'Do you want to continue',
-          icon: 'error',
-          confirmButtonText: 'Cool'
         })
       }
       else{

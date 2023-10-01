@@ -7,14 +7,24 @@ import './ForgetPassword.css'
 import { useEffect } from 'react';
 
 function ForgetPassword() {
+  const [email, setEmail] = useState("")
   const [loading, setLoading] = useState(false)
-    const user = JSON.parse(localStorage.getItem("userData"))
-    // console.log(user);
-    // const email = user.email
-
+    const [disable, setdisable] = useState(true)
+  console.log({email})
   const url = "https://redex-webapp-v1.onrender.com/api/forgotpassword"
+
+  useEffect(()=>{
+    if(!email){
+      setdisable(true)
+    }
+    else{
+      setdisable(false)
+    }
+  },[email])
+
   const reqResetPassword = () => {
-    axios.post(url)
+      setLoading(true)
+    axios.post(url, {email})
     .then(res=>{
         console.log(res)
         Swal.fire({
@@ -23,8 +33,10 @@ function ForgetPassword() {
             icon: 'success',
             confirmButtonText: 'Close'
           })
+          setLoading(false)
     })
     .catch(err=>{
+      setLoading(false)
          if(err.message === "Network Error"){
             Swal.fire({
               title: "Check your internet connection",
@@ -45,6 +57,7 @@ function ForgetPassword() {
   }
 
 
+
   return (
     <div className='ForgetPassword_Page'>
        <div className='ForgetPassword_Opacity'>
@@ -57,8 +70,8 @@ function ForgetPassword() {
                 <span>Enter the email used for registration</span>
             </div>
             <div className='ForgetPassword_Action'>
-                <input className='EmailVer_Input' type="text" placeholder='E-mail'/>
-                <button style={{background:loading? "rgba(255, 0, 0, 0.589)":null}} disabled={loading} className='ForgetPassword_Btn' onClick={reqResetPassword}>Resend verification link</button>
+                <input className='EmailVer_Input' type="text" placeholder='E-mail' value={email } onChange={(e)=>setEmail(e.target.value)}/>
+                <button disabled={loading || disable} style={{background:loading? "rgb(185, 184, 184)":disable?"rgb(216, 81, 81)":null}} className='ForgetPassword_Btn' onClick={reqResetPassword}>Resend verification link</button>
             </div>
         </div>
        </div>
