@@ -58,7 +58,7 @@ function Header({home, about, blog, cart, login}) {
           }}>Account</li>
           <li>Dashboard</li>
           <li onClick={()=>{
-            nav(`api/logout/${id}`)
+            nav(`/api/logout/${id}`)
           }}>Log Out</li>
         </ul>
       </div>:null
