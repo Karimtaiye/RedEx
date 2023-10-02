@@ -82,6 +82,7 @@
     justify-content: center;
     justify-content: space-evenly;
     gap: 10px;
+    position: relative;
     align-items:center;
 }
 
@@ -98,4 +99,20 @@
     font-size: 10px;
     rotate: -90deg;
     /* font-weight: bolder; */
+}
+
+.Cart_Qty {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: white;
+    font-family: cursive;
+    top: 19%;
+    right: 11%;
 }

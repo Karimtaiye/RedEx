@@ -2,10 +2,95 @@
     width: 100%;
     height: 100vh;
     background: #000;
-    background: url('../../assets/bg2.png');
+    background: url('../../../assets/bg1.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.LogOut_Opacity {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.14);
+}
 
+
+.LogOut_Card {
+    width: 55%;
+    height: 80%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LogOut_Card h1 {
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.LogOut_Card span{
+    font-size: 33px;
+}
+
+.LogOut_Text {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    gap: 15px;
+}
+
+.LogOut_Action {
+    width: 80%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 13px;
+    justify-content: space-around;
+}
+
+.GoBack_Btn {
+    width: 35%;
+    height: 55px;
+    font-size: 16px;
+    font-weight: bold;
+    background: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: black;
+    outline: none;
+}
+
+.GoBack_Btn:hover {
+    transition: all 350ms;
+    background: rgb(241, 234, 234);
+}
+
+.LogOut_Btn {
+    width: 35%;
+    height: 55px;
+    font-size: 16px;
+    font-weight: bold;
+    background: red;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+.LogOut_Btn:hover {
+    transition: all 350ms;
+    background:  rgb(226, 9, 9);
+}

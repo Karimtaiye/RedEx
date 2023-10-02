@@ -97,22 +97,22 @@
 .SortBy_Category {
     width:7%;
     height: 40%;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 14px;
     background: white;
 }
 
 .Choose_Category {
-    width:7%;
+    width:9%;
     height: 40%;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 3px;
-    padding-inline: 20px;
-    font-size: 16px;
+    padding-inline: 5px;
+    font-size: 14px;
 }
 
 .Category_ProductsDiv {
@@ -201,7 +201,7 @@
 
 .Cateory_ATCBtn:hover {
     transition: all 350ms;
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .ATC_Icon {
@@ -212,15 +212,14 @@
     width: 45%;
     height:75px;
     background: white;
-    position: absolute;
-    top: 3%;
+    position: fixed;
+    top: 2%;
     right: 3%;
     border-radius: 5px;
     animation:slideInDown;
-    /* color: rgba(255, 255, 255, 0.635); */
-    animation-duration:1s ;
+    animation-duration:0.6s ;
     display: flex;
-    color: black;
+    color: green;
     align-items: center;
     padding-inline: 15px;
     justify-content: space-between;
@@ -232,6 +231,16 @@
     align-items: center;
     display: flex;
     gap: 10px;
+}
+
+.View_Cart {
+    color: black;
+    cursor: pointer;
+}
+
+.View_Cart:hover {
+    text-decoration: underline;
+    color: #27283D;
 }
 
 .ATC_Noftication h4 {
@@ -246,4 +255,10 @@
     cursor: pointer;
     transform: scale(1.1);
     font-size:21px;
+}
+
+.AddMark_Icon {
+    font-size: 20px;
+    margin-right: -5px;
+    color: green;
 }

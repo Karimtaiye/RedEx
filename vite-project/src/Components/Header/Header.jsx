@@ -1,20 +1,46 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Header.css'
 import Logo from '../../assets/Logo1.png'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { FaLessThan } from 'react-icons/fa'
+import { BiSolidCart } from 'react-icons/bi'
+import axios from 'axios'
 
 function Header({home, about, blog, cart, login}) {
   const user = useSelector(state=>state.redexstore.user)
-  const resData = useSelector(state=>state.redexstore.userRes)
+  const userRes = useSelector(state=>state.redexstore.userRes)
   const nav = useNavigate()
-  const firstname = resData.firstname
-  const lastname = resData.lastname
+  const firstname = userRes.firstname
+  const lastname = userRes.lastname
   const [accPopUp, setAccPopUp] = useState(false)
+  const [userCart, setuserCart] = useState([])
 
   const token = user.token
   const id = user.id
+
+  const config = {
+    headers:{
+      Authorization:`Bearer ${token}`
+    }
+  }
+
+  console.log(userRes.cart);
+
+  const getUserCart = () => {
+    axios.get(`https://redex-webapp-v1.onrender.com/api/getCart/${userRes.cart}`, config)
+    .then(res=>{
+      console.log(res)
+      setuserCart(res.data.data)
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+  }
+
+  useEffect(()=>{
+    getUserCart()
+  },[])
+  console.log(userCart);
   
   return (
    <div className='RedExHeaderWrappper'>
@@ -34,7 +60,9 @@ function Header({home, about, blog, cart, login}) {
             <li style={{color:blog}}>Blog</li>
         </NavLink>
         <NavLink to={'/cart'} style={{color:"black", textDecoration:"none", background:"none"}} >
-           <li style={{color:cart}}>Cart</li>
+           <li style={{color:cart}}><BiSolidCart  style={{fontSize:'25px'}}/>
+           <div className='Cart_Qty' style={{ background:cart}}>{userCart.length === 0?"...":userCart.items.length}</div>
+           </li>
         </NavLink>
        {
         !token?

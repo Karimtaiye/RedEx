@@ -30,6 +30,14 @@ function LandingPage() {
   const nav = useNavigate()
   const homepage = "red"
 
+  const token = user.token
+  
+  const config = {
+    headers:{
+      Authorization:`Bearer ${token}`
+    }
+  }
+
 
   const url = "https://redex-webapp-v1.onrender.com/api/getProducts"
   const getAllProducts = () => {
@@ -58,14 +66,10 @@ function LandingPage() {
 
   console.log(allProducts);
   const getCategory = allProducts.filter((products)=>products.productType[0])
-  console.log(getCategory);
 
   useEffect(()=>{
     carousel()
     setexecute(false)
-    // setInterval(() => {
-    //  setNextPro((prev)=>prev += 1) 
-    // }, 3000);
 
   },[])
   console.log(user)

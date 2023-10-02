@@ -28,6 +28,7 @@
     height: 100%;
     background: #EEDDEE;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
 }
@@ -259,4 +260,26 @@ hr {
     font-weight: bold;
     color: rgba(0, 0, 0, 0.679);
     align-items: center;
+}
+
+.Clear_CartFun {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.Clear_CartFun h4{
+    cursor: pointer;
+    position: absolute;
+    font-size: 14px;
+    color: #27283D;
+}
+
+.Clear_CartFun h4:hover {
+    transition: all 350ms;
+    text-decoration: underline;
 }

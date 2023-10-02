@@ -6,6 +6,7 @@ import item3 from '../LandingPage/assets/item3.png'
 import item4 from '../LandingPage/assets/item4.png'
 import item5 from '../LandingPage/assets/item5.png'
 import { BiSearch } from 'react-icons/bi'
+import { GrStatusGood } from 'react-icons/gr'
 import Header from '../Header/Header'
 import { useNavigate } from 'react-router-dom'
 import { HiShoppingCart } from 'react-icons/hi'
@@ -15,14 +16,18 @@ import { useDispatch, useSelector} from 'react-redux'
 
 function Category() {
     const [allProducts, setAllProducts] = useState([])
+    const [ATC, setATC] = useState(false)
     const user = useSelector(state=>state.redexstore.user)
     const token = user.token
     const Dispatch = useDispatch()
     const nav = useNavigate()
     const categorypage = "red"
+    console.log(token);
 
     const config = {
-        Headers:`Bearer ${token}`
+        headers:{
+            Authorization:`Bearer ${token}`
+        }
     }
 
     const url = "https://redex-webapp-v1.onrender.com/api/getProducts"
@@ -37,6 +42,7 @@ function Category() {
     })
   }
   
+  
   const carousel = () => {
     setNextPro((prev)=>prev += 1) 
     if(execute){
@@ -48,10 +54,16 @@ function Category() {
   
   useEffect(()=>{
     getAllProducts()
-  },[])
+  },[ATC])
 
   console.log(allProducts);
 
+  useEffect(()=>{
+    setTimeout(() => {
+        setATC(false)
+    }, 10000);
+
+  },[ATC])
   return (
    <>
     <Header active={categorypage}/>
@@ -95,14 +107,15 @@ function Category() {
                 </div>
                 <div className='Category_Des'>
                     <div className='CategoryDes_Details'>
-                        <h4>Name: choke</h4>
-                        <h4>Price: </h4>
+                        <h4>Name: {produucts.productName}</h4>
+                        <h4>Price: {produucts.productQuantity}</h4>
                     </div>
                     <div className='CategoryDes_Btn'>
                         <button className='Cateory_ATCBtn'  onClick={()=>{
-                            axios.put(`https://redex-webapp-v1.onrender.com/api/cart/${produucts._id}`, null, config)
-                            .then(res=>{
-                                console.log(res)
+                            axios.post(`https://redex-webapp-v1.onrender.com/api/cart/${produucts._id}`,null, config)
+                            .then(res=>{                             
+                             console.log(res)
+                             setATC(true)
                             
                             }).catch(err=>{
                                 console.log(err);
@@ -228,14 +241,20 @@ function Category() {
             </div>
         </section>
     </div>
+   {
+    ATC? 
     <div className='ATC_Noftication'>
-        <div><h5>item has been added to cart </h5>
-        <h5 style={{color:"green", cursor:"pointer", background:"rgba(243, 239, 239, 0.835)", padding:"3px"}}>view details</h5>
-        <h5>view cart</h5>
-        </div>
-        <h4>x</h4>
-        
+    <div>
+    <GrStatusGood className='AddMark_Icon' />
+    <h5>item has been added to cart </h5>
+    <h5 className='View_Cart' style={{}}>view cart</h5>
     </div>
+    <h4 onClick={()=>{
+        setATC(false)
+    }}>x</h4>
+    
+</div>:null
+   }
    </>
    
   )

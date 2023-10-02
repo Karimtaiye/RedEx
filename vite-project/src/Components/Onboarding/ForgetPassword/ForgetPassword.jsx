@@ -40,9 +40,9 @@ function ForgetPassword() {
          if(err.message === "Network Error"){
             Swal.fire({
               title: "Check your internet connection",
-              // text: 'Do you want to continue',
+              text: 'Check your network',
               icon: 'error',
-              confirmButtonText: 'Cool'
+              confirmButtonText: 'Close'
             })
           }
           else{
