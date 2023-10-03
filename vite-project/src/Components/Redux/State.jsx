@@ -10,7 +10,8 @@ const initialState = {
         login:false,
         profilePicture:"",
         admin:false
-    }
+    },
+    expToken:true
 }
 
 export const redexReducers = createSlice({
@@ -22,8 +23,11 @@ export const redexReducers = createSlice({
         },
         userResData:(state, {payload})=>{
             state.userRes = payload
+        },
+        userTokenExp:(state, {payload})=>{
+            state.expToken = payload
         }
     }
 })
-export const {userStoreData, userResData} = redexReducers.actions
+export const {userStoreData, userResData, userTokenExp} = redexReducers.actions
 export default redexReducers.reducer

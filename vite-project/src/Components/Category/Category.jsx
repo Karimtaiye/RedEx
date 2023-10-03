@@ -41,6 +41,10 @@ function Category() {
       console.log(err);
     })
   }
+
+  useEffect(()=>{
+
+  },[ATC])
   
   
   const carousel = () => {
@@ -64,9 +68,10 @@ function Category() {
     }, 10000);
 
   },[ATC])
+
   return (
    <>
-    <Header active={categorypage}/>
+    <Header renders={ATC} home={categorypage}/>
     <div className='RedExCategory_Page'>
         <section className='RexExMain_Category'>
             <div className='MainCategory_Img'>

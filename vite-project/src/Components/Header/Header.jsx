@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import { BiSolidCart } from 'react-icons/bi'
 import axios from 'axios'
 
-function Header({home, about, blog, cart, login}) {
+function Header({home, about, blog, cart, login, renders}) {
   const user = useSelector(state=>state.redexstore.user)
   const userRes = useSelector(state=>state.redexstore.userRes)
   const nav = useNavigate()
@@ -14,6 +14,8 @@ function Header({home, about, blog, cart, login}) {
   const lastname = userRes.lastname
   const [accPopUp, setAccPopUp] = useState(false)
   const [userCart, setuserCart] = useState([])
+  // const renders = true
+
 
   const token = user.token
   const id = user.id
@@ -37,9 +39,10 @@ function Header({home, about, blog, cart, login}) {
     })
   }
 
+
   useEffect(()=>{
     getUserCart()
-  },[])
+  },[renders])
   console.log(userCart);
   
   return (

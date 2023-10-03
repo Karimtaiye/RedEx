@@ -10,6 +10,7 @@ import item3 from '../LandingPage/assets/item3.png'
 import item4 from '../LandingPage/assets/item4.png'
 import item5 from '../LandingPage/assets/item5.png'
 import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 import './UpdateCart.css'
@@ -18,11 +19,15 @@ function UpdateCart() {
     const { id } = useParams()
     const [details, setDetails] = useState(true)
     const [reviews, setReview] = useState(false)
-    const [allProducts, setOneProducts] = useState([])
+    const userRes = useSelector(state=>state.redexstore.userRes)
+    const [oneProducts, setOneProducts] = useState({})
     const [related, setRelated] = useState(false)
     const [quote, setQuote] = useState(false)
     const [addImg, setAddImg] = useState(false)
     const [selImg, setSelImg] = useState("")
+    const user = useSelector(state=>state.redexstore.user)
+    const token = user.token
+    const Dispatch = useDispatch()
     const [main, setMain] = useState(MainPackage)
 
     const images = [Min1, Min2, Min3, Min1, Min3, Min2, Min3, Min2]
@@ -31,6 +36,44 @@ function UpdateCart() {
       const File = e.target.files[0]
       setSelImg(URL.createObjectURL(File))
      }
+
+     const config = {
+      headers:{
+          Authorization:`Bearer ${token}`
+      }
+  }
+      const url = `https://redex-webapp-v1.onrender.com/api/product/${id}`
+      const getOneProducts = () => {
+        axios.get(url)
+        .then(res=>{
+          console.log(res)
+          setOneProducts(res.data.data)
+        })
+        .catch(err=>{
+          console.log(err);
+        })
+      }
+      useEffect(()=>{
+        getOneProducts()
+      },[])
+
+
+
+      const getUserCart = () => {
+        axios.get(`https://redex-webapp-v1.onrender.com/api/getCart/${userRes.cart}`, config)
+        .then(res=>{
+          console.log(res)
+          console.log(res.data.data);
+        })
+        .catch(err=>{
+          console.log(err);
+        })
+      }
+    
+      useEffect(()=>{
+        getUserCart()
+      },[])
+
   return (
     <>
     <Header />
@@ -51,24 +94,6 @@ function UpdateCart() {
                     <img src={image} alt="" />
                   </div>))
                   }
-                    {/* <div className='Sub_Img'>
-                      <img src={Min2} alt="" />
-                    </div>
-                    <div className='Sub_Img'>
-                      <img src={Min3} alt="" />
-                    </div>
-                    <div className='Sub_Img'>
-                      <img src={Min1} alt="" />
-                    </div>
-                    <div className='Sub_Img'>
-                      <img src={Min2} alt="" />
-                    </div>
-                    <div className='Sub_Img'>
-                      <img src={Min3} alt="" />
-                    </div>
-                    <div className='Sub_Img'>
-                      <img src={Min1} alt="" />
-                    </div> */}
                   </div>
                 </div>
 

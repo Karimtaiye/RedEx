@@ -15,10 +15,9 @@ function Cart() {
     const user = useSelector(state=>state.redexstore.user)
     const token = user.token
     const Dispatch = useDispatch()
-    const categorypage = "red"
-    console.log(token);
     const [userCart, setuserCart] = useState([])
     const [RFC, setRFC] = useState(false)
+    const [CFC, setCFC] = useState(false)
     const [userCartItem, setuserCartItem] = useState([])
 
     const config = {
@@ -43,14 +42,14 @@ function Cart() {
     
       useEffect(()=>{
         getUserCart()
-      },[])
+      },[RFC, CFC])
       console.log(userCart);
   return (
     <>
-        <Header cart={cartpage}/>
+        <Header renders={[RFC ,CFC]} cart={cartpage}/>
         <div className='RedExCart_Page'>
             <div className='CartPage_Route'>
-                <span>Home /<span style={{color:"red"}}>Cart</span></span>
+                <span onClick={()=>{nav('/category')}} style={{cursor:"pointer"}}>Detail /<span style={{color:"red", cursor:"pointer"}}>Cart</span></span>
             </div>
             <div className='CartPage_BoxDiv'>
                 <div className='CartPage_Items'>
@@ -86,27 +85,18 @@ function Cart() {
                                 <div className='Item_Total'>
                                     <h4>NGN--- ---</h4>
                                 </div>
-                                <RiDeleteBin5Fill  onClick={()=>{
-                                    axios.put(`https://redex-webapp-v1.onrender.com/api/remove/${produucts._id}`,null, config)
-                                    .then(res=>{                             
-                                    console.log(res)
-                                    setRFC(true)
-                                    
-                                    }).catch(err=>{
-                                        console.log(err);
-                                    })
-                              }} className='DeleteCart_Icon'/>
+                                <RiDeleteBin5Fill className='DeleteCart_Icon'/>
                             </div>
                            </div>
                            : 
                            userCartItem.map((cart)=>(
-                            <div className='CartItem_Container' onClick={()=>{
-                                nav('/api/product/:id')
-                               }}>
+                            <div className='CartItem_Container' key={cart.product._id} onClick={()=>{
+                                nav(`/update/${cart.product._id}`)
+                            }}>
                                  <div className='Cart_Item'>
                                     <div className='Item_Img'>
                                         <div className=''>
-                                            <img src="" alt="" />
+                                            <img src={cart.product.productImages[0]} alt="" />
                                         </div>
                                     </div>
                                     <div className='Item_Name'>
@@ -116,17 +106,37 @@ function Cart() {
                                         <h4>NGN{cart.product.productPrice}</h4>
                                     </div>
                                     <div className='Item_Qty'>
-                                        <h4>{cart.product.productQuantity}</h4>
+                                        <h4>{cart.quantity}</h4>
                                     </div>
                                     <div className='Item_Total'>
-                                        <h4>NGN{cart.product.productPrice * cart.product.productQuantity}</h4>
+                                        <h4>NGN{cart.product.productPrice * cart.quantity}</h4>
                                     </div>
-                                    <RiDeleteBin5Fill  className='DeleteCart_Icon'/>
-                                </div>
-                               </div>
-                        ))
-                           }
-                           <div className='Clear_CartFun'><h4>Clear cart</h4></div>
+                                    <RiDeleteBin5Fill  onClick={()=>{
+                                        console.log(userCart._id)
+                                     axios.put(`https://redex-webapp-v1.onrender.com/api/remove/${userCart._id}`, {productId:cart.product._id}, config)
+                                    .then(res=>{                             
+                                    console.log(res)
+                                    setRFC(true)
+                                    
+                                    }).catch(err=>{
+                                        console.log(err);
+                                    })
+                                     }} className='DeleteCart_Icon'/>
+                                            </div>
+                                        </div>
+                                    ))
+                                    }
+                                    <div className='Clear_CartFun'><h4 onClick={()=>{
+                                        console.log(userCart._id)
+                                    axios.delete(`https://redex-webapp-v1.onrender.com/api/deletecart/${userCart._id}`, config)
+                                    .then(res=>{                             
+                                    console.log(res)
+                                    setCFC(true)
+                                    
+                                    }).catch(err=>{
+                                        console.log(err);
+                                    })
+                              }}>Clear cart</h4></div>
                     </div>
 
                 </div>

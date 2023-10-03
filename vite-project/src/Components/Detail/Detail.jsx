@@ -44,6 +44,7 @@ function Detail() {
     }
     useEffect(()=>{
       getOneProducts()
+      window.location.reload()
     },[])
   
 
