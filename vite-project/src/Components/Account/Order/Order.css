@@ -1,0 +1,178 @@
+.My_Order {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.Order_Header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.Order_Header h1{
+    font-size: 24px;
+}
+
+.MyOrder_Update {
+    width: 85%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.Search_Order {
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+.Order_SearchIcon {
+    font-size: 22px;
+    position: absolute;
+    top: 18%;
+    left: 3.5%;
+    
+}
+
+.Search_OrderInput  {
+    width: 100%;
+    height: 70%;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding-left: 40px;
+    background: #dedbdb;
+}
+
+.Search_OrderInput::placeholder  {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.553);
+}
+
+.Order_BoxContainer {
+    width: 100%;
+    height: 77.7vh;
+    overflow-y: auto;
+    /* gap: 10px; */
+
+}
+
+.Order_BoxContainer::-webkit-scrollbar {
+    display: none;
+
+}
+
+.Order_Box {
+    width: 100%;
+    height: 95px;
+    background: #dedbdb;
+    border-radius: 2px;
+    padding-top: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.286);
+    margin-bottom: 10px;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.Order_Box:hover {
+    transition: all 450ms;
+    border: 1px solid red;
+}
+
+.Order_Name {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    padding-left:5px;    
+    padding-right:10px; 
+    color: white;   
+}
+
+.Order_Name h4{
+    font-size: 14px;
+}
+
+.Desc_Part {
+    display: flex;
+    gap: 2px;
+}
+
+.Desc_Part img {
+    width: 20px;
+    height: 20px;
+}
+
+.Order_Date {
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.Order_Stat h5 {
+    font-size: 13.5px;
+    color: #05a805;
+    padding-left: 10px;
+}
+
+.Order_Add {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:10px;    
+    padding-right:10px; 
+}
+
+.Order_Add span{
+    font-size: 15px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.518);
+}
+
+.Order_GreaThan {
+    font-size: 19px;
+}
+
+.Order_Img {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:10px;    
+    padding-right:10px; 
+}
+
+.Order_Img span{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.534);
+}
+
+.Product_Img {
+    width: 15%;
+    height: 100%;
+    overflow-x: auto;
+    display: flex;
+    gap: 5px;
+}
+
+.Product_Img::-webkit-scrollbar {
+    display: none;
+}
+
+.Product_Img img {
+    width: 20px;
+    background: whitesmoke;
+    height: 100%;
+    flex: 0 0 auto;
+}

@@ -85,7 +85,7 @@ function Header({home, about, blog, cart, login, renders}) {
         <div onMouseLeave={()=> setAccPopUp(!accPopUp)}  className='Nav_PopUp'>
         <ul>
           <li onClick={()=>{
-            nav('/acc')
+            nav('/account')
           }}>Account</li>
           <li>Dashboard</li>
           <li onClick={()=>{

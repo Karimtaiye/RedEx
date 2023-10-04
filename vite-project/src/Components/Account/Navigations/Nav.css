@@ -1,0 +1,102 @@
+.AccountNav_Routes {
+    width: 49.9%;
+    height: 100%;
+    
+    /* border-right: 1px solid rgba(0, 0, 0, 0.215); */
+}
+
+.AccNav_Header {
+    width: 100%;
+    height: 13%;
+    display: flex;
+    align-items: center ;
+    gap: 25px;
+}
+
+.AccNav_Header h1{
+    font-size: 25px;
+}
+
+.Back_Arrow {
+    font-size: 45px;
+    cursor: pointer;
+}
+
+.AccNav_Navigations {
+    width: 100%;
+    height: max-content;
+}
+
+.Account_Details {
+    width: 90%;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.AccDetails_Navs {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-inline: 2%;
+    border-radius: 5px;
+}
+
+.AccDetails_Navs:hover {
+    background: #00000023;
+}
+
+.AccNav_Lines {
+    width: 100%;
+    height: 2.5%;
+    background: #0000004e;
+}
+.Icon_Circle {
+    width:46px;
+    height: 46px;
+    background: #000000b3;
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.854);
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.Nav_Settings {
+    width:93%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    justify-content: space-between;
+    padding-left: 8px;
+}
+
+.Nav_Settings h1{
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+}
+
+.Nav_Settings h4{
+    color: rgba(0, 0, 0, 0.649);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 15.5px;
+}
+
+.Grea_ThanDiv {
+    width: 30px;
+    height: 30px;
+    background: lightgrey;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Nav_GreaThan {
+    font-size: 20px;
+}
+
