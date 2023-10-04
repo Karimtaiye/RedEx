@@ -1,0 +1,203 @@
+.User_OrderPage {
+    width: 100%;
+    height: 100vh;
+    background: white;
+}
+
+.Order_Header {
+    width: 100%;
+    height: 10%;
+    background: rgba(246, 244, 244, 0.77);
+    box-shadow: 0px 4px 15px 3px rgba(0, 0, 0, 0.15);
+}
+
+.Order_TextHeader {
+    width: 100%;
+    height: 10%;
+    padding-left: 2%;
+    display: flex;
+    padding-top: 1%;
+    align-items: center;
+}
+
+.Order_TextHeader h1{
+    font-size: 25px;
+}
+
+.OrderInfo_Text {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-left: 2%;
+}
+
+.Order_Step {
+    width: 25px;
+    height: 25px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    font-size: 12px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.Order_Informations {
+    width: 100%;
+    height: 43%;
+    display: flex;
+    justify-content: center;
+}
+
+.Info_Wrapper {
+    width: 91%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.UserOrder_Details {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.UserOrder_CheckOut {
+    width: 30%;
+    height: 100%;
+    background: white;
+    box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.25);
+}
+
+.User_Names, .User_Email, .User_StateComp, .User_Phone {
+    width: 100%;
+    height: 21%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.User_Names input {
+    width: 48%;
+    height: 100%;
+    background: white;
+    box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.25);
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+.User_Email input {
+    width: 100%;
+    height: 100%;
+    background: white;
+    box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.25);
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+.User_StateComp input {
+    width: 48%;
+    height: 100%;
+    background: white;
+    box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.25);
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+.User_Phone input {
+    width: 48%;
+    height: 100%;
+    background: white;
+    box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.25);
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+.Proceed_PayDiv {
+    width: 60%;
+    height: 10%;
+    margin-left: 4.4%;
+    display: flex;
+    align-items: flex-end
+}
+
+.Proceed_Btn {
+    width: 100%;
+    height: 80%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: red;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.CheckOut_Text {
+    width: 100%;
+    height:max-content;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding-block: 10px;
+    gap: 4px;
+    align-items: center;
+}
+
+.CheckOut_Text h1{
+    font-size: 16px;
+}
+
+.Order_Sum {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    /* font-weight: no; */
+}
+
+.Total_Pur {
+    width: 100%;
+    height:max-content;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding-block: 12px;
+    gap: 10px;
+    align-items: center;
+}
+
+.Total_Price {
+    width: 100%;
+    height:max-content;
+    display: flex;
+    flex-direction: column;
+    padding-block: 12px;
+    gap: 10px;
+    align-items: center;
+}
+
+.Total_Price h5{
+    font-size: 19px;
+    color: rgba(0, 0, 0, 0.715);
+}

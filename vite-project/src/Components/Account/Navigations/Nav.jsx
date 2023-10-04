@@ -24,7 +24,7 @@ function Nav() {
       <section className='AccNav_Navigations'>
         <div className='Account_Details'>
           <div onClick={()=>{
-            nav('./details/:id')
+            nav('./')
             setPersonalDetails(true)
             setorder(false)
             setpayment(false)

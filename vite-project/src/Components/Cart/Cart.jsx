@@ -158,7 +158,7 @@ function Cart() {
                         <span>Total Price</span>
                         <h2>NGN{userCart.totalPrice}</h2>
                     </div>
-                    <button className='CheckOut_Btn'>Proceed to Details</button>
+                    <button className='CheckOut_Btn' onClick={()=>nav('/userorder')}>Proceed to Details</button>
                 </div>
             </div>
         </div>

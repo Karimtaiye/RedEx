@@ -14,7 +14,7 @@ function Contents() {
       <div className='AccCont_Wrapper'>
 
        <Routes>
-        <Route path='/details/:id' element={<PersonalDetails />} />
+        <Route path='/' element={<PersonalDetails />} />
         <Route path='/order/:id' element={<Order />} />
         <Route path='/payment/:id' element={<Payment />} />
         <Route path='/address/:id' element={<Address />} />

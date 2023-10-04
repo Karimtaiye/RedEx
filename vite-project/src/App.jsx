@@ -17,6 +17,7 @@ import LogOut from './Components/Onboarding/LogOut/LogOut'
 import UpdateCart from './Components/UpdateCart/UpdateCart'
 import Account from './Components/Account/Account'
 import AllProducts from './Components/AllProducts/AllProducts'
+import UserOrder from './Components/UserOrder/UserOrder'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/account/*' element={<Account />} />
           <Route path='/allproducts' element={<AllProducts />} />
+          <Route path='/userorder' element={<UserOrder />} />
           <Route path='/api/logout/:id' element={<LogOut />} />
        </Routes>
     </HashRouter>
