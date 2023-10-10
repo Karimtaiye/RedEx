@@ -1,0 +1,227 @@
+.About_page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.About_Wrapper {
+    width: 95%;
+    height: max-content%;
+}
+
+.About_FirstPart {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.About_FirstPartLeft {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-bottom: 10%;
+    align-items: center;
+    gap: 30px;
+}
+
+.About_FirstPartRight {
+    width: 53%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.LeftPart_Header {
+    display: flex;
+    width: 90%;
+    gap: 5px;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.LeftPart_Header h2 {
+    font-size: 29px;font-weight: 600;
+    width: 90%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+}
+
+.LeftPart_Header h4{
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: red;
+    font-size: 100;
+}
+
+.About_FirstPartLeft span {
+    width: 85%;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.ReadMore_Btn {
+    width: 85%;
+    height: 9%;
+    margin-top: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.837);
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+    color: red;
+    border-radius: 3px;
+    font-size: 14px;
+    background: transparent;
+}
+
+.Right_PartImg1 {
+    width: 82%;
+    height: 90%;
+    object-fit: cover;
+    position: relative
+}
+
+.Right_PartImg1 img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0.3%;
+    top: 0.6%;
+}
+
+.Right_PartImg2 {
+    position: absolute;
+    width: 50%;
+    height: 60%;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+}
+
+.Right_PartImg2 img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0.3%;
+    top: 0.6%;
+}
+
+.About_SecPart {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    margin-top:8vh
+}
+
+.About_SecPartLeft {
+    width: 40%;
+    height: 100%;
+
+}
+
+.SecPart_Right {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.SecPart_Left {
+    width:90%;
+    border-radius: 5px;
+    height: 100%;
+    background: #000;
+    object-fit: cover;
+}
+
+.SecPart_Left img{
+    width:100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
+.SecLeftPart_Header h2 {
+    font-size: 29px;font-weight: 600;
+    width: 90%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+}
+
+.SecLeftPart_Header h4{
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: red;
+    font-size: 100;
+}
+
+.SecPart_Right span {
+    width: 85%;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.ReadMore_Btn {
+    width: 85%;
+    height: 9%;
+    margin-top: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.837);
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+    color: red;
+    border-radius: 3px;
+    font-size: 14px;
+    background: transparent;
+}
+
+.Great_Product {
+    width: 100%;
+    height: 80vh;
+    margin-block: 10vh;
+    background: url(../about/assets/about4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    font-size: 26px;
+}
+
+.Choice_Part {
+    width: 100%;
+    height: 70vh;
+    background: #A9AAAF;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10vh;
+}   
+
+.Choice_Text {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Choice_Text span{
+    font-size: 56px;
+}
+
+.Choice_Text h4{
+    color: red;
+    font-size: 60px;
+}

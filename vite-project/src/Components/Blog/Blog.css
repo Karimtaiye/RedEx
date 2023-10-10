@@ -1,0 +1,164 @@
+.Blog_page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Blog_Wrapper {
+    width: 95%;
+    height: auto;
+}
+
+.Blog_Header {
+    width: 100%;
+    height: 10vh;
+    margin-top: 5vh;
+    font-size: 14px;
+}
+
+.Blog_content {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Main_Blog {
+    width: 45%;
+    height: 100vh;
+}
+
+.Sub_Blog {
+    width: 45%;
+    height: 130vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Main_BlogImg {
+    width: 100%;
+    height: 65%;
+    border-radius: 10px;
+    display: flex;
+    background: #000;
+    justify-content: center;
+    align-items: center;
+}
+
+.Main_BlogImg img{
+    width: 80%;
+    background: aqua;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.Main_BlogDes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Main_BlogDes span{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.694);
+ }
+ 
+ .Main_BlogDes h3{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.9);
+ }
+ 
+ .Main_BlogDes p{
+     line-height: 18px;
+    font-size: 15px;
+ }
+.BlogSub_Img {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.SubImg_Img {
+    width: 48%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.SubImg_Img img{
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+    background: aqua;
+}
+
+.SubImg_Des {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.SubImg_Des span{
+   font-size: 16px;
+   font-weight: bold;
+   color: rgba(0, 0, 0, 0.694);
+}
+
+.SubImg_Des h3{
+   font-size: 18px;
+   font-weight: bold;
+   color: rgba(0, 0, 0, 0.9);
+}
+
+.SubImg_Des p{
+    line-height: 18px;
+   font-size: 15px;
+}
+
+.Blog_Sere {
+    width: 100%;
+    height: 30vh;
+    margin-block: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Blog_SereContent {
+    width: 15%;
+    height: 100%;
+    background: #00000023;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 4px 3px 1px rgba(0, 0, 0, 0.25);
+}
+
+.Blog_SereIcon {
+    width: 40%;
+    border-radius: 5px;
+    height: 38%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+.Blog_SereIcon img{
+    width: 70%;
+    height: 70%;
+}

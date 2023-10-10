@@ -120,7 +120,69 @@
     height: max-content;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.3%;
+    gap: 2.65%;
+}
+
+.Category_ProductsH {
+    width: 23%;
+    height: 350px;
+    border-radius: 10px;
+    background: rgb(241, 235, 235);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 7vh;
+}
+
+.Category_ProductsH:hover{
+    position: relative;
+    transition: 350ms;
+    height: 450px;
+}
+
+.Category_ProductsH:hover >.Category_ImgH{
+    transform: scale(.8);
+    position: absolute;
+    transition: 350ms;
+    top: 0;
+    height: 55%;
+}
+
+.Category_ProductsH:hover >.Category_DesH{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+
+.Category_ImgH {
+    width: 100%;
+    transition: 350ms;
+    height: 63%;
+    background: rgb(241, 235, 235);
+    display: flex;
+    cursor: pointer;
+    justify-self: center;
+    border-radius: 3px;
+    align-items: center;
+    display: flex;
+    transform: scale(1);
+    justify-content: center;
+}
+
+.Category_ImgH img{
+    width: 80%;
+    height: 100%;;
+}
+
+.Category_DesH {
+    width: 100%;
+    height: 45%;
+    display: none;
+    flex-direction: column;
+    border-radius: 0px 0px 10px 10px;
+    align-items: center;
+    background: rgb(255, 255, 255);
+
 }
 
 .Category_Products {
@@ -136,12 +198,137 @@
     height: 60%;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     display: flex;
+    background: red;
+    justify-self: center;
+    border-radius: 3px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center     ;
+}
+
+.Category_Img img{
+    width: 70%;
+    height: 70%;
+
+}
+
+.Category_Des {
+    width: 100%;
+    height: 40%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border-radius: 0px 3px 10px 10px;
+
+}
+
+.CategoryDes_Details {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content:  space-evenly;  
+    user-select: none;
+}
+
+.Detail_Name {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Detail_Name span{
+    font-size: 14px;
+}
+
+.Detail_Size, .Detail_Color {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Detail_Size div, .Detail_Color div{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.Detail_Size div span, .Detail_Color div span{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background: grey;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+}
+
+.CategoryDes_Details h4{
+    font-size: 15px;
+}
+
+.CategoryDes_Btn {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;   
+}
+
+.CategoryDes_BtnC {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;   
+}
+
+.Cateory_ATCBtn {
+    width: 45%;
+    height: 65%;
+    background: #27283D;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    transform: scale(1);
+}
+
+.Category_ProductsC {
+    width: 24%;
+    height: 500px;
+    background: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin-bottom: 7vh;}
+
+.Category_ImgC {
+    width: 100%;
+    height: 60%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
     justify-self: center;
     border-radius: 15px 15px 0px 0px;
     align-items: center;
 }
 
-.Category_Img img{
+.Category_ImgC img{
     width: 100%;
     border-radius: 10px 10px 0px 0px;
     height: 100%;
@@ -149,7 +336,7 @@
 
 }
 
-.Category_Des {
+.Category_DesC {
     width: 100%;
     height: 40%;    
     display: flex;
@@ -160,7 +347,7 @@
 
 }
 
-.CategoryDes_Details {
+.CategoryDes_DetailsC {
     width: 85%;
     height: 50%;
     display: flex;
@@ -169,11 +356,11 @@
     gap: 10px; 
 }
 
-.CategoryDes_Details h4{
+.CategoryDes_DetailsC h4{
     font-size: 20px;
 }
 
-.CategoryDes_Btn {
+.CategoryDes_BtnC {
     width: 85%;
     height: 40%;
     display: flex;
@@ -181,7 +368,7 @@
     align-items: flex-end;   
 }
 
-.Cateory_ATCBtn {
+.Cateory_ATCBtnC {
     width: 90%;
     height: 60%;
     background: #27283D;
@@ -199,12 +386,49 @@
     transform: scale(1);
 }
 
+.Cateory_ATCBtnC:hover {
+    transition: all 350ms;
+    transform: scale(1.03);
+}
+
+.ATC_IconC {
+    font-size: 26px;
+}
+
+
+.Cateory_ORNBtn {
+    width: 45%;
+    height: 65%;
+    background: red;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transform: scale(1);
+}
+
 .Cateory_ATCBtn:hover {
     transition: all 350ms;
     transform: scale(1.03);
 }
 
+.Cateory_ATCBtnC:hover {
+    transition: all 350ms;
+    transform: scale(1.03);
+}
+
 .ATC_Icon {
+    font-size: 20px;
+}
+
+.ATC_IconC {
     font-size: 26px;
 }
 

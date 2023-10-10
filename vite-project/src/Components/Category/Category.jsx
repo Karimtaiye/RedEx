@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Category.css'
-import item1 from '../LandingPage/assets/item1.png'
+import Titem1 from '../LandingPage/assets/Titem1.png'
 import item2 from '../LandingPage/assets/item2.png'
 import item3 from '../LandingPage/assets/item3.png'
 import item4 from '../LandingPage/assets/item4.png'
@@ -75,14 +75,14 @@ function Category() {
     <div className='RedExCategory_Page'>
         <section className='RexExMain_Category'>
             <div className='MainCategory_Img'>
-                <img src={item1} alt="" />
+                <img src={Titem1} alt="" />
             </div>
             <div className='MainCategory_Desc'>
                 <div className='Category_SearchBar'>
                     <BiSearch style={{cursor:"pointer"}}/>
                 </div>
                 <div className='Category_Header'>
-                    <h1>Shop Generic Food Pakaging plain and shii</h1>
+                    <h1>Shop Generic Food Pakaging Plain and shii</h1>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, minima! Similique velit ab recusandae nisi corporis, fugit tenetur placeat.</p>
                 </div>
                 <div className='Category_BtnDiv'>
@@ -104,144 +104,291 @@ function Category() {
                 </select>
             </div>
             <div className='Category_ProductsDiv'>
-               {
+             
+
+               {/* {
                 allProducts.map((produucts)=>(
-            <div className='Category_Products' key={produucts._id}>
-                <div className='Category_Img'>
-                    <img src={item1} alt="" />
-                </div>
-                <div className='Category_Des'>
+                    
+                    <div className='Category_ProductsC' key={produucts._id}>
+                    <div className='Category_ImgC'>
+                        <img src={Titem1} alt="" />
+                    </div>
+                    <div className='Category_DesC'>
+                        <div className='CategoryDes_DetailsC'>
+                            <h4>Name: {produucts.productName}</h4>
+                            <h4>Price: {produucts.productQuantity}</h4>
+                        </div>
+                        <div className='CategoryDes_BtnC'>
+                            <button className='Cateory_ATCBtnC'  onClick={()=>{
+                                axios.post(`https://redex-webapp-v1.onrender.com/api/cart/${produucts._id}`,null, config)
+                                .then(res=>{                             
+                                 console.log(res)
+                                 setATC(true)
+                                
+                                }).catch(err=>{
+                                    console.log(err);
+                                })
+                            }}><HiShoppingCart className='ATC_IconC'/>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>))
+               } */}
+                   <div className='Category_ProductsH'>
+                    <div className='Category_ImgH'>
+                        <img src={Titem1} alt="" />
+                    </div>
+                    <div className='Category_DesH'>
                     <div className='CategoryDes_Details'>
-                        <h4>Name: {produucts.productName}</h4>
-                        <h4>Price: {produucts.productQuantity}</h4>
-                    </div>
-                    <div className='CategoryDes_Btn'>
-                        <button className='Cateory_ATCBtn'  onClick={()=>{
-                            axios.post(`https://redex-webapp-v1.onrender.com/api/cart/${produucts._id}`,null, config)
-                            .then(res=>{                             
-                             console.log(res)
-                             setATC(true)
-                            
-                            }).catch(err=>{
-                                console.log(err);
-                            })
-                        }}><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
+                          <div className='Detail_Name'>
+                            <div style={{display:"flex", justifyContent:"space-between"}}>
+                            <h4>Plain package</h4>
+                            <h4>NGN5,000</h4>
+                            </div>
+                            <span>For Pizza</span>
+                          </div>
+                          <div className='Detail_Size'>
+                            <h4>Sizes</h4>
+                            <div>
+                            <span style={{background:"white", color:"black"}}>XL</span><span>L</span><span>M</span><span>S</span>
+                            </div>
+                          </div>
+                          <div className='Detail_Color'>
+                          <h4>Colors</h4>
+                            <div>
+                            <span style={{background:"red"}}></span><span style={{background:"blue"}}></span><span style={{background:"yellow"}}></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='CategoryDes_Btn'>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                            <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon' onClick={()=>{
+                                axios.post(`https://redex-webapp-v1.onrender.com/api/cart/${produucts._id}`,null, config)
+                                .then(res=>{                             
+                                 console.log(res)
+                                 setATC(true)
+                                
+                                }).catch(err=>{
+                                    console.log(err);
+                                })
+                            }}/>Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>))
-               }
-                <div className='Category_Products'>
-                    <div className='Category_Img'>
-                        <img src={item1} alt="" />
+
+                   <div className='Category_ProductsH'>
+                    <div className='Category_ImgH'>
+                        <img src={Titem1} alt="" />
                     </div>
-                    <div className='Category_Des'>
-                        <div className='CategoryDes_Details'>
+                    <div className='Category_DesH'>
+                    <div className='CategoryDes_Details'>
+                          <div className='Detail_Name'>
+                            <div style={{display:"flex", justifyContent:"space-between"}}>
+                            <h4>Plain package</h4>
+                            <h4>NGN5,000</h4>
+                            </div>
+                            <span>For Pizza</span>
+                          </div>
+                          <div className='Detail_Size'>
+                            <h4>Sizes</h4>
+                            <div>
+                            <span style={{background:"white", color:"black"}}>XL</span><span>L</span><span>M</span><span>S</span>
+                            </div>
+                          </div>
+                          <div className='Detail_Color'>
+                          <h4>Colors</h4>
+                            <div>
+                            <span style={{background:"red"}}></span><span style={{background:"blue"}}></span><span style={{background:"yellow"}}></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='CategoryDes_Btn'>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                            <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                   <div className='Category_ProductsH'>
+                    <div className='Category_ImgH'>
+                        <img src={Titem1} alt="" />
+                    </div>
+                    <div className='Category_DesH'>
+                    <div className='CategoryDes_Details'>
+                          <div className='Detail_Name'>
+                            <div style={{display:"flex", justifyContent:"space-between"}}>
+                            <h4>Plain package</h4>
+                            <h4>NGN5,000</h4>
+                            </div>
+                            <span>For Pizza</span>
+                          </div>
+                          <div className='Detail_Size'>
+                            <h4>Sizes</h4>
+                            <div>
+                            <span style={{background:"white", color:"black"}}>XL</span><span>L</span><span>M</span><span>S</span>
+                            </div>
+                          </div>
+                          <div className='Detail_Color'>
+                          <h4>Colors</h4>
+                            <div>
+                            <span style={{background:"red"}}></span><span style={{background:"blue"}}></span><span style={{background:"yellow"}}></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='CategoryDes_Btn'>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                            <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                   <div className='Category_ProductsH'>
+                    <div className='Category_ImgH'>
+                        <img src={Titem1} alt="" />
+                    </div>
+                    <div className='Category_DesH'>
+                    <div className='CategoryDes_Details'>
+                          <div className='Detail_Name'>
+                            <div style={{display:"flex", justifyContent:"space-between"}}>
+                            <h4>Plain package</h4>
+                            <h4>NGN5,000</h4>
+                            </div>
+                            <span>For Pizza</span>
+                          </div>
+                          <div className='Detail_Size'>
+                            <h4>Sizes</h4>
+                            <div>
+                            <span style={{background:"white", color:"black"}}>XL</span><span>L</span><span>M</span><span>S</span>
+                            </div>
+                          </div>
+                          <div className='Detail_Color'>
+                          <h4>Colors</h4>
+                            <div>
+                            <span style={{background:"red"}}></span><span style={{background:"blue"}}></span><span style={{background:"yellow"}}></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='CategoryDes_Btn'>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                            <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                   <div className='Category_ProductsH'>
+                    <div className='Category_ImgH'>
+                        <img src={Titem1} alt="" />
+                    </div>
+                    <div className='Category_DesH'>
+                    <div className='CategoryDes_Details'>
+                          <div className='Detail_Name'>
+                            <div style={{display:"flex", justifyContent:"space-between"}}>
+                            <h4>Plain package</h4>
+                            <h4>NGN5,000</h4>
+                            </div>
+                            <span>For Pizza</span>
+                          </div>
+                          <div className='Detail_Size'>
+                            <h4>Sizes</h4>
+                            <div>
+                            <span style={{background:"white", color:"black"}}>XL</span><span>L</span><span>M</span><span>S</span>
+                            </div>
+                          </div>
+                          <div className='Detail_Color'>
+                          <h4>Colors</h4>
+                            <div>
+                            <span style={{background:"red"}}></span><span style={{background:"blue"}}></span><span style={{background:"yellow"}}></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='CategoryDes_Btn'>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                            <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                   <div className='Category_ProductsH'>
+                    <div className='Category_ImgH'>
+                        <img src={Titem1} alt="" />
+                    </div>
+                    <div className='Category_DesH'>
+                    <div className='CategoryDes_Details'>
+                          <div className='Detail_Name'>
+                            <div style={{display:"flex", justifyContent:"space-between"}}>
+                            <h4>Plain package</h4>
+                            <h4>NGN5,000</h4>
+                            </div>
+                            <span>For Pizza</span>
+                          </div>
+                          <div className='Detail_Size'>
+                            <h4>Sizes</h4>
+                            <div>
+                            <span style={{background:"white", color:"black"}}>XL</span><span>L</span><span>M</span><span>S</span>
+                            </div>
+                          </div>
+                          <div className='Detail_Color'>
+                          <h4>Colors</h4>
+                            <div>
+                            <span style={{background:"red"}}></span><span style={{background:"blue"}}></span><span style={{background:"yellow"}}></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='CategoryDes_Btn'>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                            <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                   <div className='Category_ProductsH'>
+                    <div className='Category_ImgH'>
+                        <img src={Titem1} alt="" />
+                    </div>
+                    <div className='Category_DesH'>
+                    <div className='CategoryDes_Details'>
+                          <div className='Detail_Name'>
+                            <div style={{display:"flex", justifyContent:"space-between"}}>
+                            <h4>Plain package</h4>
+                            <h4>NGN5,000</h4>
+                            </div>
+                            <span>For Pizza</span>
+                          </div>
+                          <div className='Detail_Size'>
+                            <h4>Sizes</h4>
+                            <div>
+                            <span style={{background:"white", color:"black"}}>XL</span><span>L</span><span>M</span><span>S</span>
+                            </div>
+                          </div>
+                          <div className='Detail_Color'>
+                          <h4>Colors</h4>
+                            <div>
+                            <span style={{background:"red"}}></span><span style={{background:"blue"}}></span><span style={{background:"yellow"}}></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='CategoryDes_Btn'>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                            <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                  <div className='Category_ProductsH'>
+                    <div className='Category_ImgH'>
+                        <img src={Titem1} alt="" />
+                    </div>
+                    <div className='Category_DesH'>
+                    <div className='CategoryDes_Details'>
                             <h4>Name: </h4>
                             <h4>Price: </h4>
                         </div>
                         <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
+                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                            <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
                         </div>
                     </div>
                 </div>
-                <div className='Category_Products'>
-                    <div className='Category_Img'>
-                        <img src={item1} alt="" />
-                    </div>
-                    <div className='Category_Des'>
-                        <div className='CategoryDes_Details'>
-                            <h4>Name: </h4>
-                            <h4>Price: </h4>
-                        </div>
-                        <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div className='Category_Products'>
-                    <div className='Category_Img'>
-                        <img src={item1} alt="" />
-                    </div>
-                    <div className='Category_Des'>
-                        <div className='CategoryDes_Details'>
-                            <h4>Name: </h4>
-                            <h4>Price: </h4>
-                        </div>
-                        <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div className='Category_Products'>
-                    <div className='Category_Img'>
-                        <img src={item1} alt="" />
-                    </div>
-                    <div className='Category_Des'>
-                        <div className='CategoryDes_Details'>
-                            <h4>Name: </h4>
-                            <h4>Price: </h4>
-                        </div>
-                        <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div className='Category_Products'>
-                    <div className='Category_Img'>
-                        <img src={item1} alt="" />
-                    </div>
-                    <div className='Category_Des'>
-                        <div className='CategoryDes_Details'>
-                            <h4>Name: </h4>
-                            <h4>Price: </h4>
-                        </div>
-                        <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div className='Category_Products'>
-                    <div className='Category_Img'>
-                        <img src={item1} alt="" />
-                    </div>
-                    <div className='Category_Des'>
-                        <div className='CategoryDes_Details'>
-                            <h4>Name: </h4>
-                            <h4>Price: </h4>
-                        </div>
-                        <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div className='Category_Products'>
-                    <div className='Category_Img'>
-                        <img src={item1} alt="" />
-                    </div>
-                    <div className='Category_Des'>
-                        <div className='CategoryDes_Details'>
-                            <h4>Name: </h4>
-                            <h4>Price: </h4>
-                        </div>
-                        <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div className='Category_Products'>
-                    <div className='Category_Img'>
-                        <img src={item1} alt="" />
-                    </div>
-                    <div className='Category_Des'>
-                        <div className='CategoryDes_Details'>
-                            <h4>Name: </h4>
-                            <h4>Price: </h4>
-                        </div>
-                        <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon' />Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
+
 
             </div>
         </section>

@@ -3,7 +3,7 @@ import './LandingPage.css'
 import './LandingPageRes.css'
 
 import image from '../LandingPage/assets/DesImg.png'
-import item1 from '../LandingPage/assets/item1.png'
+import Titem1 from '../LandingPage/assets/Titem1.png'
 import item2 from '../LandingPage/assets/item2.png'
 import item3 from '../LandingPage/assets/item3.png'
 import item4 from '../LandingPage/assets/item4.png'
@@ -17,6 +17,8 @@ import Service1 from '../LandingPage/assets/Service1.png'
 import { useNavigate } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import { motion } from 'framer-motion'
+import { HiShoppingCart } from 'react-icons/hi'
 import { useDispatch, useSelector} from 'react-redux'
 import axios from 'axios'
 
@@ -37,6 +39,8 @@ function LandingPage() {
       Authorization:`Bearer ${token}`
     }
   }
+
+  const categoryArray = [Titem1, item2, item3, item4, item5]
 
 
   const url = "https://redex-webapp-v1.onrender.com/api/getProducts"
@@ -75,11 +79,26 @@ function LandingPage() {
   console.log(user)
   console.log(userRes)
 
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+   
+  };
+
   
   return (
     <>
       <Header home={homepage}/>
-      <div className='Landing_page'>
+      <motion.div
+      
+      initial={{animation:"slideInLeft",
+        animationDuration:"1s"}}
+      animate={{opacity:1}}
+      exit={{opacity:0, transitionDuration:4}}
+      
+      className='Landing_page'>
       <div className='LandingPage_Wrapper'>
 
         
@@ -120,16 +139,74 @@ function LandingPage() {
           </div>
         </section>
 
+        <div className='Category_ProductsDiv'>
+       {
+        categoryArray.map((pro)=>(
+          <div className='Category_ProductsH'>
+          <div className='Category_ImgH'>
+              <img src={Titem1} alt="" />
+          </div>
+          <div className='Category_DesH'>
+          <div className='CategoryDes_Details'>
+                <div className='Detail_Name'>
+                  <div style={{display:"flex", justifyContent:"space-between"}}>
+                  <h4>Plain package</h4>
+                  <h4>NGN5,000</h4>
+                  </div>
+                  <span>For Pizza</span>
+                </div>
+                <div className='Detail_Size'>
+                  <h4>Sizes</h4>
+                  <div>
+                  <span style={{background:"white", color:"black"}}>XL</span><span>L</span><span>M</span><span>S</span>
+                  </div>
+                </div>
+                <div className='Detail_Color'>
+                <h4>Colors</h4>
+                  <div>
+                  <span style={{background:"red"}}></span><span style={{background:"blue"}}></span><span style={{background:"yellow"}}></span>
+                  </div>
+                </div>
+              </div>
+              <div className='CategoryDes_Btn'>
+                  <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                  <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
+              </div>
+          </div>
+      </div>
+        ))
+       }
+        </div>
+
         <section className='RedExFeatured_Categories'>
             <div className='Category_TextHeader'>
              <h1>Featured </h1><h1 style={{color:"red"}}>Category</h1>
           </div>  
           <div className='RedExCategories_Products'>
+          <div className='Categoriy_Products'>
+                <div className='Category_ProductImg'>
+                  <img
+
+                  src={categoryArray[nextPro % categoryArray.length]} alt="" />
+                </div>
+                <div className='Category_ProductDesc'>
+                  <div className='Category_TopDesc'>
+                    <span></span>
+                  </div>
+                  <div className='Category_BotDesc'>
+                    <button  className='Get_ShoppingBtn'  onClick={()=>{
+                      nav('/category')
+                    }}>Get Shopping</button>
+                  </div>
+                </div>
+              </div>
            {
             getCategory.length === 0?
               <div className='Categoriy_Products'>
                 <div className='Category_ProductImg'>
-                  <img src="" alt="" />
+                  <img
+
+                  src={categoryArray[nextPro % categoryArray.length]} alt="" />
                 </div>
                 <div className='Category_ProductDesc'>
                   <div className='Category_TopDesc'>
@@ -164,7 +241,7 @@ function LandingPage() {
               getCategory.map((category)=>(
                 <div className='Categoriy_Products' >
                   <div className='Category_ProductImg'>
-                    <img src={item1} alt="" />
+                    <img src={Titem1} alt="" />
                   </div>
                   <div className='Category_ProductDesc'>
                     <div className='Category_TopDesc'>
@@ -188,6 +265,12 @@ function LandingPage() {
             <h1>Top </h1><h1 style={{color:"red"}}>Demanding</h1>
           </div>
           <div className='RedExDemanding_Products'>
+            <button onClick={()=>{
+               setCurrentSlide((prevSlide) =>
+               prevSlide === 0 ? images.length - 1 : prevSlide - 1
+             )
+            }} className='Prev'>prev</button>
+            <button onClick={nextSlide} className='Next'>Next</button>
            {
             allProducts.map((products)=>(
               <div className='Demanding_Products' onClick={()=>{
@@ -215,7 +298,7 @@ function LandingPage() {
               <span>Choke Bag-package stuffs</span>
             </div>
             <div className='Demanding_Products'>
-            <img src={item1} alt="" />
+            <img src={Titem1} alt="" />
               <span>Customized Takeout Full Package</span>
             </div>
           </div>
@@ -344,7 +427,7 @@ function LandingPage() {
           </div>
         </section>
       </div>
-    </div>
+    </motion.div>
     {/* <Footer />   */}
     </>
   )
