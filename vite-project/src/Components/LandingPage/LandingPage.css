@@ -3,7 +3,6 @@
     height: max-content;
     display: flex;
     justify-content: center;
-    /* background: rgb(241, 241, 241); */
 
 }
 
@@ -13,7 +12,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background: aqua; */
 }
 
 
@@ -290,9 +288,9 @@
     margin-bottom: 10vh;
 }
 
-/* .RedExDemanding_Products::-webkit-scrollbar {
+.RedExDemanding_Products::-webkit-scrollbar {
     display: none;
-} */
+}
 
 .Prev{
     position: absolute;
@@ -308,8 +306,8 @@
 }
 
 .Demanding_Products {
-    width: 342px;
-    height: 330px;
+    width: 302px;
+    height: 300px;
     background: white;
     border-radius: 20px;
     display: flex;

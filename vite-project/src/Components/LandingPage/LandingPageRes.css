@@ -1,0 +1,178 @@
+
+@media screen and (max-width: 575px) { 
+    
+    
+.LandingPage_Wrapper {
+    width: 100%;
+}
+
+.RedExDisplay_Details {
+    width: 100%;
+    height: 40vh;
+    background: red;
+    color: white;
+    margin-top: 0vh;
+    margin-bottom: 10vh;
+}
+
+
+.RedExDisplay_Image {
+    justify-content: flex-start;
+    padding-top: 10px;
+    justify-content: center;
+}
+
+.RedExDisplay_Image img {
+    width: 100%;
+    height: 75%;
+}
+
+.RedExDisplay_DescWrapper {
+    width: 90%;
+    height: 90%;
+    padding-top: 15px;
+
+}
+
+.RedExDes_Text {
+    gap: 7px;
+}
+
+.RedExDes_Text h1 {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.RedExDes_Text span {
+    width: 80%;
+    font-size: 12px;
+}
+
+.RedExShopNow_Btn {
+    width: 75%;
+    height: 43px;
+    background-color: white;
+    font-size: 14px;
+    color: red;
+}
+
+.RedExShopNow_Btn:hover {
+    background-color:white;
+}
+
+
+.RedEx_Address {
+    width: 100%;
+    background: none;
+}
+
+.RedExAddress_Location {
+    gap: 3px;
+}
+.RedExAddress_Location h4, .RedExAddress_Contact h4{
+    font-size: 12px;
+}
+
+.RedExAddress_Location div, .RedExAddress_Contact div {
+    font-size: 12px;
+}
+
+.RedExAddress_Contact {
+    gap: 3px;
+}
+
+
+.RedExFeatured_Categories {
+    gap: 2vh;
+    align-items: center;
+    margin-bottom: 0vh;
+}
+
+.Category_TextHeader {
+    width: 95%;
+} 
+
+.Category_TextHeader h1 {
+    font-size: 26px;
+} 
+
+.RedExCategories_Products {
+    width: 95%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5%;
+ }
+
+.Categoriy_Products {
+    width: 47%;
+    height: 280px;
+    background: #EDEBEB;
+    flex-direction: column;
+    margin-bottom: 3vh;
+    /* g */
+
+}
+
+.Category_ProductImg {
+    margin-top: 4%;
+    width: 95%;
+    height: 48%;
+    border-radius: 5px;
+}
+
+.Category_ProductImg img {
+    width: 70%;
+    height: 90%;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.Category_ProductDesc {
+    width: 47%;
+    height: 50%;
+    
+}
+
+.Category_TopDesc {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.Category_TopDesc span {
+    width: 60%;
+    font-size: 21px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.Category_BotDesc  {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Get_ShoppingBtn {
+    width: 100%;
+    height: 45px;
+    background-color: red;
+    color: white;
+    font-size: 13px;
+    /* font-weight: bold; */
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.Get_ShoppingBtn:hover {
+    transition: all 600ms;
+    background-color: rgb(223, 9, 9);
+}
+
+
+}

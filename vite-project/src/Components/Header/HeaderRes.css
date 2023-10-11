@@ -1,0 +1,42 @@
+
+@media screen and (max-width: 575px) { 
+
+    .RedExHeader_Logo img{
+        width: 190px;
+        /* height: 100%; */
+    }
+.RedExHeader_Nav ul {
+    gap: 10px;
+    justify-content: flex-end ;
+}
+
+.menu {
+    display: none;
+}
+
+.Profile {
+    display: flex;
+}
+
+.Burger {
+    display: flex;
+}
+
+.Menu_Icon {
+    font-size: 30px;
+
+}
+
+.Profile {
+    width: 40px;
+    height: 40px;
+    background: #000;
+    border-radius: 50%;
+    color: white;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+}
