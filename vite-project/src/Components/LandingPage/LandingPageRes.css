@@ -20,6 +20,7 @@
     justify-content: flex-start;
     padding-top: 10px;
     justify-content: center;
+    
 }
 
 .RedExDisplay_Image img {
@@ -107,7 +108,7 @@
 
 .Categoriy_Products {
     width: 47%;
-    height: 280px;
+    height: 260px;
     background: #EDEBEB;
     flex-direction: column;
     margin-bottom: 3vh;
@@ -118,7 +119,7 @@
 .Category_ProductImg {
     margin-top: 4%;
     width: 95%;
-    height: 48%;
+    height: 51%;
     border-radius: 5px;
 }
 
@@ -129,50 +130,180 @@
 }
 
 .Category_ProductDesc {
-    width: 47%;
-    height: 50%;
+    width: 87%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
     
 }
 
 .Category_TopDesc {
-    width: 100%;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    height: 50%;
+    align-items: center;
 }
 .Category_TopDesc span {
-    width: 60%;
-    font-size: 21px;
+    width: 90%;
+    font-size: 13px;
     text-align: center;
     font-weight: bold;
 }
 
 .Category_BotDesc  {
-    width: 100%;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .Get_ShoppingBtn {
     width: 100%;
     height: 45px;
-    background-color: red;
-    color: white;
     font-size: 13px;
-    /* font-weight: bold; */
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
-.Get_ShoppingBtn:hover {
-    transition: all 600ms;
-    background-color: rgb(223, 9, 9);
+.RedExTop_Demanding {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    align-items: center;
+    margin-bottom: 0vh;
+    margin-top: 4vh;
 }
 
+.Demanding_TextHeader h1 {
+    font-size: 26px;
+} 
+
+.RedExDemanding_Products {
+    width: 95%;
+    gap: 4%;
+    margin-bottom: 2vh;
+}
+
+.Demanding_Products {
+    width: 178px;
+    height:180px;
+    background: rgb(238, 238, 238);
+    border-radius:10px;
+    margin-bottom: 4vh;
+}
+
+
+.Demanding_Products img{
+    width: 85%;
+    height: 80%;
+}
+
+.Demanding_Products span{
+    top: 50%;
+    color: white;
+    font-size: 14px;
+}
+
+.RedEx_Service {
+    width: 100%;
+    gap: 0vh;
+    margin-bottom: 3vh;
+}
+
+.Service_TextHeader div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+}
+
+.Service_TextHeader div h1 {
+    font-size: 26px;
+} 
+
+.Service_TextHeader h3{
+    font-size: 16px;
+}
+
+.RedExService_Template {
+    width: 100%;
+    gap: 7.5%;
+    justify-content: center;
+}
+
+.RedExService_Info {
+    width: 100%;
+    height: 274px;
+    object-fit: cover;
+}
+
+.RedExService_Info img{
+    width: 100%;
+    height: 100%;
+}
+
+.RedExService_Info span {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.RedExCase_Studies {
+    width: 95%;
+    margin-bottom: 9vh;
+    gap:10px;
+}
+
+.CaseStudies_TextHeader {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.CaseStudies_TextHeader h1 {
+    font-size: 26px;
+} 
+
+.Case_StudiesDiv {
+    width: 100%;
+    height: 20vh;
+}
+
+.RedEx_FAQ {
+    gap: 3vh;
+    margin-bottom: 5vh;
+}
+
+.FAQ_TextHeader h1{
+    font-size: 26px;
+}
+
+.RedExFAQ_AnsDiv {
+    gap: 10px;
+}
+
+.FAQ_AnsWrapper {
+    padding-block:20px;
+    padding-inline: 15px;
+}
+
+.rot{
+    rotate: 180deg;
+    transition: all 350ms;
+    background-color: #1d252f38;
+}
+
+.FAQ_Que span {
+    font-size: 16px;
+    color: black;
+    font-weight: normal;
+}
+
+.FAQ_Ans {
+    padding-block:2px;
+    font-size: 14px;
+    padding-inline: 2px;
+    line-height:21px;
+    font-weight: 500;
+    color:rgb(255, 0, 0);
+}
 
 }

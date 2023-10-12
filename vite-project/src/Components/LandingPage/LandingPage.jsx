@@ -210,7 +210,7 @@ function LandingPage() {
                 </div>
                 <div className='Category_ProductDesc'>
                   <div className='Category_TopDesc'>
-                    <span></span>
+                    <span>Get Customized Generic Package</span>
                   </div>
                   <div className='Category_BotDesc'>
                     <button  className='Get_ShoppingBtn'  onClick={()=>{
