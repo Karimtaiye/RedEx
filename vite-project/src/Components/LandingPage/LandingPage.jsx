@@ -40,8 +40,8 @@ function LandingPage() {
     }
   }
 
-  const categoryArray = [Titem1, item2, item3, item4, item5]
-
+  // const categoryArray = [Titem1, item2]
+   const categoryArray = [Titem1, item2, item3, item4, item5, item2] 
 
   const url = "https://redex-webapp-v1.onrender.com/api/getProducts"
   const getAllProducts = () => {
@@ -142,7 +142,9 @@ function LandingPage() {
         <div className='Category_ProductsDiv'>
        {
         categoryArray.map((pro)=>(
-          <div className='Category_ProductsH'>
+          
+         <>
+           <div className='Category_ProductsH '>
           <div className='Category_ImgH'>
               <img src={Titem1} alt="" />
           </div>
@@ -161,12 +163,6 @@ function LandingPage() {
                   <span style={{background:"white", color:"black"}}>XL</span><span>L</span><span>M</span><span>S</span>
                   </div>
                 </div>
-                <div className='Detail_Color'>
-                <h4>Colors</h4>
-                  <div>
-                  <span style={{background:"red"}}></span><span style={{background:"blue"}}></span><span style={{background:"yellow"}}></span>
-                  </div>
-                </div>
               </div>
               <div className='CategoryDes_Btn'>
                   <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
@@ -174,6 +170,24 @@ function LandingPage() {
               </div>
           </div>
       </div>
+
+        <div className='Category_ProductsHMobile'>
+        <div className='Category_ImgH'>
+            <img src={Titem1} alt="" />
+        </div>
+        <div className='Category_DesH'>
+        <div className='CategoryDes_Details'>
+                <h4>Name: </h4>
+                <h4>Price: </h4>
+            </div>
+            <div className='CategoryDes_Btn'>
+                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+            </div>
+        </div>
+        </div>
+         </>
+
         ))
        }
         </div>
@@ -265,12 +279,12 @@ function LandingPage() {
             <h1>Top </h1><h1 style={{color:"red"}}>Demanding</h1>
           </div>
           <div className='RedExDemanding_Products'>
-            <button onClick={()=>{
+            {/* <button onClick={()=>{
                setCurrentSlide((prevSlide) =>
                prevSlide === 0 ? images.length - 1 : prevSlide - 1
              )
             }} className='Prev'>prev</button>
-            <button onClick={nextSlide} className='Next'>Next</button>
+            <button onClick={nextSlide} className='Next'>Next</button> */}
            {
             allProducts.map((products)=>(
               <div className='Demanding_Products' onClick={()=>{

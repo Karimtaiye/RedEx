@@ -120,7 +120,7 @@
     background: #F8F8F8;
     border-radius: 3px;
     outline: none;
-    padding-left: 2%;
+    padding-inline: 2%;
     border: 1px solid rgba(0, 0, 0, 0.142);
     color: grey;
     cursor: pointer;

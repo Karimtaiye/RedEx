@@ -127,11 +127,24 @@
     width: 23%;
     height: 350px;
     border-radius: 10px;
-    background: rgb(241, 235, 235);
+    background: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 7vh;
+}
+
+
+.Category_ProductsHMobile {
+    width: 23%;
+    height: 350px;
+    border-radius: 10px;
+    background: red;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 7vh;
+    display: none;
 }
 
 .Category_ProductsH:hover{
@@ -150,6 +163,7 @@
 
 .Category_ProductsH:hover >.Category_DesH{
     display: flex;
+    background: white;
     position: absolute;
     bottom: 0;
 }
@@ -158,7 +172,6 @@
     width: 100%;
     transition: 350ms;
     height: 63%;
-    background: rgb(241, 235, 235);
     display: flex;
     cursor: pointer;
     justify-self: center;
@@ -181,7 +194,7 @@
     flex-direction: column;
     border-radius: 0px 0px 10px 10px;
     align-items: center;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.175);
 
 }
 
@@ -419,7 +432,7 @@
     transform: scale(1.03);
 }
 
-.Cateory_ATCBtnC:hover {
+.Cateory_ORNBtn:hover {
     transition: all 350ms;
     transform: scale(1.03);
 }

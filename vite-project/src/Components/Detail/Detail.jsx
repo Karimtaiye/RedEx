@@ -152,7 +152,7 @@ function Detail() {
                     setDetails(false)
                     setReview(false)
                     setRelated(true)
-                  }}>Related Categories</li>
+                  }}>Related Products</li>
                 <li className={reviews?"active":null} onClick={()=>{
                   setDetails(false)
                   setReview(true)
