@@ -3,9 +3,13 @@
 
     .Login_Card {
         width: 90%;
-        height: 55%;
+        height: 62%;
         background-color: transparent;
         border-radius: 10px;
+    }
+
+    .Login_Input {
+        height: 34%;
     }
 
     .Login_Input input {
@@ -17,8 +21,8 @@
     }
 
     .Redex_TlogoLogin {
-        left: 22%;
-        top: 21%;
+        left: 20%;
+        top: 18%;
     }
 
     .Login_Input input:placeholder-shown {
@@ -30,11 +34,11 @@
 
     .Forgot_PasswordSpan {
         color: white;
-        position: absolute;
+        /* position: absolute;
         bottom: 38%;
         font-size: 13px;
         text-decoration: underline;
-        left: 0%;
+        left: 0%; */
     }
     .Forgot_PasswordSpan:hover {
         color: white;

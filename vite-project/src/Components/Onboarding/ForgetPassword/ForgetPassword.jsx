@@ -71,7 +71,7 @@ function ForgetPassword() {
                 <span>Enter the email used for registration</span>
             </div>
             <div className='ForgetPassword_Action'>
-                <input className='EmailVer_Input' type="text" placeholder='E-mail' value={email } onChange={(e)=>setEmail(e.target.value)}/>
+                <input className='EmailVer_Inputs' type="text" placeholder='E-mail' value={email } onChange={(e)=>setEmail(e.target.value)}/>
                 <button disabled={loading || disable} style={{background:loading? "rgb(185, 184, 184)":disable?"rgb(216, 81, 81)":null}} className='ForgetPassword_Btn' onClick={reqResetPassword}>Resend verification link</button>
             </div>
         </div>
