@@ -1,0 +1,43 @@
+
+@media screen and (max-width: 767px) { 
+
+    .LogOut_Card {
+        width: 100%;
+        height: 49%;
+        /* justify-content: flex-start; */
+    }
+
+    .LogOut_Text {
+        width: 100%;
+        height: 35%;
+        justify-content: flex-start;
+    }
+
+    .LogOut_Text h1 {
+        font-size: 35px;
+        font-weight: normal;
+    }
+    .LogOut_Text span{
+        font-size: 22px;
+    }
+
+    
+.LogOut_Action {
+    width: 90%;
+    height: 35%;
+    align-items: flex-start;
+    gap: 0px;
+    justify-content: space-around;
+}
+
+.GoBack_Btn {
+    width: 43%;
+    height: 36%;
+}
+
+.LogOut_Btn {
+    width: 43%;
+    height: 36%;
+}
+
+}

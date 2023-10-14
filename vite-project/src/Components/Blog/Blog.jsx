@@ -1,5 +1,6 @@
 import React from "react";
 import "./Blog.css";
+import "./BlogRes.css";
 import Header from "../Header/Header";
 import Main from "../Blog/assets/Main.png";
 import sub1 from "../Blog/assets/sub1.png";
@@ -40,6 +41,7 @@ function Blog() {
             </div>
 
             <div className="Sub_Blog">
+              <span className="News_Mobile">News</span>
               <div className="BlogSub_Img">
                 <div className="SubImg_Img">
                   <img src={sub1} alt="" />

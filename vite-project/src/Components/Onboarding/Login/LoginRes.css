@@ -28,6 +28,22 @@
         color: rgba(255, 255, 255, 0.61);
     }
 
+    .Forgot_PasswordSpan {
+        color: white;
+        position: absolute;
+        bottom: 38%;
+        font-size: 13px;
+        text-decoration: underline;
+        left: 0%;
+    }
+    .Forgot_PasswordSpan:hover {
+        color: white;
+        position: absolute;
+        bottom: 38%;
+        font-size: 13px;
+        left: 0%;
+    }
+
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {

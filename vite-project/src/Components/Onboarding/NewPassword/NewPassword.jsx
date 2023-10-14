@@ -1,5 +1,6 @@
 import { React, useEffect, useState} from 'react'
 import './NewPassword.css'
+import './NewPasswordRes.css'
 import Logo from '../assets/Tlogo.png'
 import axios from 'axios'
 import Swal from "sweetalert2";

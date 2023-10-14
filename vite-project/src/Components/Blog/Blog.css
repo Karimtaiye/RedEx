@@ -76,6 +76,11 @@
      line-height: 18px;
     font-size: 15px;
  }
+
+ .News_Mobile {
+    display: none;
+ }
+
 .BlogSub_Img {
     width: 100%;
     height: 30%;

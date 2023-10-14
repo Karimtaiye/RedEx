@@ -1,5 +1,6 @@
 import React from 'react'
 import './LogOut.css'
+import './LogOutRes.css'
 import Logo from '../assets/Tlogo2.png'
 import { useDispatch, useSelector} from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'

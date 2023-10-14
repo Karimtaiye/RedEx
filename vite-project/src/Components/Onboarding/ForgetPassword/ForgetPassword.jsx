@@ -4,6 +4,7 @@ import axios from 'axios'
 import Swal from "sweetalert2";
 import { useNavigate } from 'react-router-dom';
 import './ForgetPassword.css'
+import './ForgetPasswordRes.css'
 import { useEffect } from 'react';
 
 function ForgetPassword() {

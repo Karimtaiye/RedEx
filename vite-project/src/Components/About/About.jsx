@@ -26,11 +26,7 @@ function About() {
                 packaging solutions.We take pride in sustainable practices. All
                 our packaging materials are sourced fromresponsibly managed
                 forests.Our packaging don’t only lookgood but leaves a
-                smalllerecological foot print. Welcome to RedexPack, your
-                trusted partner in sustainable paper packaging solutions.We take
-                pride in sustainable practices. All our packaging materials are
-                sourced fromresponsibly managed forests.Our packaging don’t only
-                lookgood but leaves a smalllerecological foot print.
+                smalllerecological foot print.
               </span>
               <button className="ReadMore_Btn">Read More</button>
             </div>
@@ -59,10 +55,7 @@ function About() {
                 At RedexPack, we are driven by a simple yet powerful mission: to
                 provide sustainable packaging solutions that protect your
                 products and the planet. Our commitment to quality and
-                environmental responsibility . At RedexPack, we are driven by a
-                simple yet powerful mission: to provide sustainable packaging
-                solutions that protect your products and the planet. Our
-                commitment to quality and environmental responsibility .
+                environmental responsibility 
               </span>
               <button className="ReadMore_Btn">Read More</button>
             </div>
