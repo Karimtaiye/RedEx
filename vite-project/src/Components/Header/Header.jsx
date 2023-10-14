@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 import './Header.css'
 import './HeaderRes.css'
 import Logo from '../../assets/Logo1.png'
@@ -16,6 +16,7 @@ function Header({home, about, blog, cart, login, renders}) {
   const firstname = userRes.firstname
   const lastname = userRes.lastname
   const [accPopUp, setAccPopUp] = useState(false)
+  const [menu, setMenu] = useState(false)
   const [userCart, setuserCart] = useState([])
   // const renders = true
 
@@ -78,7 +79,9 @@ function Header({home, about, blog, cart, login, renders}) {
              <div className='Cart_Qty' style={{ background:cart}}>{userCart.length === 0?"...":userCart.items.length}</div>
              </li>
           </NavLink>
-          <li className='Burger' ><RiMenu2Line className='Menu_Icon'/> </li>
+          <li className='Burger' ><RiMenu2Line onClick={()=>{
+            setMenu(!menu)
+          }} className='Menu_Icon'/> </li>
          {
           !token?
           <NavLink to={'/login'} style={{color:"black", textDecoration:"none", background:"none"}} >
@@ -107,6 +110,48 @@ function Header({home, about, blog, cart, login, renders}) {
           </ul>
         </div>:null
          }
+
+        {
+          menu?
+          <div className='Menu_Navs'>
+          <div className='Close_Nav'>
+            <span  onClick={()=>{
+            setMenu(!menu)
+          }}>X</span>
+          </div>
+         <div className='RedExHeader_LogoM'>
+        <img src={Logo} alt="" style={{cursor:'pointer'}} onClick={()=>nav('/')}/>
+        {
+          !token?
+          <NavLink to={'/login'} style={{color:"black", textDecoration:"none", background:"none"}} >
+             <li style={{color:login}}>Log in</li>
+          </NavLink>:
+          <li  onMouseOver={()=>{
+            setAccPopUp(!accPopUp)
+          }}  className='ProfileM' style={{fontFamily:"cursive", textDecoration:"none"}}>{firstname.charAt(0).toUpperCase() + lastname.charAt(0).toUpperCase()}
+          </li>
+          
+         }
+        </div>
+        <ul className='Mobile_Navs'>
+         <NavLink className="menuM" to={'/'} style={{color:"black", textDecoration:"none", background:"none"}}>
+              <li style={{color:home}}>Home</li>
+         </NavLink>
+          <NavLink className="menuM" to={'/about'} style={{color:"black", textDecoration:"none", background:"none"}} >
+              <li style={{color:about}}>About us</li>
+          </NavLink>
+          <NavLink className="menuM" to={'/blog'} style={{color:"black", textDecoration:"none", background:"none"}} >
+              <li style={{color:blog}}>Blog</li>
+          </NavLink>
+          <NavLink className="menuM" to={'/cart'} style={{color:"black", textDecoration:"none", background:"none"}} >
+             <li style={{color:cart}}><BiSolidCart  style={{fontSize:'25px'}}/>
+             {/* <div className='Cart_Qty' style={{ background:cart}}>{userCart.length === 0?"...":userCart.items.length}</div> */}
+             </li>
+          </NavLink>
+         
+        </ul>
+         </div>:null
+        }
      </motion.div>
     {/* } */}
     </>
