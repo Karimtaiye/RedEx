@@ -107,7 +107,7 @@ function Category() {
             <div className='Category_ProductsDiv'>
              
 
-                   <div className='Category_ProductsH'>
+                   {/* <div className='Category_ProductsH'>
                     <div className='Category_ImgH'>
                         <img src={Titem1} alt="" />
                     </div>
@@ -141,40 +141,32 @@ function Category() {
                             }}/>Add to Cart</button>
                         </div>
                     </div>
+                </div> */}
+
+                <div className='Products_Card'>
+            <div className='Image_Part'>
+              <img src={Titem1} alt="" />
+            </div>
+            <div className='Description_Part'>
+              <div className='Desc_Name-Price'>
+                <div className='Name_Price'>
+                 <span> Product Generic</span>
+                  <p>Plain Package</p>
                 </div>
-
-                   <div className='Category_ProductsH'>
-                    <div className='Category_ImgH'>
-                        <img src={Titem1} alt="" />
-                    </div>
-                    <div className='Category_DesH'>
-                    <div className='CategoryDes_Details'>
-                          <div className='Detail_Name'>
-                            <div style={{display:"flex", justifyContent:"space-between"}}>
-                            <h4>Plain package</h4>
-                            <h4>NGN5,000</h4>
-                            </div>
-                            <span>For Pizza</span>
-                          </div>
-                          <div className='Detail_Size'>
-                            <h4>Sizes</h4>
-                            <div>
-                            <span style={{background:"white", color:"black"}}>XL</span><span>L</span><span>M</span><span>S</span>
-                            </div>
-                          </div>
-                          {/* <div className='Detail_Color'>
-                          <h4>Colors</h4>
-                            <div>
-                            <span style={{background:"red"}}></span><span style={{background:"blue"}}></span><span style={{background:"yellow"}}></span>
-                            </div>
-                          </div> */}
-                        </div>
-                        <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
-                            <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
-                        </div>
-                    </div>
+                <span>NGN5,000</span>
+              </div>
+              <div className='Desc_ATC'>
+                <div>
+                <span>x</span>
+                <span>x</span>
+                <span>x</span>
+                <span>x</span>
+                <span>x</span>
                 </div>
+                <button className="Product_ATC">Add To Cart</button>
+              </div>
+            </div>
+          </div>
 
                  
         <div className='Category_ProductsHMobile'>
@@ -193,6 +185,22 @@ function Category() {
         </div>
         </div>
 
+        
+        <div className='Category_ProductsHMobile'>
+        <div className='Category_ImgH'>
+            <img src={Titem1} alt="" />
+        </div>
+        <div className='Category_DesH'>
+        <div className='CategoryDes_Details'>
+                <h4>Name: </h4>
+                <h4>Price: </h4>
+            </div>
+            <div className='CategoryDes_Btn'>
+                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+            </div>
+        </div>
+        </div>
         
         <div className='Category_ProductsHMobile'>
         <div className='Category_ImgH'>
@@ -242,106 +250,7 @@ function Category() {
             </div>
         </div>
         </div>
-                 
-        <div className='Category_ProductsHMobile'>
-        <div className='Category_ImgH'>
-            <img src={Titem1} alt="" />
-        </div>
-        <div className='Category_DesH'>
-        <div className='CategoryDes_Details'>
-                <h4>Name: </h4>
-                <h4>Price: </h4>
-            </div>
-            <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
-                {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-            </div>
-        </div>
-        </div>
-
-        
-        <div className='Category_ProductsHMobile'>
-        <div className='Category_ImgH'>
-            <img src={Titem1} alt="" />
-        </div>
-        <div className='Category_DesH'>
-        <div className='CategoryDes_Details'>
-                <h4>Name: </h4>
-                <h4>Price: </h4>
-            </div>
-            <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
-                {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-            </div>
-        </div>
-        </div>
-                 
-        <div className='Category_ProductsHMobile'>
-        <div className='Category_ImgH'>
-            <img src={Titem1} alt="" />
-        </div>
-        <div className='Category_DesH'>
-        <div className='CategoryDes_Details'>
-                <h4>Name: </h4>
-                <h4>Price: </h4>
-            </div>
-            <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
-                {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-            </div>
-        </div>
-        </div>
-
-        
-        <div className='Category_ProductsHMobile'>
-        <div className='Category_ImgH'>
-            <img src={Titem1} alt="" />
-        </div>
-        <div className='Category_DesH'>
-        <div className='CategoryDes_Details'>
-                <h4>Name: </h4>
-                <h4>Price: </h4>
-            </div>
-            <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
-                {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-            </div>
-        </div>
-        </div>
-                 
-        <div className='Category_ProductsHMobile'>
-        <div className='Category_ImgH'>
-            <img src={Titem1} alt="" />
-        </div>
-        <div className='Category_DesH'>
-        <div className='CategoryDes_Details'>
-                <h4>Name: </h4>
-                <h4>Price: </h4>
-            </div>
-            <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
-                {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-            </div>
-        </div>
-        </div>
-
-        
-        <div className='Category_ProductsHMobile'>
-        <div className='Category_ImgH'>
-            <img src={Titem1} alt="" />
-        </div>
-        <div className='Category_DesH'>
-        <div className='CategoryDes_Details'>
-                <h4>Name: </h4>
-                <h4>Price: </h4>
-            </div>
-            <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
-                {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-            </div>
-        </div>
-        </div>
-                  <div className='Category_ProductsH'>
+                  {/* <div className='Category_ProductsH'>
                     <div className='Category_ImgH'>
                         <img src={Titem1} alt="" />
                     </div>
@@ -355,7 +264,7 @@ function Category() {
                             <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
 
             </div>

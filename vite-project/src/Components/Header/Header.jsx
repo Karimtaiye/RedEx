@@ -2,6 +2,7 @@ import React, { useState, useEffect, memo } from 'react'
 import './Header.css'
 import './HeaderRes.css'
 import Logo from '../../assets/Logo1.png'
+import Logo2 from '../../assets/Logo2.png'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { BiSolidCart } from 'react-icons/bi'
@@ -62,6 +63,7 @@ function Header({home, about, blog, cart, login, renders}) {
        <section className='RedEx_Header'>
       <div className='RedExHeader_Logo'>
         <img src={Logo} alt="" style={{cursor:'pointer'}} onClick={()=>nav('/')}/>
+        <img className='MobileLogo' src={Logo2} alt="" style={{cursor:'pointer'}} onClick={()=>nav('/')}/>
       </div>
       <div className='RedExHeader_Nav'>
         <ul>

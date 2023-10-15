@@ -1,10 +1,18 @@
 
 @media screen and (max-width: 575px) { 
 
-    .RedExHeader_Logo img{
+    .RedExHeader_Logo img:first-child{
         width: 190px;
+        display:none
         /* height: 50%; */
     }
+
+    .MobileLogo {
+        width: 60px;
+        height: 45px;
+        display: block;
+    }
+    
     .RedExHeader_Nav ul {
         gap: 10px;
         justify-content: flex-end ;

@@ -1,0 +1,30 @@
+@media screen and (max-width: 575px) { 
+    .AllProducts_Div {
+        justify-content: center;
+    }
+
+    
+    .All_ProductHeader {
+        width: 95%;
+        height: 3vh;
+        background: transparent;
+        color: black;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        padding-left: 2%;
+    }
+
+    .All_ProductHeader span{
+        color: black;
+        font-size: 15px;
+    }
+        
+    .Products_Card {
+        width: 23rem;
+        height: 29rem;
+        background-color: rgb(228, 228, 228);
+        border-radius: 10px;
+        margin-bottom: 40px;
+    }
+}

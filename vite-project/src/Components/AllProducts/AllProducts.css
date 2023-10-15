@@ -1,0 +1,134 @@
+.All_Products {
+    width:100%;
+    height: max-content;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.All_ProductHeader {
+    width: 95%;
+    height: 6vh;
+    background: rgb(228, 228, 228);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+}
+
+.All_ProductRoute {
+    width: 95%;
+    height: 5vh;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    /* padding-left: 2%; */
+}
+
+.All_ProductHeader span{
+    font-size: 20px;
+    color: rgb(49, 47, 47);
+    font-weight: bold;
+}
+
+.AllProducts_Div {
+    width: 95%;
+    height: max-content;
+    /* justify-content: center; */
+    display: flex;
+    gap: 1%;
+    flex-wrap: wrap;
+}
+
+
+.Products_Card {
+    /* width: 24.25%; */
+    width: 19.65rem;
+    height: 28rem;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.Stars {
+    /* color: rgb(246, 179, 10); */
+}
+
+.Image_Part {
+    width: 100%;
+    height: 65%;
+    border-radius:  10px 10px 0px 0px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Image_Part img{
+    width: 90%;
+    height: 90%;
+    border-radius:  10px 10px 0px 0px;
+}
+
+.Description_Part {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Desc_Name-Price {
+    width: 90%;
+    height: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Desc_Name-Price span{
+    font-size: 15px;
+    font-weight: 500;
+    /* color: red; */
+
+    margin-top:5%;
+}
+
+.Name_Price {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Name_Price span{
+    font-size: 15px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.771);
+    color: red;
+
+}
+
+.Name_Price p{
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.587);
+}
+
+.Desc_ATC {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Product_ATC {
+    width: 100px;
+    height: 70%;
+    background: rgb(5, 5, 67);
+    color: white;
+    border:none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
