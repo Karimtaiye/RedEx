@@ -124,7 +124,8 @@ function LandingPage() {
               <div className='RedExAddress_Location'>
               <h4>Location</h4>
               <div>
-                <span>2B, Rumens Road, Ikoyi, Lagos, Nigeria</span>
+                <span>2B, Rumens Road, Ikoyi,</span>
+                <span> Lagos, Nigeria</span>
               </div>
               </div>
               <div className='Contact_Line'></div>
@@ -182,7 +183,7 @@ function LandingPage() {
             </div>
             <div className='CategoryDes_Btn'>
                 <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
-                {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
             </div>
         </div>
         </div>

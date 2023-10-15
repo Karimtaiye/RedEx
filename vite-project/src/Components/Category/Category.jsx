@@ -179,7 +179,7 @@ function Category() {
                 <h4>Price: </h4>
             </div>
             <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Add To Cart</button>
                 {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
             </div>
         </div>
@@ -196,7 +196,7 @@ function Category() {
                 <h4>Price: </h4>
             </div>
             <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Add To Cart</button>
                 {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
             </div>
         </div>
@@ -212,7 +212,7 @@ function Category() {
                 <h4>Price: </h4>
             </div>
             <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Add To Cart</button>
                 {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
             </div>
         </div>
@@ -228,7 +228,7 @@ function Category() {
                 <h4>Price: </h4>
             </div>
             <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Add To Cart</button>
                 {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
             </div>
         </div>
@@ -245,7 +245,7 @@ function Category() {
                 <h4>Price: </h4>
             </div>
             <div className='CategoryDes_Btn'>
-                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
+                <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Add To Cart</button>
                 {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
             </div>
         </div>

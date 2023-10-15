@@ -380,13 +380,13 @@
     width: 85%;
     height: 40%;
     display: flex;
-    justify-content:  center;
+    justify-content: center;
     align-items: flex-end;   
 }
 
 .Cateory_ATCBtnC {
-    width: 90%;
-    height: 60%;
+    width: 45%;
+    height: 55%;
     background: #27283D;
     border: none;
     outline: none;
@@ -414,7 +414,7 @@
 
 .Cateory_ORNBtn {
     width: 45%;
-    height: 65%;
+    height: 55%;
     background: red;
     border: none;
     outline: none;

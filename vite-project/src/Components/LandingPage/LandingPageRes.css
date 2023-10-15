@@ -9,17 +9,17 @@
 
 .RedExDisplay_Carousel {
     flex-direction: column;
-    height: 80%;
+    height: 70%;
 }
 
 .RedEx_AddressDiv {
-    height: 20%;
+    height: 25%;
 }
 
 
 .RedExDisplay_Details {
     width: 100%;
-    height: 60vh;
+    height: 80vh;
     background: red;
     color: white;
     margin-top: 0vh;
@@ -29,7 +29,7 @@
 
 .RedExDisplay_Image {
     width: 100%;
-    height: 60%;
+    height: 55%;
     justify-content: center;
     padding-top: 10px;
     justify-content: center;
@@ -51,7 +51,7 @@
     width: 95%;
     height: 90%;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
 
 }
 
@@ -60,21 +60,22 @@
 }
 
 .RedExDes_Text h1 {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 26px;
     /* text-align: center; */
 }
 
 .RedExDes_Text span {
     width: 80%;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .RedExShopNow_Btn {
-    width: 45%;
-    height: 43px;
+    width: 70%;
+    height: 49px;
+    border-radius: 5px;
     background-color: white;
-    font-size: 16px;
+    font-size: 19px;
     color: red;
 }
 
@@ -82,26 +83,39 @@
     background-color:white;
 }
 
-
 .RedEx_Address {
     width: 100%;
     background: none;
+    flex-direction: column;
+    height: 100%;
 }
 
+.Contact_Line {
+    width: 95%;
+    height: 4px;
+}
 .RedExAddress_Location {
     gap: 4px;
+    width: 100%;
+    height: 45%;
+    align-items: flex-start;
+    padding-left: 2.5%;
 }
 .RedExAddress_Location h4, .RedExAddress_Contact h4{
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .RedExAddress_Location div, .RedExAddress_Contact div {
-    font-size: 13px;
+    font-size: 16px;
     gap: 5px;
 }
 
 .RedExAddress_Contact {
     gap: 4px;
+    align-items: flex-start;
+    padding-left: 2.5%;
+    width: 100%;
+    height: 45%;
 }
 
 
@@ -260,7 +274,7 @@
 }
 
 .Demanding_Products {
-    width: 178px;
+    width: 49%;
     height:180px;
     background: rgb(238, 238, 238);
     border-radius:10px;

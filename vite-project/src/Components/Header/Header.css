@@ -84,6 +84,8 @@
     display: flex;
     justify-content: center;
     top: 11%;
+    animation:slideInRight;
+    animation-duration:0.4s ;
 }
 
 .Nav_PopUp ul{

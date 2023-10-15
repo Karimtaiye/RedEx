@@ -115,6 +115,7 @@ function Header({home, about, blog, cart, login, renders}) {
 
         {
           menu?
+
           <div className='Menu_Navs'>
           <div className='Close_Nav'>
             <span  onClick={()=>{
