@@ -156,12 +156,12 @@ function Category() {
                   <span>NGN{products.productPrice}</span>
                 </div>
                 <div className="Desc_ATC">
-                  <div>
-                    <span>x</span>
-                    <span>x</span>
-                    <span>x</span>
-                    <span>x</span>
-                    <span>x</span>
+                  <div className="Stars">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
                   </div>
                   <button
                     className="Product_ATC"
