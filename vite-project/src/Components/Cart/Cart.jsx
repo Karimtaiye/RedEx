@@ -108,7 +108,9 @@ function Cart() {
                                         <h4>NGN{cart.product.productPrice}</h4>
                                     </div>
                                     <div className='Item_Qty'>
+                                    <button className='Add_Qty'>-</button>
                                         <h4>{cart.quantity}</h4>
+                                        <button className='Min_Qty'>+</button>
                                     </div>
                                     <div className='Item_Total'>
                                         <h4>NGN{cart.product.productPrice * cart.quantity}</h4>

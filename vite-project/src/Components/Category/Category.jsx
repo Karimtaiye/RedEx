@@ -168,7 +168,7 @@ function Category() {
                     onClick={() => {
                       axios
                         .post(
-                          `https://redex-webapp-v1.onrender.com/api/cart/${produucts._id}`,
+                          `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
                           null,
                           config
                         )
