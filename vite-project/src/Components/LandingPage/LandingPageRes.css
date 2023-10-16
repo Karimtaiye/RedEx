@@ -56,7 +56,8 @@
 }
 
 .RedExDes_Text {
-    gap: 7px;
+    gap: 9px;
+    height: 65%;
 }
 
 .RedExDes_Text h1 {

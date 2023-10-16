@@ -63,24 +63,46 @@
     display: flex;
     justify-content: center;
     margin-bottom: 3px;
-    cursor: pointer;
     transform: scale(1);
     margin-top: 10px;
 
+}
+
+.CartItem_Container:hover {
+    transition: all 250ms;
+    /* transform: scale(1.005); */
+    height: 150px;
+    background: rgb(255, 255, 255);
 }
 
 .DeleteCart_Icon {
     position: absolute;
     bottom: 6%;
     color: red;
-    font-size: 19px;
+    font-size: 20px;
     cursor: pointer;
     right: 2%;
     transform: scale(1);
+    display: none;
 }
 
 .DeleteCart_Icon:hover {
     transform: scale(1.1);
+}
+
+.Update_Cart {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    bottom: 6%;
+    color: rgb(9, 9, 50);
+    cursor: pointer;
+    left: 2%;
+    display: none;
+}
+
+.Update_Cart:hover {
+    text-decoration: underline;
 }
 
 .CartItems_Header ul{
@@ -123,10 +145,25 @@ hr {
 
 }
 
-.CartItem_Container:hover {
-    transition: all 150ms;
-    transform: scale(1.005);
-    background: rgb(255, 255, 255);
+.Cart_Item:hover {
+    display: flex;
+    align-items: flex-start;
+}
+
+.Cart_Item:hover > .DeleteCart_Icon,.Cart_Item:hover > .Update_Cart {
+    display: flex;
+}
+ .Cart_Item:hover > .Item_Name, .Cart_Item:hover > .Item_Price, .Cart_Item:hover > .Item_Qty, .Cart_Item:hover > .Item_Total {
+    height: 50%;
+}
+
+.Cart_Item:hover > .Item_Img {
+    height: 80%;
+}
+
+.Cart_Item:hover > .Item_Img div {
+    width: 100px;
+    height: 90px;
 }
 
 .Item_Img {
@@ -141,14 +178,15 @@ hr {
     width: 60px;
     height: 60px;
     background: #000;
-    border-radius: 50%;
+    transition: all 250ms;
+    /* border-radius: 50%; */
     object-fit: cover;
 }
 
 .Item_Img div img{
     width: 100%;
     height: 100%;;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .Item_Name {
@@ -173,6 +211,17 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 7px;
+}
+
+.Add_Qty, .Min_Qty {
+    width: 23px;
+    font-weight: bold;
+    outline: none;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.618);
+    height: 23px;
+    cursor: pointer;
 }
 
 .Item_Total {

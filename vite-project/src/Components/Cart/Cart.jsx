@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Cart.css'
+import './CartRes.css'
 import Header from '../Header/Header'
 import { useNavigate } from 'react-router-dom'
 import { RiDeleteBin5Fill } from 'react-icons/ri'
@@ -74,25 +75,26 @@ function Cart() {
                                     </div>
                                 </div>
                                 <div className='Item_Name'>
-                                    <h4>.... .....</h4>
+                                    <h4>Package Choke</h4>
                                 </div>
                                 <div className='Item_Price'>
-                                    <h4>NGN-- ---</h4>
+                                    <h4>NGN4,599</h4>
                                 </div>
                                 <div className='Item_Qty'>
-                                    <h4>.....</h4>
+                                    <button className='Add_Qty'>-</button>
+                                    <h4>2</h4>
+                                    <button className='Min_Qty'>+</button>
                                 </div>
                                 <div className='Item_Total'>
-                                    <h4>NGN--- ---</h4>
+                                    <h4>NGN40,000</h4>
                                 </div>
                                 <RiDeleteBin5Fill className='DeleteCart_Icon'/>
+                                <span className='Update_Cart'>Update Item</span>
                             </div>
                            </div>
                            : 
                            userCartItem.map((cart)=>(
-                            <div className='CartItem_Container' key={cart.product._id} onClick={()=>{
-                                nav(`/update/${cart.product._id}`)
-                            }}>
+                            <div className='CartItem_Container' key={cart.product._id}>
                                  <div className='Cart_Item'>
                                     <div className='Item_Img'>
                                         <div className=''>
@@ -122,6 +124,10 @@ function Cart() {
                                         console.log(err);
                                     })
                                      }} className='DeleteCart_Icon'/>
+                                   <span className='Update_Cart'  onClick={()=>{
+                                        nav(`/update/${cart.product._id}`)
+                                    }}>Update Item</span>
+
                                             </div>
                                         </div>
                                     ))

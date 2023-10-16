@@ -4,15 +4,15 @@
 }
 
 .About_FirstPart {
-    height: 70vh;
+    height: 80vh;
     flex-direction: column-reverse;
     justify-content: space-between;
 }
 
 .About_FirstPartLeft {
     width: 100%;
-    height: 50%;
-    justify-content: center;
+    height: 40%;
+    justify-content: flex-end;
     flex-direction: column;
     padding-bottom: 0%;
     gap: 10px;
@@ -42,8 +42,7 @@
 
 .About_FirstPartRight {
     width: 100%;
-    height: 50%;
-    
+    height: 57%;
     justify-content: center;
 }
 
@@ -86,14 +85,14 @@
 
 
 .About_SecPart {
-    height: 70vh;
+    height: 80vh;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .About_SecPartLeft {
     width: 100%;
-    height: 50%;
+    height: 60%;
     justify-content: center;
     flex-direction: column;
     padding-bottom: 0%;
@@ -102,7 +101,7 @@
 
 .SecPart_Right {
     width: 100%;
-    height: 60%;
+    height: 40%;
     justify-content: center;
     align-items: center;
     gap: 9px;
