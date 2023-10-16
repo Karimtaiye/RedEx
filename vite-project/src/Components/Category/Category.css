@@ -449,31 +449,120 @@
 }
 
 .ATC_Noftication {
-    width: 45%;
-    height:75px;
+    width: 257px;
+    height: 320px;
     background: white;
     position: fixed;
     top: 2%;
     right: 3%;
-    border-radius: 5px;
     animation:slideInDown;
     animation-duration:0.6s ;
+}
+
+.ATCImg_Pop {
+    width: 100%;
+    height: 63%;
     display: flex;
-    color: green;
+    justify-content: center;
     align-items: center;
-    padding-inline: 15px;
+}
+
+.Pop_Img {
+    /* width: 214px; */
+    width: 83%;
+    height: 164px;
+    background: #27283D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Pop_Img img{
+    width: 75%;
+    height: 80%;
+}
+
+.Pop_Details {
+    width: 100%;
+    height: 37%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Pop_Des {
+    width: 83%;
+    height: 20%;
+    display: flex;
     justify-content: space-between;
 }
 
+.Pop_Des span{
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.824);
+}
+
+.Pop_Des p{
+    font-size: 13px;
+}
+
+.Pop_Qty {
+    width: 83%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+}
+
+.Pop_Qty span{
+    width: 15%;
+    height: 80%;
+    display: flex;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.663);
+    justify-content: center;
+    align-items: center;
+    border:  1px solid red;
+    cursor: pointer;
+}
+
+.Pop_Qty p{
+    font-size: 18px;
+}
+
+.Pop_Order {
+    width: 83%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Pop_OrderBtn {
+    width: 100%;
+    height: 80%;
+    background: #27283D;
+    color: rgba(255, 255, 255, 0.923);
+    letter-spacing: 1px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+}
+/* 
 .ATC_Noftication div {
     width: 100%;
     height: 100%;
     align-items: center;
     display: flex;
     gap: 10px;
-}
+} */
 
-.View_Cart {
+/* .View_Cart {
     color: black;
     cursor: pointer;
 }
@@ -501,4 +590,4 @@
     font-size: 20px;
     margin-right: -5px;
     color: green;
-}
+} */

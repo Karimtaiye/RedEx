@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 function Category() {
   const [allProducts, setAllProducts] = useState([]);
   const [ATC, setATC] = useState(false);
+  const [item, setItem] = useState("");
   const user = useSelector((state) => state.redexstore.user);
   const token = user.token;
   const Dispatch = useDispatch();
@@ -63,13 +64,20 @@ function Category() {
   useEffect(() => {
     setTimeout(() => {
       setATC(false);
-    }, 10000);
+    }, 7000);
   }, [ATC]);
 
   return (
     <>
       <Header renders={ATC} home={categorypage} />
       <div className="RedExCategory_Page">
+        <div className="All_ProductRoute">
+          <span onClick={() => nav("/")} style={{ cursor: "pointer" }}>
+            Home
+          </span>
+          /<span>Category</span>/
+          <span style={{ color: "red" }}>Plain package</span>
+        </div>
         <section className="RexExMain_Category">
           <div className="MainCategory_Img">
             <img src={Titem1} alt="" />
@@ -141,182 +149,325 @@ function Category() {
                     </div>
                 </div> */}
 
-            {
-                allProducts.map((products)=>(
-                    <div className="Products_Card" key={products._id}>
-              <div className="Image_Part">
-                <img src={Titem1} alt="" />
-              </div>
-              <div className="Description_Part">
-                <div className="Desc_Name-Price">
-                  <div className="Name_Price">
-                    <span> Product Generic</span>
-                    <p>Plain Package</p>
-                  </div>
-                  <span>NGN{products.productPrice}</span>
+            {allProducts.map((products) => (
+              <div className="Products_Card" key={products._id}>
+                <div className="Image_Part">
+                  <img src={Titem1} alt="" />
                 </div>
-                <div className="Desc_ATC">
-                  <div className="Stars">
-                    <span>&#9733;</span>
-                    <span>&#9733;</span>
-                    <span>&#9733;</span>
-                    <span>&#9733;</span>
-                    <span>&#9733;</span>
-                  </div>
-                  <button
-                    className="Product_ATC"
-                    onClick={() => {
-                      axios
-                        .post(
-                          `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
-                          null,
-                          config
-                        )
-                        .then((res) => {
-                          console.log(res);
-                          setATC(true);
-                        })
-                        .catch((err) => {
-                          console.log(err);
-                        });
-                    }}
-                  >
-                    Add To Cart
-                  </button>
-                </div>
-              </div>
-            </div>
-                ))
-            }
-
-            <div className="Category_ProductsHMobile">
-              <div className="Category_ImgH">
-                <img src={Titem1} alt="" />
-              </div>
-              <div className="Category_DesH">
-                <div className="CategoryDes_Details">
-                  <h4>Name: </h4>
-                  <h4>Price: </h4>
-                </div>
-                <div className="CategoryDes_Btn">
-                  <button className="Cateory_ATCBtn">
-                    <HiShoppingCart className="ATC_Icon" />
-                    Add To Cart
-                  </button>
-                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-                </div>
-              </div>
-            </div>
-
-            <div className="Category_ProductsHMobile">
-              <div className="Category_ImgH">
-                <img src={Titem1} alt="" />
-              </div>
-              <div className="Category_DesH">
-                <div className="CategoryDes_Details">
-                  <h4>Name: </h4>
-                  <h4>Price: </h4>
-                </div>
-                <div className="CategoryDes_Btn">
-                  <button className="Cateory_ATCBtn">
-                    <HiShoppingCart className="ATC_Icon" />
-                    Add To Cart
-                  </button>
-                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-                </div>
-              </div>
-            </div>
-
-            <div className="Category_ProductsHMobile">
-              <div className="Category_ImgH">
-                <img src={Titem1} alt="" />
-              </div>
-              <div className="Category_DesH">
-                <div className="CategoryDes_Details">
-                  <h4>Name: </h4>
-                  <h4>Price: </h4>
-                </div>
-                <div className="CategoryDes_Btn">
-                  <button className="Cateory_ATCBtn">
-                    <HiShoppingCart className="ATC_Icon" />
-                    Add To Cart
-                  </button>
-                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-                </div>
-              </div>
-            </div>
-
-            <div className="Category_ProductsHMobile">
-              <div className="Category_ImgH">
-                <img src={Titem1} alt="" />
-              </div>
-              <div className="Category_DesH">
-                <div className="CategoryDes_Details">
-                  <h4>Name: </h4>
-                  <h4>Price: </h4>
-                </div>
-                <div className="CategoryDes_Btn">
-                  <button className="Cateory_ATCBtn">
-                    <HiShoppingCart className="ATC_Icon" />
-                    Add To Cart
-                  </button>
-                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-                </div>
-              </div>
-            </div>
-
-            <div className="Category_ProductsHMobile">
-              <div className="Category_ImgH">
-                <img src={Titem1} alt="" />
-              </div>
-              <div className="Category_DesH">
-                <div className="CategoryDes_Details">
-                  <h4>Name: </h4>
-                  <h4>Price: </h4>
-                </div>
-                <div className="CategoryDes_Btn">
-                  <button className="Cateory_ATCBtn">
-                    <HiShoppingCart className="ATC_Icon" />
-                    Add To Cart
-                  </button>
-                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
-                </div>
-              </div>
-            </div>
-            {/* <div className='Category_ProductsH'>
-                    <div className='Category_ImgH'>
-                        <img src={Titem1} alt="" />
+                <div className="Description_Part">
+                  <div className="Desc_Name-Price">
+                    <div className="Name_Price">
+                      <span> Product Generic</span>
+                      <p>Plain Package</p>
                     </div>
-                    <div className='Category_DesH'>
-                    <div className='CategoryDes_Details'>
-                            <h4>Name: </h4>
-                            <h4>Price: </h4>
-                        </div>
-                        <div className='CategoryDes_Btn'>
-                            <button className='Cateory_ATCBtn'><HiShoppingCart className='ATC_Icon'/>Order now</button>
-                            <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
-                        </div>
+                    <span>NGN{products.productPrice}</span>
+                  </div>
+                  <div className="Desc_ATC">
+                    <div>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
                     </div>
-                </div> */}
+                    <button
+                      className="Product_ATC"
+                      onClick={() => {
+                        axios
+                          .post(
+                            `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
+                            null,
+                            config
+                          )
+                          .then((res) => {
+                            console.log(res);
+                            setItem(res._id)
+                            setATC(true);
+                          })
+                          .catch((err) => {
+                            console.log(err);
+                          });
+                      }}
+                    >
+                      {item === products._id ? "View Cart": "Add To Cart"}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {allProducts.map((products) => (
+              <div className="Products_Card" key={products._id}>
+                <div className="Image_Part">
+                  <img src={Titem1} alt="" />
+                </div>
+                <div className="Description_Part">
+                  <div className="Desc_Name-Price">
+                    <div className="Name_Price">
+                      <span> Product Generic</span>
+                      <p>Plain Package</p>
+                    </div>
+                    <span>NGN{products.productPrice}</span>
+                  </div>
+                  <div className="Desc_ATC">
+                    <div className="Stars">
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                    </div>
+                    <button
+                      className="Product_ATC"
+                      onClick={() => {
+                        axios
+                          .post(
+                            `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
+                            null,
+                            config
+                          )
+                          .then((res) => {
+                            console.log(res);
+                            setATC(true);
+                          })
+                          .catch((err) => {
+                            console.log(err);
+                          });
+                      }}
+                    >
+                      Add To Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {allProducts.map((products) => (
+              <div className="Products_Card" key={products._id}>
+                <div className="Image_Part">
+                  <img src={Titem1} alt="" />
+                </div>
+                <div className="Description_Part">
+                  <div className="Desc_Name-Price">
+                    <div className="Name_Price">
+                      <span> Product Generic</span>
+                      <p>Plain Package</p>
+                    </div>
+                    <span>NGN{products.productPrice}</span>
+                  </div>
+                  <div className="Desc_ATC">
+                    <div className="Stars">
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                    </div>
+                    <button
+                      className="Product_ATC"
+                      onClick={() => {
+                        axios
+                          .post(
+                            `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
+                            null,
+                            config
+                          )
+                          .then((res) => {
+                            console.log(res);
+                            setATC(true);
+                          })
+                          .catch((err) => {
+                            console.log(err);
+                          });
+                      }}
+                    >
+                      Add To Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {allProducts.map((products) => (
+              <div className="Products_Card" key={products._id}>
+                <div className="Image_Part">
+                  <img src={Titem1} alt="" />
+                </div>
+                <div className="Description_Part">
+                  <div className="Desc_Name-Price">
+                    <div className="Name_Price">
+                      <span> Product Generic</span>
+                      <p>Plain Package</p>
+                    </div>
+                    <span>NGN{products.productPrice}</span>
+                  </div>
+                  <div className="Desc_ATC">
+                    <div className="Stars">
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                    </div>
+                    <button
+                      className="Product_ATC"
+                      onClick={() => {
+                        axios
+                          .post(
+                            `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
+                            null,
+                            config
+                          )
+                          .then((res) => {
+                            console.log(res);
+                            setATC(true);
+                          })
+                          .catch((err) => {
+                            console.log(err);
+                          });
+                      }}
+                    >
+                     Add To Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            <div className="Category_ProductsHMobile">
+              <div className="Category_ImgH">
+                <img src={Titem1} alt="" />
+              </div>
+              <div className="Category_DesH">
+                <div className="CategoryDes_Details">
+                  <h4>Name: </h4>
+                  <h4>Price: </h4>
+                </div>
+                <div className="CategoryDes_Btn">
+                  <button className="Cateory_ATCBtn">
+                    <HiShoppingCart className="ATC_Icon" />
+                    Add To Cart
+                  </button>
+                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                </div>
+              </div>
+            </div>
+
+            <div className="Category_ProductsHMobile">
+              <div className="Category_ImgH">
+                <img src={Titem1} alt="" />
+              </div>
+              <div className="Category_DesH">
+                <div className="CategoryDes_Details">
+                  <h4>Name: </h4>
+                  <h4>Price: </h4>
+                </div>
+                <div className="CategoryDes_Btn">
+                  <button className="Cateory_ATCBtn">
+                    <HiShoppingCart className="ATC_Icon" />
+                    Add To Cart
+                  </button>
+                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                </div>
+              </div>
+            </div>
+
+            <div className="Category_ProductsHMobile">
+              <div className="Category_ImgH">
+                <img src={Titem1} alt="" />
+              </div>
+              <div className="Category_DesH">
+                <div className="CategoryDes_Details">
+                  <h4>Name: </h4>
+                  <h4>Price: </h4>
+                </div>
+                <div className="CategoryDes_Btn">
+                  <button className="Cateory_ATCBtn">
+                    <HiShoppingCart className="ATC_Icon" />
+                    Add To Cart
+                  </button>
+                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                </div>
+              </div>
+            </div>
+
+            <div className="Category_ProductsHMobile">
+              <div className="Category_ImgH">
+                <img src={Titem1} alt="" />
+              </div>
+              <div className="Category_DesH">
+                <div className="CategoryDes_Details">
+                  <h4>Name: </h4>
+                  <h4>Price: </h4>
+                </div>
+                <div className="CategoryDes_Btn">
+                  <button className="Cateory_ATCBtn">
+                    <HiShoppingCart className="ATC_Icon" />
+                    Add To Cart
+                  </button>
+                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                </div>
+              </div>
+            </div>
+
+            <div className="Category_ProductsHMobile">
+              <div className="Category_ImgH">
+                <img src={Titem1} alt="" />
+              </div>
+              <div className="Category_DesH">
+                <div className="CategoryDes_Details">
+                  <h4>Name: </h4>
+                  <h4>Price: </h4>
+                </div>
+                <div className="CategoryDes_Btn">
+                  <button className="Cateory_ATCBtn">
+                    <HiShoppingCart className="ATC_Icon" />
+                    Add To Cart
+                  </button>
+                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
       </div>
       {ATC ? (
         <div className="ATC_Noftication">
-          <div>
+          <div className="ATCImg_Pop">
+            <div className="Pop_Img">
+              <img src={Titem1} />
+            </div>
+          </div>
+
+          <div className="Pop_Details">
+            <div className="Pop_Des">
+                <span>Plain Package</span>
+                <p>NGN20,000</p>
+            </div>
+            <div className="Pop_Qty">
+                <span>-</span>
+                <p>5</p>
+                <span>+</span>
+            </div>
+            <div className="Pop_Order">
+                <button className="Pop_OrderBtn">Order Now</button>
+            </div>
+          </div>
+          {/* <div>
             <GrStatusGood className="AddMark_Icon" />
             <h5>item has been added to cart </h5>
             <h5 className="View_Cart" style={{}}>
               view cart
             </h5>
-          </div>
-          <h4
+          </div> */}
+          {/* <h4
             onClick={() => {
               setATC(false);
             }}
           >
             x
-          </h4>
+          </h4> */}
         </div>
       ) : null}
     </>

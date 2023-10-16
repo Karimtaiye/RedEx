@@ -18,6 +18,7 @@
 
 .CartPage_BoxDiv {
     width: 95%;
+    user-select: none;
     height: 84%;
     display: flex;
     justify-content: space-between;
@@ -42,6 +43,8 @@
 
 .CartItems_Wrapper::-webkit-scrollbar {
     background-color: grey;
+    width: 13px;
+    /* display: none; */
 }
 
 .CartItems_Wrapper::-webkit-scrollbar-thumb{
