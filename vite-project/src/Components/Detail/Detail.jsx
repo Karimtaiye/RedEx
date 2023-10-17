@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './Detail.css'
+import './DetailRes.css'
 import Header from '../Header/Header'
 import MainPackage from './assets/MainPackage.png'
 import Min1 from './assets/Min1.png'
 import Min2 from './assets/Min2.png'
 import Min3 from './assets/Min3.png'
+import { BiLeftArrowAlt } from 'react-icons/bi'
 import item1 from '../LandingPage/assets/item1.png'
 import item2 from '../LandingPage/assets/item2.png'
 import item3 from '../LandingPage/assets/item3.png'
@@ -23,6 +25,7 @@ function Detail() {
   const [addImg, setAddImg] = useState(false)
   const [selImg, setSelImg] = useState("")
   const [main, setMain] = useState(MainPackage)
+  const [nextNav, setNextNav] = useState(0)
 
   const images = [Min1, Min2, Min3, Min1, Min3, Min2, Min3, Min2]
 
@@ -46,8 +49,25 @@ function Detail() {
       getOneProducts()
       // window.location.reload()
     },[])
-  
+    console.log(nextNav)      
+    
+    const itemNav = ["CheckOut Details", "Related Products", "Products Reviews"]
 
+    useEffect(()=>{
+      if(details){
+        setRelated(false)
+        setReview(false)
+      }
+      else if(related){
+        setDetails(false)
+        setReview(false)
+      }
+        else if(reviews){
+          setDetails(false)
+          setRelated(false)
+        }
+
+    },[details, related, reviews])
   return (
     <>
         <Header />
@@ -143,7 +163,7 @@ function Detail() {
 
             <section className='ItemDetails_Others'>
               <ul className='ItemDetails_Nav'>
-                <li className={details?"active":null} onClick={()=>{
+                <li className={details?"active":null}  onClick={()=>{
                   setDetails(true)
                   setReview(false)
                   setRelated(false)
@@ -160,8 +180,79 @@ function Detail() {
                 }}>Product Reviews</li>
               </ul>
 
+              <ul className='ItemDetails_NavMobile'>
+                <BiLeftArrowAlt onClick={()=>{
+                  nextNav === 0?
+                  setNextNav(0):
+                  setNextNav(prev=>prev -= 1  )
+                }} className='Left_Arrow'/>
+                    
+                 <>
+                   {
+                    nextNav === 0?
+                    <li className="active">CheckOut Details</li>:
+                    nextNav === 1?
+                    <li className="active">Related Products</li>:
+                    nextNav === 2?
+                    <li className="active">Product Reviews</li>:null
+                   }
+                </>
+               
+                <BiLeftArrowAlt onClick={()=>{
+                  nextNav === 2?
+                  setNextNav(2):
+                  setNextNav(prev=>prev += 1)
+                }} className='Right_Arrow'/>
+              </ul>
+
+                {
+                  nextNav === 0?
+                  <div className='CheckOut_DetailsMobile'>
+                  <div className='CheckOut_Img'>
+                    <img src={MainPackage} alt="" />
+                  </div>
+                  <div className='CheckOutDesc'>
+                    <span>Products Name</span>
+                    <span>Products Description</span>
+                    <span>Products Quantity</span>
+                    <span>Products Size</span>
+                    <span>Products Type</span>
+                    <span>NGN 50,000 </span>
+                  </div>
+                </div>:
+                nextNav === 1?
+                <div className='Related Categories_Products'>
+                <div className='Demanding_Products'>
+                  <img src={item1} alt="" />
+                  <span>Customized Takeout Full Package</span>
+                </div>
+                <div className='Demanding_Products'>
+                <img src={item2} alt="" />
+                  <span>Overchoke carton stuff chsi</span>
+                </div>
+
+                <div className='Demanding_Products'>
+              <img src={item3} alt="" />
+                <span>Choke multi-package stuffs</span>
+              </div>
+              <div className='Demanding_Products'>
+              <img src={item4} alt="" />
+                <span>Customized Takeout Full Package</span>
+              </div>
+              <div className='Demanding_Products'>
+              <img src={item5} alt="" />
+                <span>Choke Bag-package stuffs</span>
+              </div>
+              <div className='Demanding_Products'>
+              <img src={item1} alt="" />
+                <span>Customized Takeout Full Package</span>
+              </div>
+                </div>:null
+                }
+
               {
-                details?<div className='CheckOut_Details'>
+                details
+                ?<div className='CheckOut_Details'>
                 <div className='CheckOut_Img'>
                   <img src={MainPackage} alt="" />
                 </div>
@@ -173,7 +264,9 @@ function Detail() {
                   <span>Products Type</span>
                   <span>NGN 50,000 </span>
                 </div>
-              </div>:related?
+              </div>
+              
+              :related?
               <div className='Related Categories_Products'>
               <div className='Demanding_Products'>
                 <img src={item1} alt="" />

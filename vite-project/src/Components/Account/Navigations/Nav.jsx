@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Nav.css'
 import { BiLeftArrowAlt } from 'react-icons/bi'
 import { LiaGreaterThanSolid } from 'react-icons/lia'
@@ -14,6 +14,10 @@ function Nav() {
   const [address, setaddress] = useState(false)
   const [dashboard, setdashboard] = useState(false)
 
+
+  useEffect(()=>{
+    
+  },[])
   return (
     <div className='AccountNav_Routes'>
       <section className='AccNav_Header'>

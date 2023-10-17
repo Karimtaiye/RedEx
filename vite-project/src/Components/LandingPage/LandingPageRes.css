@@ -19,10 +19,10 @@
 
 .RedExDisplay_Details {
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     background: red;
     color: white;
-    margin-top: 0vh;
+    margin-top: -3vh;
     margin-bottom: 10vh;
 }
 

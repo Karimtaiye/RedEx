@@ -204,6 +204,28 @@
     flex-direction: column;
 }
 
+.ItemDetails_NavMobile {
+    width: 45%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+    display: none;
+}
+
+.ItemDetails_NavMobile li{
+    height: 40%;
+    display: flex;
+    align-items: center;
+    padding-inline: 13px;
+    padding-block: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: rgba(0, 0, 0, 0.734);
+    cursor: pointer;
+}
+
 .ItemDetails_Nav {
     width: 45%;
     height: 10vh;
@@ -225,9 +247,14 @@
     cursor: pointer;
 }
 
+.Left_Arrow, .Right_Arrow {
+    display: none;
+}
+
 .active{
     background: rgb(222, 221, 221);
 }
+
 
 .CheckOut_Details {
     width: 100%;
@@ -235,6 +262,16 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+
+.CheckOut_DetailsMobile {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    display: none;
 }
 
 .CheckOut_Img {

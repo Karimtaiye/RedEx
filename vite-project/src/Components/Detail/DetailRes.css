@@ -1,0 +1,181 @@
+@media screen and (max-width: 575px) { 
+    
+.DetailPage_Item {
+    width: 100%;
+    height: max-content;
+}
+
+.DetailItem_Actions {
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Detail_ItemImg {
+    width: 100%;
+    height: 32vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.Item_MainImg {
+    width: 78%;
+    height: 100%;
+}
+
+.Item_SubImg {
+    width: 20%;
+    height: 100%;
+    flex-direction: column;
+    gap: 3%;
+}
+
+.Sub_Img {
+    width: 100%;
+    height: 25%;
+}
+
+.Detail_ItemDet {
+    width: 100%;
+    height: 50vh;
+    
+}
+
+.Item_NameDes {
+    width: 100%;
+    height: 30%;
+    gap: 5%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+} 
+
+.Item_NameDes h1 {
+    font-size: 28px;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.767);
+} 
+
+.Item_NameDes span {
+    width: 70%;
+    font-size: 18px;
+} 
+
+.Item_InputInfo {
+    width: 100%;
+    height: 43%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+    flex-direction: row;
+    /* padding-block: 10px; */
+} 
+
+.Item_InfoSel {
+    width: 48%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Item_InfoSel h4{
+    font-size: 16px;
+}
+
+.Item_InfoSel select{
+    width: 100%;
+    height: 58%;
+    background: #f9f8f8;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.378);
+    color: black;
+    font-size: 15px ;
+}
+
+.Item_Action {
+    width: 100%;
+    margin-top: -1vh;
+} 
+.ATC_Btn, .PTP_Btn {
+    width: 47%;
+    height: 78%;
+    font-size: 16px;
+    border-radius: 7px;
+}
+
+.SubmitDesign_Act {
+    height: 5%;
+    margin-top: -5vh;
+}
+
+.SubmitDesign_Btn {
+    width: 100%;
+    background: none;
+    color: red;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.RedEx_ItemVideo {
+    height: 17vh;
+    margin-block: 5vh;
+}
+
+.RedEx_ItemVideo video {
+    width: 60%;
+    height: 100%;
+    background: #000;
+}
+
+.ItemDetails_Nav {
+    display: none;
+}
+
+.ItemDetails_NavMobile {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0vh;
+    justify-content: center;
+    gap: 12%;
+    user-select: none;
+}
+
+.ItemDetails_NavMobile li{
+    animation:slideInDown;
+    animation-duration:1s ;
+}
+
+.Left_Arrow, .Right_Arrow {
+    display: flex;
+    font-size: 35px;
+    cursor:pointer
+}
+
+.Right_Arrow {
+    transform: rotate(180deg)
+}
+
+.CheckOut_Details {
+    display: none 
+}
+
+.CheckOut_DetailsMobile {
+    display: flex;
+    flex-direction: row;
+}
+
+.CheckOut_Img {
+    width: 60%;
+    height: 17vh;
+}
+
+.CheckOutDesc {
+    width:50%;
+    font-size: 14px;
+    gap:2%
+}
+};

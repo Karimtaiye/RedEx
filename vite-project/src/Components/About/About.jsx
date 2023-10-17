@@ -5,7 +5,7 @@ import about1 from "../About/assets/about1.png";
 import about2 from "../About/assets/about2.png";
 import about3 from "../About/assets/about3.png";
 import about5 from "../About/assets/about5.png";
-
+import { motion } from "framer-motion";
 import Header from "../Header/Header";
 
 function About() {
@@ -15,7 +15,12 @@ function About() {
       <Header about={aboutpage} />
       <div className="About_page">
         <div className="About_Wrapper">
-          <section className="About_FirstPart">
+          <motion.section 
+          initial={{opacity:0, scale:0}}
+          whileInView={{opacity:1, scale:1}}
+          transition={{duration:0.6}}
+
+          className="About_FirstPart">
             <div className="About_FirstPartLeft">
               <div className="LeftPart_Header">
                 <h2>About Us</h2>
@@ -38,9 +43,15 @@ function About() {
                 <img src={about2} alt="" />
               </div>
             </div>
-          </section>
+          </motion.section>
 
-          <section className="About_SecPart">
+          <motion.section
+          
+          initial={{opacity:0, scale:0}}
+          whileInView={{opacity:1, scale:1}}
+          transition={{duration:0.6}}
+          
+          className="About_SecPart">
             <div className="About_SecPartLeft">
               <div className="SecPart_Left">
                 <img src={about3} alt="" />
@@ -57,15 +68,29 @@ function About() {
                 products and the planet. Our commitment to quality and
                 environmental responsibility 
               </span>
+              <span className="Mobil">
+                At RedexPack, we are driven by a simple yet powerful mission: to
+                provide sustainable packaging solutions that protect your
+                products and the planet. Our commitment to quality and
+                environmental responsibility 
+              </span>
               <button className="ReadMore_Btn">Read More</button>
             </div>
-          </section>
+          </motion.section>
 
-          <section className="Great_Product">
+          <motion.section
+          initial={{opacity:0, scale:0}}
+          whileInView={{opacity:1, scale:1}}
+          transition={{duration:0.6}}
+          className="Great_Product">
             <h1>Great Products are found here!</h1>
-          </section>
+          </motion.section>
 
-          <section className="Choice_Part">
+          <motion.section
+          initial={{opacity:0, scale:0}}
+          whileInView={{opacity:1, scale:1}}
+          transition={{duration:0.6}}
+          className="Choice_Part">
             <div className="Choice_Text">
               <span>Pick Your</span> <h4>Choice</h4>
               <span>That stands </span>
@@ -73,7 +98,7 @@ function About() {
               <h4>Crowd</h4>
             </div>
             <img src={about5} alt="" />
-          </section>
+          </motion.section>
         </div>
       </div>
     </>

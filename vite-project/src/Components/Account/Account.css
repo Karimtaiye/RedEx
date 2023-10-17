@@ -17,3 +17,10 @@
     height: 95%;
     background: #00000031;
 }
+
+@media screen and (max-width: 575px) { 
+    .Acc_Line {
+        display: none;
+    }
+     
+}

@@ -10,6 +10,7 @@ import item3 from '../LandingPage/assets/item3.png'
 import item4 from '../LandingPage/assets/item4.png'
 import item5 from '../LandingPage/assets/item5.png'
 import axios from 'axios'
+import { motion } from 'framer-motion'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 

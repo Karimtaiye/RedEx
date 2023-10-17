@@ -7,3 +7,10 @@
         width: 90%;
         height: max-content;
 }
+
+@media screen and (max-width: 575px) {
+        .Account_Contents {
+           width: 100%;
+           display: none;
+        }
+    }

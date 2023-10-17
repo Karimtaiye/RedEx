@@ -194,9 +194,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     object-fit: cover;
 }
 
+
+.Carousel_Cat {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+    bottom: 10%;
+
+}
+
+.Carousel_Cat div {
+    width: 11px;
+    height: 11px;
+    background: rgb(209, 208, 208);
+    border-radius: 50%;
+}
 .Category_ProductImg img {
     width: 70%;
     height: 70%;
@@ -219,16 +239,17 @@
 
 .Category_TopDesc {
     width: 100%;
-    height: 40%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
 .Category_TopDesc span {
-    width: 60%;
-    font-size: 21px;
+    width: 70%;
+    font-size: 16px;
     text-align: center;
     font-weight: bold;
+    color: rgba(0, 0, 0, 0.841)
 }
 
 .Category_BotDesc  {
@@ -241,14 +262,13 @@
 
 .Get_ShoppingBtn {
     width: 70%;
-    height: 55px;
+    height: 50px;
     background-color: red;
     color: white;
-    font-size: 19px;
-    /* font-weight: bold; */
+    font-size: 18px;
     border: none;
     outline: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -281,8 +301,8 @@
     width: 100%;
     height: max-content;
     display: flex;
-    overflow-x: auto;
-    gap: 4%;
+    overflow-x: auto  ;
+    gap: 2.6%;
     position: relative;
     margin-bottom: 10vh;
 }
@@ -305,18 +325,19 @@
 }
 
 .Demanding_Products {
-    width: 302px;
+    min-width: 23%;
     height: 300px;
     background: white;
     border-radius: 20px;
     display: flex;
     justify-content: center;
+    position: relative;
+    left: 0;
     cursor: pointer;
-    flex: 0 0 auto;
+    /* flex: 0 0 auto; */
     align-items: center;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     transform: scale(1);
-    position: relative;
     margin-bottom: 7vh;
 }
 

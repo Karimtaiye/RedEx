@@ -1,13 +1,15 @@
 import React from 'react'
 import './Order.css'
 import logo from '../assets/logo.png'
+import { BiLeftArrowAlt } from 'react-icons/bi'
 import { LiaGreaterThanSolid } from 'react-icons/lia'
 import { IoSearch } from 'react-icons/io5'
 
 function Order() {
   return (
     <div className='My_Order'>
-        <section className='Order_Header'>
+        <section className='Order_Headers' style={{position:"relative"}}>
+      <BiLeftArrowAlt className='Back_ArrowMobile' style={{position:"absolute", left:"6%", top:"40%"}} onClick={()=>nav('/')}/>
         <h1>My Order</h1>
         </section>
         <section className='MyOrder_Update'>

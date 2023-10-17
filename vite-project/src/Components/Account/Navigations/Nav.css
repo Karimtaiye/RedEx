@@ -1,8 +1,6 @@
 .AccountNav_Routes {
     width: 49.9%;
     height: 100%;
-    
-    /* border-right: 1px solid rgba(0, 0, 0, 0.215); */
 }
 
 .AccNav_Header {
@@ -11,6 +9,7 @@
     display: flex;
     align-items: center ;
     gap: 25px;
+    position: relative;
 }
 
 .AccNav_Header h1{
@@ -20,6 +19,12 @@
 .Back_Arrow {
     font-size: 45px;
     cursor: pointer;
+}
+
+.Back_ArrowMobile {
+    font-size: 45px;
+    cursor: pointer;
+    display: none;
 }
 
 .AccNav_Navigations {
@@ -101,3 +106,26 @@
     font-size: 20px;
 }
 
+@media screen and (max-width: 575px) {
+    .AccountNav_Routes {
+        width: 100%;
+    }
+
+.AccNav_Navigations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Account_Details {
+    width: 95%;
+}
+
+.Back_ArrowMobile {
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+}
+
+
+}
