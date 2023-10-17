@@ -142,7 +142,7 @@ function LandingPage() {
             </div>
           </section>
 
-          <div className="Category_ProductsDiv">
+          {/* <div className="Category_ProductsDiv">
             {categoryArray.map((pro) => (
               <>
                 <div  className="Category_ProductsH ">
@@ -211,7 +211,7 @@ function LandingPage() {
                 </div>
               </>
             ))}
-          </div>
+          </div> */}
 
           <section className="RedExFeatured_Categories">
             <div  className="Category_TextHeader">
@@ -225,6 +225,130 @@ function LandingPage() {
                     <div></div>
                     <div></div>
                     <div style={{color:"white", width:"12px", height:"12px", background:"white"}}></div>
+                    <div></div>
+                  </div>
+                  <img
+                    src={categoryArray[nextPro % categoryArray.length]}
+                    alt=""
+                  />
+                </div>
+                <div className="Category_ProductDesc">
+                  <div className="Category_TopDesc">
+                    <span>
+                      Get Quote for Customised Packaging with your logo
+                    </span>
+                  </div>
+                  <div className="Category_BotDesc">
+                    <button
+                      className="Get_ShoppingBtn"
+                      onClick={() => {
+                        nav("/category");
+                      }}
+                    >
+                      Get Shopping
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="Categoriy_Products">
+                <div style={{background:"red"}} className="Category_ProductImg">
+                  <div className="Carousel_Cat">
+                    <div></div>
+                    <div></div>
+                    <div style={{color:"white", width:"12px", height:"12px", background:"white"}}></div>
+                    <div></div>
+                  </div>
+                  <img
+                    src={categoryArray[nextPro % categoryArray.length]}
+                    alt=""
+                  />
+                </div>
+                <div className="Category_ProductDesc">
+                  <div className="Category_TopDesc">
+                    <span>
+                      Get Quote for Customised Packaging with your logo
+                    </span>
+                  </div>
+                  <div className="Category_BotDesc">
+                    <button
+                      className="Get_ShoppingBtn"
+                      onClick={() => {
+                        nav("/category");
+                      }}
+                    >
+                      Get Shopping
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="Categoriy_Products">
+                <div style={{background:"red"}} className="Category_ProductImg">
+                  <div className="Carousel_Cat">
+                    <div></div>
+                    <div></div>
+                    <div style={{color:"white", width:"12px", height:"12px", background:"white"}}></div>
+                    <div></div>
+                  </div>
+                  <img
+                    src={categoryArray[nextPro % categoryArray.length]}
+                    alt=""
+                  />
+                </div>
+                <div className="Category_ProductDesc">
+                  <div className="Category_TopDesc">
+                    <span>
+                      Get Quote for Customised Packaging with your logo
+                    </span>
+                  </div>
+                  <div className="Category_BotDesc">
+                    <button
+                      className="Get_ShoppingBtn"
+                      onClick={() => {
+                        nav("/category");
+                      }}
+                    >
+                      Get Shopping
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="Categoriy_Products">
+                <div style={{background:"red"}} className="Category_ProductImg">
+                  <div className="Carousel_Cat">
+                    <div></div>
+                    <div></div>
+                    <div style={{color:"white", width:"12px", height:"12px", background:"white"}}></div>
+                    <div></div>
+                  </div>
+                  <img
+                    src={categoryArray[nextPro % categoryArray.length]}
+                    alt=""
+                  />
+                </div>
+                <div className="Category_ProductDesc">
+                  <div className="Category_TopDesc">
+                    <span>
+                      Get Quote for Customised Packaging with your logo
+                    </span>
+                  </div>
+                  <div className="Category_BotDesc">
+                    <button
+                      className="Get_ShoppingBtn"
+                      onClick={() => {
+                        nav("/category");
+                      }}
+                    >
+                      Get Shopping
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="Categoriy_Products">
+                <div style={{background:"white"}} className="Category_ProductImg">
+                  <div className="Carousel_Cat">
+                    <div></div>
+                    <div></div>
+                    <div style={{color:"white", width:"12px", height:"12px", background:"red"}}></div>
                     <div></div>
                   </div>
                   <img
@@ -313,6 +437,8 @@ function LandingPage() {
                   </div>
                 ))
               )}
+              
+
               {getCategory.map((category) => (
                 <div className="Categoriy_Products">
                   <div className="Category_ProductImg">

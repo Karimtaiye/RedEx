@@ -148,6 +148,156 @@ function Category() {
                         </div>
                     </div>
                 </div> */}
+                <div className='Products_Card'>
+            <div className='Image_Part'>
+              <img src={Titem1} alt="" />
+            </div>
+            <div className='Description_Part'>
+              <div className='Desc_Name-Price'>
+                <div className='Name_Price'>
+                 <span> Product Generic</span>
+                  <p>Plain Package</p>
+                </div>
+                <span>NGN5,000</span>
+              </div>
+              <div className='Desc_ATC'>
+                <div className='Stars'>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                </div>
+                <button className="Product_ATC">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div className='Products_Card'>
+            <div className='Image_Part'>
+              <img src={Titem1} alt="" />
+            </div>
+            <div className='Description_Part'>
+              <div className='Desc_Name-Price'>
+                <div className='Name_Price'>
+                 <span> Product Generic</span>
+                  <p>Plain Package</p>
+                </div>
+                <span>NGN5,000</span>
+              </div>
+              <div className='Desc_ATC'>
+                <div className='Stars'>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                </div>
+                <button className="Product_ATC">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div className='Products_Card'>
+            <div className='Image_Part'>
+              <img src={Titem1} alt="" />
+            </div>
+            <div className='Description_Part'>
+              <div className='Desc_Name-Price'>
+                <div className='Name_Price'>
+                 <span> Product Generic</span>
+                  <p>Plain Package</p>
+                </div>
+                <span>NGN5,000</span>
+              </div>
+              <div className='Desc_ATC'>
+                <div className='Stars'>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                </div>
+                <button className="Product_ATC">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div className='Products_Card'>
+            <div className='Image_Part'>
+              <img src={Titem1} alt="" />
+            </div>
+            <div className='Description_Part'>
+              <div className='Desc_Name-Price'>
+                <div className='Name_Price'>
+                 <span> Product Generic</span>
+                  <p>Plain Package</p>
+                </div>
+                <span>NGN5,000</span>
+              </div>
+              <div className='Desc_ATC'>
+                <div className='Stars'>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                </div>
+                <button className="Product_ATC">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div className='Products_Card'>
+            <div className='Image_Part'>
+              <img src={Titem1} alt="" />
+            </div>
+            <div className='Description_Part'>
+              <div className='Desc_Name-Price'>
+                <div className='Name_Price'>
+                 <span> Product Generic</span>
+                  <p>Plain Package</p>
+                </div>
+                <span>NGN5,000</span>
+              </div>
+              <div className='Desc_ATC'>
+                <div className='Stars'>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                </div>
+                <button className="Product_ATC">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div className='Products_Card'>
+            <div className='Image_Part'>
+              <img src={Titem1} alt="" />
+            </div>
+            <div className='Description_Part'>
+              <div className='Desc_Name-Price'>
+                <div className='Name_Price'>
+                 <span> Product Generic</span>
+                  <p>Plain Package</p>
+                </div>
+                <span>NGN5,000</span>
+              </div>
+              <div className='Desc_ATC'>
+                <div className='Stars'>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                </div>
+                <button className="Product_ATC">Add To Cart</button>
+              </div>
+            </div>
+          </div>
 
             {allProducts.map((products) => (
               <div className="Products_Card" key={products._id}>

@@ -21,10 +21,10 @@
     }
         
     .Products_Card {
-        width: 97%;
-        height: 29rem;
+        width: 95%;
+        height: 28rem;
         background-color: rgb(228, 228, 228);
-        border-radius: 10px;
+        border-radius: 2px;
         margin-bottom: 40px;
     }
 }
