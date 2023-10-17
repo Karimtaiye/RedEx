@@ -5,12 +5,31 @@ import Logo from '../assets/Tlogo.png'
 import axios from 'axios'
 import Swal from "sweetalert2";
 import { useNavigate } from 'react-router-dom'
-import { userResData, userStoreData } from '../../Redux/State'
+import { userResData, userStoreData, userTokenExp } from '../../Redux/State'
 import { useDispatch, useSelector} from 'react-redux'
 
 function Login() {
   const userRes = useSelector(state=>state.redexstore.userRes)
   const user = useSelector(state=>state.redexstore.user)
+  const expireToken = useSelector(state=>state.redexstore.expToken)
+
+  
+  useEffect(()=>{
+    if(expireToken){
+      Swal.fire({
+        title: "Session Expired",
+        text: 'Please Log in again',
+        icon: 'error',
+        confirmButtonText: 'Close'
+      })
+    }
+
+    setTimeout(() => {
+      Dispatch(userTokenExp({expToken:false}))
+      console.log(expireToken);
+    }, 3000);
+  },[])
+  
   const Dispatch = useDispatch()
   const nav = useNavigate()
   const [loading, setLoading] = useState(false)

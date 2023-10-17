@@ -11,7 +11,7 @@ const initialState = {
         profilePicture:"",
         admin:false
     },
-    expToken:true
+    expToken:false
 }
 
 export const redexReducers = createSlice({

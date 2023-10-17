@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Category.css";
 import "./CategoryRes.css";
+import Swal from "sweetalert2";
 import Titem1 from "../LandingPage/assets/Titem1.png";
 import item2 from "../LandingPage/assets/item2.png";
 import item3 from "../LandingPage/assets/item3.png";
@@ -12,6 +13,7 @@ import Header from "../Header/Header";
 import { useNavigate } from "react-router-dom";
 import { HiShoppingCart } from "react-icons/hi";
 import axios from "axios";
+import { userTokenExp } from "../Redux/State";
 import { useDispatch, useSelector } from "react-redux";
 
 function Category() {
@@ -148,156 +150,7 @@ function Category() {
                         </div>
                     </div>
                 </div> */}
-                <div className='Products_Card'>
-            <div className='Image_Part'>
-              <img src={Titem1} alt="" />
-            </div>
-            <div className='Description_Part'>
-              <div className='Desc_Name-Price'>
-                <div className='Name_Price'>
-                 <span> Product Generic</span>
-                  <p>Plain Package</p>
-                </div>
-                <span>NGN5,000</span>
-              </div>
-              <div className='Desc_ATC'>
-                <div className='Stars'>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                </div>
-                <button className="Product_ATC">Add To Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className='Products_Card'>
-            <div className='Image_Part'>
-              <img src={Titem1} alt="" />
-            </div>
-            <div className='Description_Part'>
-              <div className='Desc_Name-Price'>
-                <div className='Name_Price'>
-                 <span> Product Generic</span>
-                  <p>Plain Package</p>
-                </div>
-                <span>NGN5,000</span>
-              </div>
-              <div className='Desc_ATC'>
-                <div className='Stars'>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                </div>
-                <button className="Product_ATC">Add To Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className='Products_Card'>
-            <div className='Image_Part'>
-              <img src={Titem1} alt="" />
-            </div>
-            <div className='Description_Part'>
-              <div className='Desc_Name-Price'>
-                <div className='Name_Price'>
-                 <span> Product Generic</span>
-                  <p>Plain Package</p>
-                </div>
-                <span>NGN5,000</span>
-              </div>
-              <div className='Desc_ATC'>
-                <div className='Stars'>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                </div>
-                <button className="Product_ATC">Add To Cart</button>
-              </div>
-            </div>
-          </div>
-
-
-          <div className='Products_Card'>
-            <div className='Image_Part'>
-              <img src={Titem1} alt="" />
-            </div>
-            <div className='Description_Part'>
-              <div className='Desc_Name-Price'>
-                <div className='Name_Price'>
-                 <span> Product Generic</span>
-                  <p>Plain Package</p>
-                </div>
-                <span>NGN5,000</span>
-              </div>
-              <div className='Desc_ATC'>
-                <div className='Stars'>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                </div>
-                <button className="Product_ATC">Add To Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className='Products_Card'>
-            <div className='Image_Part'>
-              <img src={Titem1} alt="" />
-            </div>
-            <div className='Description_Part'>
-              <div className='Desc_Name-Price'>
-                <div className='Name_Price'>
-                 <span> Product Generic</span>
-                  <p>Plain Package</p>
-                </div>
-                <span>NGN5,000</span>
-              </div>
-              <div className='Desc_ATC'>
-                <div className='Stars'>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                </div>
-                <button className="Product_ATC">Add To Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className='Products_Card'>
-            <div className='Image_Part'>
-              <img src={Titem1} alt="" />
-            </div>
-            <div className='Description_Part'>
-              <div className='Desc_Name-Price'>
-                <div className='Name_Price'>
-                 <span> Product Generic</span>
-                  <p>Plain Package</p>
-                </div>
-                <span>NGN5,000</span>
-              </div>
-              <div className='Desc_ATC'>
-                <div className='Stars'>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                </div>
-                <button className="Product_ATC">Add To Cart</button>
-              </div>
-            </div>
-          </div>
+                
 
             {allProducts.map((products) => (
               <div className="Products_Card" key={products._id}>
@@ -336,6 +189,11 @@ function Category() {
                           })
                           .catch((err) => {
                             console.log(err);
+                            if(err.response.data.message === "jwt expired"){
+                                console.log(err)
+                                Dispatch(userTokenExp({expToken:true}))
+                                nav("/login")
+                            }
                           });
                       }}
                     >
@@ -382,6 +240,11 @@ function Category() {
                           })
                           .catch((err) => {
                             console.log(err);
+                            if(err.response.data.message === "jwt expired"){
+                                console.log(err)
+                                Dispatch(userTokenExp({expToken:true}))
+                                nav("/login")
+                            }
                           });
                       }}
                     >
@@ -428,6 +291,11 @@ function Category() {
                           })
                           .catch((err) => {
                             console.log(err);
+                            if(err.response.data.message === "jwt expired"){
+                                console.log(err)
+                                Dispatch(userTokenExp({expToken:true}))
+                                nav("/login")
+                            }
                           });
                       }}
                     >
@@ -474,6 +342,11 @@ function Category() {
                           })
                           .catch((err) => {
                             console.log(err);
+                            if(err.response.data.message === "jwt expired"){
+                                console.log(err)
+                                Dispatch(userTokenExp({expToken:true}))
+                                nav("/login")
+                            }
                           });
                       }}
                     >

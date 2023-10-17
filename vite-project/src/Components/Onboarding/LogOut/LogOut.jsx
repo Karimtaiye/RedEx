@@ -6,13 +6,14 @@ import { useDispatch, useSelector} from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Swal from "sweetalert2";
-import { userStoreData } from '../../Redux/State'
+import { userStoreData, userTokenExp } from '../../Redux/State'
 import { useState } from 'react'
 
 function LogOut() {
   const nav = useNavigate()
   const { id } = useParams()
   const user = useSelector(state=>state.redexstore.user)
+  const expireToken = useSelector(state=>state.redexstore.expToken)
   const [loading, setLoading] = useState(false)
   const Dispatch = useDispatch()
   const token = user.token
@@ -24,6 +25,7 @@ function LogOut() {
     }
   }
 
+  console.log(expireToken)
   const logOutUser = () => {
     setLoading(true)
     axios.put(url, null, config)
@@ -52,6 +54,12 @@ function LogOut() {
         icon: 'error',
         confirmButtonText: 'Close'
       })
+    }
+    else if(err.response.data.message === "jwt expired"){
+        console.log(err)
+        Dispatch(userTokenExp({expToken:true}))
+        nav("/login")
+        
     }
     else{
         console.log(err)
