@@ -31,6 +31,9 @@ function LandingPage() {
   const [ans, setAns] = useState({ type: "first", drop: false });
   const nav = useNavigate();
   const homepage = "red";
+  const homeheader = "rgb(4, 4, 42)";
+  const homecolor = "white";
+  const hometext = "black";
 
   const token = user.token;
 
@@ -87,7 +90,7 @@ function LandingPage() {
   let Container = carCards.length * cartSize - cartSize * 4
   return (
     <>
-      <Header home={homepage} />
+      <Header home={homepage} homeHeader={homeheader} homeColor={homecolor} hometext={hometext}/>
       <motion.div
         initial={{ animation: "slideInLeft", animationDuration: "1s" }}
         animate={{ opacity: 1 }}

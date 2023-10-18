@@ -216,6 +216,10 @@ hr {
     justify-content: center;
     gap: 7px;
 }
+/* 
+.Item_Qty h4{
+    transition: all 550ms;
+} */
 
 .Add_Qty, .Min_Qty {
     width: 23px;

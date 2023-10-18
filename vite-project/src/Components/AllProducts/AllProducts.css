@@ -21,7 +21,9 @@
     height: 5vh;
     margin-bottom: 10px;
     display: flex;
+    font-size: 15px;
     align-items: center;
+    font-weight: bold;
     /* padding-left: 2%; */
 }
 

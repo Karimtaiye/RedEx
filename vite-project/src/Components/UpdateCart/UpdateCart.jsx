@@ -12,11 +12,12 @@ import item5 from '../LandingPage/assets/item5.png'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import './UpdateCart.css'
 
 function UpdateCart() {
+  const nav = useNavigate()
     const { id } = useParams()
     const [details, setDetails] = useState(true)
     const [reviews, setReview] = useState(false)
@@ -74,12 +75,19 @@ function UpdateCart() {
       useEffect(()=>{
         getUserCart()
       },[])
-
+      const cartpage = "red"
   return (
     <>
-    <Header />
+    <Header cart={cartpage}/>
          <div className='RedEx_DetailPage'>
           <div className='DetailPage_Wrapper'>
+          <div className="All_ProductRoute">
+          <span onClick={() => nav("/")} style={{ cursor: "pointer" }}>
+            Home
+          </span>
+          /<span style={{cursor:"pointer"}} onClick={()=>nav('/cart')}>Cart</span>/
+          <span style={{ color: "red" }}>Plain package</span>
+        </div>
             <section className='DetailPage_Item'>
               <div className='DetailItem_Actions'>
                 <div className='Detail_ItemImg'>

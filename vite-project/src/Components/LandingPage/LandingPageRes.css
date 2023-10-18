@@ -19,7 +19,7 @@
 
 .RedExDisplay_Details {
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     background: rgb(4, 4, 42);
     color: white;
     margin-top: -3vh;
@@ -48,7 +48,7 @@
 }
 
 .RedExDisplay_DescWrapper {
-    width: 95%;
+    width: 90%;
     height: 90%;
     justify-content: space-between;
     align-items: center;
@@ -92,15 +92,15 @@
 }
 
 .Contact_Line {
-    width: 95%;
-    height: 4px;
+    width: 90%;
+    height: 3px;
 }
 .RedExAddress_Location {
     gap: 4px;
     width: 100%;
     height: 45%;
     align-items: flex-start;
-    padding-left: 2.5%;
+    padding-left: 5%;
 }
 .RedExAddress_Location h4, .RedExAddress_Contact h4{
     font-size: 18px;
@@ -114,7 +114,7 @@
 .RedExAddress_Contact {
     gap: 4px;
     align-items: flex-start;
-    padding-left: 2.5%;
+    padding-left: 5%;
     width: 100%;
     height: 45%;
 }
@@ -277,8 +277,9 @@
 }
 
 .Demanding_Products {
-    width: 49%;
-    height:180px;
+    width: 46%;
+    height:170px;
+    flex: 0 0 auto;
     background: rgb(238, 238, 238);
     border-radius:10px;
     margin-bottom: 4vh;

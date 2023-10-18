@@ -10,7 +10,7 @@ import { RiMenu2Line } from 'react-icons/ri'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 
-function Header({home, about, blog, cart, login, renders}) {
+function Header({home, about, blog, cart, login, renders, homeHeader, homeColor, hometext}) {
   const user = useSelector(state=>state.redexstore.user)
   const userRes = useSelector(state=>state.redexstore.userRes)
   const nav = useNavigate()
@@ -55,7 +55,7 @@ function Header({home, about, blog, cart, login, renders}) {
     {/* {
       userCart.length === 0 ?
       <><h1>Loading</h1></>: */}
-      <motion.div
+      <motion.div style={{background:homeHeader}}
       initial={{animation:"slideInDown",
         animationDuration:"1s"}}
       animate={{opacity:1}}
@@ -81,7 +81,7 @@ function Header({home, about, blog, cart, login, renders}) {
              <div className='Cart_Qty' style={{ background:cart}}>{userCart.length === 0?"...":userCart.items.length}</div>
              </li>
           </NavLink>
-          <li className='Burger' ><RiMenu2Line onClick={()=>{
+          <li className='Burger' ><RiMenu2Line style={{ color:homeColor}} onClick={()=>{
             setMenu(!menu)
           }} className='Menu_Icon'/> </li>
          {
@@ -91,7 +91,7 @@ function Header({home, about, blog, cart, login, renders}) {
           </NavLink>:
           <li  onMouseOver={()=>{
             setAccPopUp(!accPopUp)
-          }}  className='Profile' style={{fontFamily:"cursive", textDecoration:"none"}}>{firstname.charAt(0).toUpperCase() + lastname.charAt(0).toUpperCase()}
+          }}  className='Profile' style={{fontFamily:"cursive", textDecoration:"none",  background:homeColor, color:hometext}}>{firstname.charAt(0).toUpperCase() + lastname.charAt(0).toUpperCase()}
           </li>
           
          }

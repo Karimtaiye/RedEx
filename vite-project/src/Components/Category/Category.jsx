@@ -10,6 +10,7 @@ import item5 from "../LandingPage/assets/item5.png";
 import { BiSearch } from "react-icons/bi";
 import { GrStatusGood } from "react-icons/gr";
 import Header from "../Header/Header";
+import {ThreeDots} from 'react-loader-spinner'
 import { useNavigate } from "react-router-dom";
 import { HiShoppingCart } from "react-icons/hi";
 import axios from "axios";
@@ -19,6 +20,7 @@ import { useDispatch, useSelector } from "react-redux";
 function Category() {
   const [allProducts, setAllProducts] = useState([]);
   const [ATC, setATC] = useState(false);
+  const [loading, setLoading] = useState(false)
   const [item, setItem] = useState("");
   const user = useSelector((state) => state.redexstore.user);
   const token = user.token;
@@ -66,7 +68,7 @@ function Category() {
   useEffect(() => {
     setTimeout(() => {
       setATC(false);
-    }, 7000);
+    }, 4000);
   }, [ATC]);
 
   return (
@@ -89,15 +91,11 @@ function Category() {
               <BiSearch style={{ cursor: "pointer" }} />
             </div>
             <div className="Category_Header">
-              <h1>Shop Generic Food Pakaging Plain and shii</h1>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi,
-                minima! Similique velit ab recusandae nisi corporis, fugit
-                tenetur placeat.
-              </p>
+              <h1>Shop Generic Food Pakaging Plain and shii,  </h1>
+              <span>Natural Stuffs and very nice Products</span>
             </div>
             <div className="Category_BtnDiv">
-              <button className="Category_Btn">Shop More</button>
+              <button className="Category_Btn">Explore</button>
             </div>
           </div>
         </section>
@@ -176,6 +174,7 @@ function Category() {
                     <button
                       className="Product_ATC"
                       onClick={() => {
+                        setLoading(true)
                         axios
                           .post(
                             `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
@@ -184,11 +183,13 @@ function Category() {
                           )
                           .then((res) => {
                             console.log(res);
+                            setLoading(false)
                             setItem(res._id)
                             setATC(true);
                           })
                           .catch((err) => {
                             console.log(err);
+                            setLoading(false)
                             if(err.response.data.message === "jwt expired"){
                                 console.log(err)
                                 Dispatch(userTokenExp({expToken:true}))
@@ -228,6 +229,7 @@ function Category() {
                     <button
                       className="Product_ATC"
                       onClick={() => {
+                        setLoading(true)
                         axios
                           .post(
                             `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
@@ -235,10 +237,12 @@ function Category() {
                             config
                           )
                           .then((res) => {
+                            setLoading(false)
                             console.log(res);
                             setATC(true);
                           })
                           .catch((err) => {
+                            setLoading(false)
                             console.log(err);
                             if(err.response.data.message === "jwt expired"){
                                 console.log(err)
@@ -279,6 +283,7 @@ function Category() {
                     <button
                       className="Product_ATC"
                       onClick={() => {
+                        setLoading(true)
                         axios
                           .post(
                             `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
@@ -286,10 +291,12 @@ function Category() {
                             config
                           )
                           .then((res) => {
+                            setLoading(false)
                             console.log(res);
                             setATC(true);
                           })
                           .catch((err) => {
+                            setLoading(false)
                             console.log(err);
                             if(err.response.data.message === "jwt expired"){
                                 console.log(err)
@@ -329,7 +336,9 @@ function Category() {
                     </div>
                     <button
                       className="Product_ATC"
+                      style={{display:"flex", justifyContent:"center", alignItems:"center"}}
                       onClick={() => {
+                        setLoading(true)
                         axios
                           .post(
                             `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
@@ -337,10 +346,12 @@ function Category() {
                             config
                           )
                           .then((res) => {
+                            setLoading(false)
                             console.log(res);
                             setATC(true);
                           })
                           .catch((err) => {
+                            setLoading(false)
                             console.log(err);
                             if(err.response.data.message === "jwt expired"){
                                 console.log(err)
@@ -350,14 +361,23 @@ function Category() {
                           });
                       }}
                     >
-                     Add To Cart
+                     {loading?<ThreeDots 
+                    height="60" 
+                    width="60" 
+                    radius="9"
+                    color="#fff" 
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                    />:ATC?"View Cart":"Add To Cart"}
                     </button>
                   </div>
                 </div>
               </div>
             ))}
 
-            <div className="Category_ProductsHMobile">
+            {/* <div className="Category_ProductsHMobile">
               <div className="Category_ImgH">
                 <img src={Titem1} alt="" />
               </div>
@@ -371,12 +391,12 @@ function Category() {
                     <HiShoppingCart className="ATC_Icon" />
                     Add To Cart
                   </button>
-                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                  <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="Category_ProductsHMobile">
+            {/* <div className="Category_ProductsHMobile">
               <div className="Category_ImgH">
                 <img src={Titem1} alt="" />
               </div>
@@ -390,12 +410,12 @@ function Category() {
                     <HiShoppingCart className="ATC_Icon" />
                     Add To Cart
                   </button>
-                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                  <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="Category_ProductsHMobile">
+            {/* <div className="Category_ProductsHMobile">
               <div className="Category_ImgH">
                 <img src={Titem1} alt="" />
               </div>
@@ -409,12 +429,12 @@ function Category() {
                     <HiShoppingCart className="ATC_Icon" />
                     Add To Cart
                   </button>
-                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                  <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="Category_ProductsHMobile">
+            {/* <div className="Category_ProductsHMobile">
               <div className="Category_ImgH">
                 <img src={Titem1} alt="" />
               </div>
@@ -428,12 +448,12 @@ function Category() {
                     <HiShoppingCart className="ATC_Icon" />
                     Add To Cart
                   </button>
-                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                  <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="Category_ProductsHMobile">
+            {/* <div className="Category_ProductsHMobile">
               <div className="Category_ImgH">
                 <img src={Titem1} alt="" />
               </div>
@@ -447,10 +467,10 @@ function Category() {
                     <HiShoppingCart className="ATC_Icon" />
                     Add To Cart
                   </button>
-                  {/* <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button> */}
+                  <button className='Cateory_ORNBtn'><HiShoppingCart className='ATC_Icon'/>Add to Cart</button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </section>
