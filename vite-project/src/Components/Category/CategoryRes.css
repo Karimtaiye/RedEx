@@ -239,6 +239,10 @@
         left: 90%;
     }
 
+    .Search_ResultDiv {
+        gap: 2%;
+    }
+
     .Search_Input input{
         width: 70%;
         height: 55%;
@@ -250,7 +254,7 @@
     .Search_Result {
         cursor: pointer;
         width: 80%;
-        min-height: 25%;
+        min-height: 23%;
     }
 
     .Desc_Name {

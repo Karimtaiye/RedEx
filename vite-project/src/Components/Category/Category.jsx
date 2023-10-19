@@ -611,6 +611,34 @@ function Category() {
                   </div>
                 </div>
               </div>
+              <div className="Search_Result">
+                <div className="Result_Img">
+                  <img src={Titem1} alt="" />
+                </div>
+                <div className="Result_Des">
+                  <div className="Desc_Name">
+                  <p>Plain Package Products Choke stuff</p>
+                  <h4>Main Generic Category</h4>
+                  </div>
+                  <div className="Result_Price">
+                    <span>NGN6,000</span>
+                  </div>
+                </div>
+              </div>
+              <div className="Search_Result">
+                <div className="Result_Img">
+                  <img src={Titem1} alt="" />
+                </div>
+                <div className="Result_Des">
+                  <div className="Desc_Name">
+                  <p>Plain Package Products Choke stuff</p>
+                  <h4>Main Generic Category</h4>
+                  </div>
+                  <div className="Result_Price">
+                    <span>NGN6,000</span>
+                  </div>
+                </div>
+              </div>
               {/* <div className="Search_Result">
                 <div className="Result_Img">
                   <img src={Titem1} alt="" />
