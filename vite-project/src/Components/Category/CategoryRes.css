@@ -43,9 +43,6 @@
         align-items: center;
     }
 
-    .Category_Header p {
-        /* display: none; */
-    }
     .Category_Header h1 {
         width: 70%;
 
