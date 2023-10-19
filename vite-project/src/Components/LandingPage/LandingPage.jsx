@@ -64,9 +64,9 @@ function LandingPage() {
   const carousel = () => {
     setNextPro((prev) => (prev += 1));
     if (execute) {
-      // setTimeout(() => {
-      //   carousel();
-      // }, 5000);
+      setTimeout(() => {
+        carousel();
+      }, 5000);
     }
   };
 

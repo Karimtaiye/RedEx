@@ -8,10 +8,23 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { MutatingDots } from 'react-loader-spinner'
+
 
 function Cart() {
   const nav = useNavigate();
   const cartpage = "red";
+
+  const [up, setUp] = useState(0)
+
+  useEffect(()=>{
+  //  const inter = setInterval(() => {
+    setUp(1)
+    // }, 200);
+    // if(up === 1){
+    //   clearInterval(inter)
+    // }
+    },[])
 
   const [myCart, setMyCart] = useState([]);
   const userRes = useSelector((state) => state.redexstore.userRes);
@@ -56,6 +69,22 @@ function Cart() {
   console.log(userCart);
   return (
     <>
+    {
+      loading?
+      <div className="Loading_Spinners">
+        <MutatingDots  
+      height="100px"
+      width="100px"
+      color="#fff"
+      secondaryColor= 'red'
+      radius='12.5'
+      ariaLabel="mutating-dots-loading"
+      wrapperStyle={{}}
+      wrapperClass=""
+      visible={true}
+ /> 
+    </div>:null
+    }
       <Header renders={[RFC, CFC, ATC]} cart={cartpage} />
       {userCart.length === 0 ? (
         <div
@@ -67,7 +96,7 @@ function Cart() {
             paddingTop: "100px",
           }}
         >
-          <img style={{ width: "230px", height: "70px" }} src={Logo} alt="" />
+          <img style={{ width: "200px", height: "60px", transform:`scale(${up})`, transition:"all 500ms"}} src={Logo} alt="" />
         </div>
       ) : (
         <div className="RedExCart_Page">
