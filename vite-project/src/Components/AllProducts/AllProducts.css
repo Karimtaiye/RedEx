@@ -45,12 +45,12 @@
 
 .Products_Card {
     /* width: 24.25%; */
-    width: 19.65rem;
+    width: 19rem;
     height: 28rem;
     background-color: rgb(228, 228, 228);
     border-radius: 10px;
     margin-bottom: 40px;
-}
+}   
 
 .Stars {
     /* color: rgb(246, 179, 10); */
@@ -110,7 +110,7 @@
     font-size: 15px;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.771);
-    color: red;
+    /* color: red; */
 
 }
 

@@ -158,7 +158,6 @@
     .CategoryDes_Btn {
         width: 90%;
         height: 40%;
-        /* flex-direction: column; */
     }
         
     .Cateory_ATCBtn {
@@ -171,7 +170,7 @@
 
     .Category_ProductsHMobile {
         display: flex;
-        width: 90%;
+        width: 85%;
         height: 27rem;
         position: relative;
         border-radius: 5px;

@@ -12,6 +12,7 @@ import { GrStatusGood } from "react-icons/gr";
 import Header from "../Header/Header";
 import {ThreeDots} from 'react-loader-spinner'
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import { HiShoppingCart } from "react-icons/hi";
 import axios from "axios";
 import { userTokenExp } from "../Redux/State";
@@ -21,6 +22,7 @@ function Category() {
   const [allProducts, setAllProducts] = useState([]);
   const [ATC, setATC] = useState(false);
   const [loading, setLoading] = useState(false)
+  const [search, setsearch] = useState(false)
   const [item, setItem] = useState("");
   const user = useSelector((state) => state.redexstore.user);
   const token = user.token;
@@ -88,7 +90,9 @@ function Category() {
           </div>
           <div className="MainCategory_Desc">
             <div className="Category_SearchBar">
-              <BiSearch style={{ cursor: "pointer" }} />
+              <BiSearch style={{ cursor: "pointer" }} onClick={()=>{
+                setsearch(!search)
+              }}/>
             </div>
             <div className="Category_Header">
               <h1>Shop Generic Food Pakaging Plain and shii,  </h1>
@@ -173,6 +177,7 @@ function Category() {
                     </div>
                     <button
                       className="Product_ATC"
+                      style={{display:"flex", justifyContent:"center", alignItems:"center"}}
                       onClick={() => {
                         setLoading(true)
                         axios
@@ -195,118 +200,27 @@ function Category() {
                                 Dispatch(userTokenExp({expToken:true}))
                                 nav("/login")
                             }
-                          });
-                      }}
-                    >
-                      {item === products._id ? "View Cart": "Add To Cart"}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {allProducts.map((products) => (
-              <div className="Products_Card" key={products._id}>
-                <div className="Image_Part">
-                  <img src={Titem1} alt="" />
-                </div>
-                <div className="Description_Part">
-                  <div className="Desc_Name-Price">
-                    <div className="Name_Price">
-                      <span> Product Generic</span>
-                      <p>Plain Package</p>
-                    </div>
-                    <span>NGN{products.productPrice}</span>
-                  </div>
-                  <div className="Desc_ATC">
-                    <div className="Stars">
-                      <span>&#9733;</span>
-                      <span>&#9733;</span>
-                      <span>&#9733;</span>
-                      <span>&#9733;</span>
-                      <span>&#9733;</span>
-                    </div>
-                    <button
-                      className="Product_ATC"
-                      onClick={() => {
-                        setLoading(true)
-                        axios
-                          .post(
-                            `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
-                            null,
-                            config
-                          )
-                          .then((res) => {
-                            setLoading(false)
-                            console.log(res);
-                            setATC(true);
-                          })
-                          .catch((err) => {
-                            setLoading(false)
-                            console.log(err);
-                            if(err.response.data.message === "jwt expired"){
-                                console.log(err)
-                                Dispatch(userTokenExp({expToken:true}))
-                                nav("/login")
+                            else if(err.response.data.message === "jwt must be provided"){
+                              Swal.fire({
+                                title: "You are not logged in",
+                                text: 'Log in to your account',
+                                icon: 'error',
+                                confirmButtonText: 'Close'
+                              })
                             }
                           });
                       }}
                     >
-                      Add To Cart
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {allProducts.map((products) => (
-              <div className="Products_Card" key={products._id}>
-                <div className="Image_Part">
-                  <img src={Titem1} alt="" />
-                </div>
-                <div className="Description_Part">
-                  <div className="Desc_Name-Price">
-                    <div className="Name_Price">
-                      <span> Product Generic</span>
-                      <p>Plain Package</p>
-                    </div>
-                    <span>NGN{products.productPrice}</span>
-                  </div>
-                  <div className="Desc_ATC">
-                    <div className="Stars">
-                      <span>&#9733;</span>
-                      <span>&#9733;</span>
-                      <span>&#9733;</span>
-                      <span>&#9733;</span>
-                      <span>&#9733;</span>
-                    </div>
-                    <button
-                      className="Product_ATC"
-                      onClick={() => {
-                        setLoading(true)
-                        axios
-                          .post(
-                            `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
-                            null,
-                            config
-                          )
-                          .then((res) => {
-                            setLoading(false)
-                            console.log(res);
-                            setATC(true);
-                          })
-                          .catch((err) => {
-                            setLoading(false)
-                            console.log(err);
-                            if(err.response.data.message === "jwt expired"){
-                                console.log(err)
-                                Dispatch(userTokenExp({expToken:true}))
-                                nav("/login")
-                            }
-                          });
-                      }}
-                    >
-                      Add To Cart
+                       {loading?<ThreeDots 
+                    height="60" 
+                    width="60" 
+                    radius="9"
+                    color="#fff" 
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                    />:ATC?"View Cart":"Add To Cart"}
                     </button>
                   </div>
                 </div>
@@ -357,6 +271,158 @@ function Category() {
                                 console.log(err)
                                 Dispatch(userTokenExp({expToken:true}))
                                 nav("/login")
+                            }
+                            else if(err.response.data.message === "jwt must be provided"){
+                              Swal.fire({
+                                title: "You are not logged in",
+                                text: 'Log in to your account',
+                                icon: 'error',
+                                confirmButtonText: 'Close'
+                              })
+                            }
+                          });
+                      }}
+                    >
+                       {loading?<ThreeDots 
+                    height="60" 
+                    width="60" 
+                    radius="9"
+                    color="#fff" 
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                    />:ATC?"View Cart":"Add To Cart"}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {allProducts.map((products) => (
+              <div className="Products_Card" key={products._id}>
+                <div className="Image_Part">
+                  <img src={Titem1} alt="" />
+                </div>
+                <div className="Description_Part">
+                  <div className="Desc_Name-Price">
+                    <div className="Name_Price">
+                      <span> Product Generic</span>
+                      <p>Plain Package</p>
+                    </div>
+                    <span>NGN{products.productPrice}</span>
+                  </div>
+                  <div className="Desc_ATC">
+                    <div className="Stars">
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                    </div>
+                    <button
+                      className="Product_ATC"
+                      style={{display:"flex", justifyContent:"center", alignItems:"center"}}
+                      onClick={() => {
+                        setLoading(true)
+                        axios
+                          .post(
+                            `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
+                            null,
+                            config
+                          )
+                          .then((res) => {
+                            setLoading(false)
+                            console.log(res);
+                            setATC(true);
+                          })
+                          .catch((err) => {
+                            setLoading(false)
+                            console.log(err);
+                            if(err.response.data.message === "jwt expired"){
+                                console.log(err)
+                                Dispatch(userTokenExp({expToken:true}))
+                                nav("/login")
+                            }
+                            else if(err.response.data.message === "jwt must be provided"){
+                              Swal.fire({
+                                title: "You are not logged in",
+                                text: 'Log in to your account',
+                                icon: 'error',
+                                confirmButtonText: 'Close'
+                              })
+                            }
+                          });
+                      }}
+                    >
+                       {loading?<ThreeDots 
+                    height="60" 
+                    width="60" 
+                    radius="9"
+                    color="#fff" 
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                    />:ATC?"View Cart":"Add To Cart"}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {allProducts.map((products) => (
+              <div className="Products_Card" key={products._id}>
+                <div className="Image_Part">
+                  <img src={Titem1} alt="" />
+                </div>
+                <div className="Description_Part">
+                  <div className="Desc_Name-Price">
+                    <div className="Name_Price">
+                      <span> Product Generic</span>
+                      <p>Plain Package</p>
+                    </div>
+                    <span>NGN{products.productPrice}</span>
+                  </div>
+                  <div className="Desc_ATC">
+                    <div className="Stars">
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                      <span>&#9733;</span>
+                    </div>
+                    <button
+                      className="Product_ATC"
+                      style={{display:"flex", justifyContent:"center", alignItems:"center"}}
+                      onClick={() => {
+                        setLoading(true)
+                        axios
+                          .post(
+                            `https://redex-webapp-v1.onrender.com/api/cart/${products._id}`,
+                            null,
+                            config
+                          )
+                          .then((res) => {
+                            setLoading(false)
+                            console.log(res);
+                            setATC(true);
+                          })
+                          .catch((err) => {
+                            setLoading(false)
+                            console.log(err);
+                            if(err.response.data.message === "jwt expired"){
+                                console.log(err)
+                                Dispatch(userTokenExp({expToken:true}))
+                                nav("/login")
+                            }
+                            else if(err.response.data.message === "jwt must be provided"){
+                              Swal.fire({
+                                title: "You are not logged in",
+                                text: 'Log in to your account',
+                                icon: 'error',
+                                confirmButtonText: 'Close'
+                              })
                             }
                           });
                       }}
@@ -513,6 +579,56 @@ function Category() {
           </h4> */}
         </div>
       ) : null}
+      {
+
+        search?
+        <motion.div
+        initial={{opacity:0, scale:0}}
+        animate={{opacity:1, scale:1}}
+        transition={{duration:0.3}}
+        exit={{opacity:0, transitionDuration: 4 }}
+        
+        className="Search_Bar">
+          <div className="Search_Input">
+            <span className="Cancel_Search" style={{cursor:"pointer"}} onClick={()=>{
+                setsearch(!search)
+              }}>X</span>
+            <input type="text" placeholder="Search" />
+
+          </div>
+          <div className="Search_ResultDiv">
+              <div className="Search_Result">
+                <div className="Result_Img">
+                  <img src={Titem1} alt="" />
+                </div>
+                <div className="Result_Des">
+                  <div className="Desc_Name">
+                  <p>Plain Package Products Choke stuff</p>
+                  <h4>Main Generic Category</h4>
+                  </div>
+                  <div className="Result_Price">
+                    <span>NGN6,000</span>
+                  </div>
+                </div>
+              </div>
+              {/* <div className="Search_Result">
+                <div className="Result_Img">
+                  <img src={Titem1} alt="" />
+                </div>
+                <div className="Result_Des">
+                  <div className="Desc_Name">
+                  <p>Plain Package Products Choke stuff</p>
+                  <h4>Main Generic Category</h4>
+                  </div>
+                  <div className="Result_Price">
+                    <span>NGN6,000</span>
+                  </div>
+                </div>
+              </div> */}
+
+          </div>
+          </motion.div>:null
+      }
     </>
   );
 }

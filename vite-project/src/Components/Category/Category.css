@@ -9,8 +9,9 @@
 .RexExMain_Category {
     width: 95%;
     height: 80vh;
+    justify-content: center;
     display: flex;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25)
+    /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25) */
 
 }
 
@@ -122,8 +123,9 @@
     width: 100%;
     height: max-content;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 1%;
+    gap: 2%;
 }
 
 .Category_ProductsH {
@@ -554,6 +556,128 @@
     font-weight: bold;
     cursor: pointer;
     border-radius: 3px;
+}
+
+.Search_Bar {
+    width: 100%;
+    height: 100vh;
+    background: #000000f8;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+
+.Search_Input {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: flex-end ;
+    justify-content: center;
+    position: relative;
+}
+
+.Cancel_Search{
+    color: white;
+    position: absolute;
+    top:55%;
+    left: 4%;
+}
+
+.Search_Input input{
+    width: 30%;
+    height: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.578);
+    outline: none;
+    padding-left: 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+.Search_ResultDiv {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    overflow: auto;
+    gap: 5%;
+}
+
+.Search_Result {
+    cursor: pointer;
+    width: 30%;
+    min-height: 35%;
+    transform: scale(1);
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.342) ;
+}
+
+.Search_Result:hover {
+   transform: scale(1.01);
+   transition: all 450ms;
+}
+
+.Result_Img {
+    width: 35%;
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.Result_Img img{
+    width: 80%;
+    height:60%;
+}
+.Result_Des {
+    width: 65%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center ;
+    text-align: center;
+    flex-direction: column;
+}
+
+.Desc_Name {
+    width: 100%;
+    display: flex;
+    height: 45%;
+    justify-content: flex-end   ;
+    gap: 7px;
+    align-items: center ;
+    text-align: center;
+    flex-direction: column;
+}
+
+.Result_Des p{
+    width: 60%;
+    line-height: 19px;
+}
+
+.Result_Des h4{
+    width: 67%;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.674);
+}
+
+.Result_Price {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+    font-size: 19px;
+    /* color: rgba(255, 255, 255, 0.657); */
+    align-items: flex-end;
 }
 /* 
 .ATC_Noftication div {

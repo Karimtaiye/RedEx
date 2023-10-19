@@ -27,6 +27,8 @@ function LandingPage() {
   const user = useSelector((state) => state.redexstore.user);
   const [allProducts, setAllProducts] = useState([]);
   const [nextPro, setNextPro] = useState(0);
+  const [lefty, setlefty] = useState(0);
+  const [left, setleft] = useState(0);
   const [execute, setexecute] = useState(true);
   const [ans, setAns] = useState({ type: "first", drop: false });
   const nav = useNavigate();
@@ -62,9 +64,9 @@ function LandingPage() {
   const carousel = () => {
     setNextPro((prev) => (prev += 1));
     if (execute) {
-      setTimeout(() => {
-        carousel();
-      }, 5000);
+      // setTimeout(() => {
+      //   carousel();
+      // }, 5000);
     }
   };
 
@@ -85,8 +87,8 @@ function LandingPage() {
   let carCards = [item2,item4,item2,item4,item3,item3,item4,item4]
   let card = useRef()
 
-  let left = 0
-  let cartSize = 23.5
+  // let left = 0
+  let cartSize = 25.5
   let Container = carCards.length * cartSize - cartSize * 4
   return (
     <>
@@ -230,7 +232,10 @@ function LandingPage() {
                     <div style={{color:"white", width:"12px", height:"12px", background:"white"}}></div>
                     <div></div>
                   </div>
-                  <img
+                  <motion.img
+                  initial={{opacity:0}}
+                  animate={{opacity:1}}
+                  exit={{opacity:0}}
                     src={categoryArray[nextPro % categoryArray.length]}
                     alt=""
                   />
@@ -473,9 +478,16 @@ function LandingPage() {
               <h1 style={{ color: "red" }}>Demanding</h1>
             </div>
             <div className="RedExDemanding_Products">
-            <button className='Next'>Next</button>
+            <button className='Next' onClick={()=>{
+                  setleft(prev => prev -= cartSize)
+                  console.log(left)
+                  left === 0?
+                  setlefty(0):
+                  setlefty(left +"%")
+
+                }} >Next</button>
               {carCards.map((products) => (
-                <div ref={card} style={{left:"0%"}}
+                <div ref={card} style={{left:lefty}}
                   className="Demanding_Products"
                   onClick={() => {
                     nav(`/api/product/${products._id}`);
@@ -514,14 +526,9 @@ function LandingPage() {
                 <span>Customized Takeout Full Package</span>
               </div> */}
                 <button onClick={()=>{
-                  left += cartSize
+                  setleft(prev => prev += cartSize)
                   console.log(left)
-                  console.log(card.current);
-                  console.log(card.current.style.left)
-                  for (card of carCards) {
-                    card.current.style.left = left + "%"
-                  }
-  
+                  setlefty(left +"%")
   
                 }} className='Prev'>prev</button>
             </div>

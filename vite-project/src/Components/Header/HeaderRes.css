@@ -1,5 +1,12 @@
 
 @media screen and (max-width: 575px) { 
+    .RedExHeaderWrappper {
+        display: none;
+    }
+
+    .RedExHeaderWrappperMobile {
+        display: flex;
+    }
 
     .RedExHeader_Logo img:first-child{
         width: 190px;
