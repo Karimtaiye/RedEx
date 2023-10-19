@@ -228,5 +228,51 @@
         font-size: 15px;
     }
 
+    .Search_Input {
+        height: 10%;
+        align-items: flex-end ;
+    }
+
     
+    .Cancel_Search{
+        top:54%;
+        left: 90%;
+    }
+
+    .Search_Input input{
+        width: 70%;
+        height: 55%;
+        padding-left: 20px;
+        font-size: 15px;
+        border-radius: 5px;
+    }
+
+    .Search_Result {
+        cursor: pointer;
+        width: 80%;
+        min-height: 25%;
+    }
+
+    .Desc_Name {
+        height: 60%;
+        justify-content: center;
+    }
+
+    
+.Result_Des p{
+    width: 90%;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.Result_Des h4{
+    width: 97%;
+    font-size: 14px;
+}
+
+.Result_Price {
+    font-size: 18px;
+    align-items: center;
+}
+
 }
