@@ -148,7 +148,7 @@ function Header({home, about, blog, cart, login, renders, homeHeader, homeColor,
           </NavLink>
           <NavLink className="menuM" to={'/cart'} style={{color:"black", textDecoration:"none", background:"none"}} >
              <li style={{color:cart}}><BiSolidCart  style={{fontSize:'25px'}}/>
-             {/* <div className='Cart_Qty' style={{ background:cart}}>{userCart.length === 0?"...":userCart.items.length}</div> */}
+             {/* <div className='Car>t_Qty' style={{ background:cart}}>{userCart.length === 0?"...":userCart.items.length}</div> */}
              </li>
           </NavLink>
          
@@ -192,7 +192,7 @@ function Header({home, about, blog, cart, login, renders, homeHeader, homeColor,
           </NavLink>:
           <li  onMouseOver={()=>{
             setAccPopUp(!accPopUp)
-          }}  className='Profile' style={{fontFamily:"cursive", textDecoration:"none",  background:homeColor, color:hometext}}>{firstname.charAt(0).toUpperCase() + lastname.charAt(0).toUpperCase()}
+          }}  className='Profile' style={{fontFamily:"cursive", textDecoration:"none",  background:"black", color:'white'}}>{firstname.charAt(0).toUpperCase() + lastname.charAt(0).toUpperCase()}
           </li>
           
          }

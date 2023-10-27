@@ -19,6 +19,7 @@ import Account from './Components/Account/Account'
 import AllProducts from './Components/AllProducts/AllProducts'
 import UserOrder from './Components/UserOrder/UserOrder'
 import { AnimatePresence } from "framer-motion"
+import DriverDashboard from './Components/Driver/DriverDashboard'
 
 
 function Framer() {
@@ -43,6 +44,7 @@ function Framer() {
         <Route path='/allproducts' element={<AllProducts />} />
         <Route path='/userorder' element={<UserOrder />} />
         <Route path='/api/logout/:id' element={<LogOut />} />
+        <Route path='/driver' element={<DriverDashboard />} />
        </Routes>
     </AnimatePresence>
   )

@@ -582,7 +582,8 @@ function Category() {
       {
 
         search?
-        <motion.div
+        <div className="Search_Wrapper">
+          <motion.div
         initial={{opacity:0, scale:0}}
         animate={{opacity:1, scale:1}}
         transition={{duration:0.3}}
@@ -655,7 +656,8 @@ function Category() {
               </div> */}
 
           </div>
-          </motion.div>:null
+          </motion.div>
+        </div>:null
       }
     </>
   );
